@@ -3,188 +3,261 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SNAP Tucson Feasibility Lab</title>
-  <meta name="description" content="A visual, data-grounded feasibility dashboard for a Cameroon-inspired SNAP beverage concept in Tucson, Arizona." />
+  <title>SNAP Tucson Intelligence System</title>
+  <meta name="description" content="Interactive Tucson market, site, land, pricing and build intelligence for the SNAP concept." />
   <link rel="preconnect" href="https://unpkg.com" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
-  <style>
-    :root{--ink:#17130f;--cream:#fff8ea;--paper:#fffdf7;--orange:#ff6b2c;--yellow:#ffc93c;--blue:#155e75;--green:#2f855a;--red:#c53030;--muted:#6d6258;--line:#eadfcf;--shadow:0 18px 50px rgba(67,43,19,.12)}
-    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:linear-gradient(180deg,#fff7e6 0,#fffdf7 42%,#f7f4ee 100%);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink)}
-    button,input,select{font:inherit} a{color:var(--blue)}
-    .wrap{max-width:1240px;margin:auto;padding:22px}
-    .hero{position:relative;overflow:hidden;background:radial-gradient(circle at 88% 10%,rgba(255,201,60,.65),transparent 33%),linear-gradient(135deg,#1b1712 0,#33261b 58%,#6f321b 100%);border-radius:30px;padding:34px;color:white;box-shadow:var(--shadow)}
-    .hero:after{content:"SNAP";position:absolute;right:-24px;bottom:-36px;font-size:180px;font-weight:950;letter-spacing:-12px;color:rgba(255,255,255,.045);transform:rotate(-6deg)}
-    .eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);padding:8px 12px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
-    h1{font-size:clamp(42px,7vw,86px);line-height:.9;letter-spacing:-.055em;margin:22px 0 14px;max-width:780px}.hero p{max-width:720px;color:#f8e7d6;font-size:18px;line-height:1.55}.hero-grid{display:grid;grid-template-columns:1.45fr .75fr;gap:22px;align-items:end}
-    .score-card{position:relative;z-index:1;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(12px);border-radius:24px;padding:22px}.score{font-size:76px;font-weight:950;letter-spacing:-.08em}.score small{font-size:22px;color:#ffd77a;letter-spacing:0}.recommend{display:inline-block;margin-top:8px;padding:8px 13px;border-radius:999px;font-weight:900;background:var(--yellow);color:#30200b}.score-note{font-size:12px;color:#e8d8c7;margin-top:10px}
-    .nav{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}.nav a{text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);padding:9px 13px;border-radius:999px;font-weight:750;font-size:13px}
-    .section{margin:26px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:14px;margin-bottom:13px}.section h2{font-size:30px;letter-spacing:-.035em;margin:0}.section-head p{margin:0;color:var(--muted);max-width:680px}
-    .grid{display:grid;gap:14px}.facts{grid-template-columns:repeat(6,1fr)}.fact,.panel{background:rgba(255,255,255,.84);border:1px solid var(--line);border-radius:20px;box-shadow:0 8px 28px rgba(67,43,19,.06)}.fact{padding:18px;min-height:136px}.fact strong{font-size:26px;display:block;letter-spacing:-.04em}.fact span{font-size:12px;color:var(--muted);font-weight:700}.fact .tag{display:inline-block;margin-top:12px;padding:5px 8px;border-radius:8px;background:#edf7f7;color:#155e75;font-size:10px;text-transform:uppercase;letter-spacing:.08em;font-weight:900}
-    .model-grid{grid-template-columns:1fr 1.45fr}.panel{padding:20px}.presets{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}.preset{border:1px solid var(--line);background:#fff;border-radius:14px;padding:12px;cursor:pointer;text-align:left}.preset.active{outline:3px solid rgba(255,107,44,.25);border-color:var(--orange)}.preset b{display:block}.preset small{color:var(--muted)}
-    .inputs{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{background:#faf7f0;border:1px solid #eee3d5;border-radius:14px;padding:11px}.field label{display:flex;justify-content:space-between;font-size:12px;font-weight:850;color:#54483d;margin-bottom:8px}.field output{color:var(--orange)} input[type=range]{width:100%;accent-color:var(--orange)} select{width:100%;padding:9px;border-radius:10px;border:1px solid var(--line);background:white}
-    .result-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.metric{padding:15px;border-radius:15px;background:#1d1915;color:white}.metric span{font-size:11px;color:#d9c7b7;text-transform:uppercase;letter-spacing:.07em}.metric b{display:block;font-size:25px;margin-top:5px;letter-spacing:-.04em}.metric.good b{color:#8fe2b4}.metric.warn b{color:#ffd36c}.metric.bad b{color:#ff9c90}
-    .scenario{margin-top:15px}.bar-row{display:grid;grid-template-columns:92px 1fr 110px;align-items:center;gap:10px;margin:11px 0}.bar-shell{height:18px;background:#eee4d6;border-radius:999px;overflow:hidden;position:relative}.bar{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--orange),var(--yellow));min-width:2px}.bar.negative{background:linear-gradient(90deg,#b83232,#ff8e80)}.bar-label{font-size:12px;font-weight:850}.bar-value{text-align:right;font-size:13px;font-weight:900}
-    .location-grid{grid-template-columns:.88fr 1.12fr}.location-list{display:grid;gap:9px}.location{padding:14px;border:1px solid var(--line);border-radius:15px;background:#fff;cursor:pointer}.location.selected{border-color:var(--orange);box-shadow:0 0 0 3px rgba(255,107,44,.12)}.location-head{display:flex;justify-content:space-between;gap:10px}.location b{font-size:16px}.location-score{font-weight:950;color:var(--orange)}.mini-bars{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-top:10px}.mini{font-size:10px;color:var(--muted)}.mini i{display:block;height:5px;background:#eee4d6;border-radius:99px;margin-top:4px;overflow:hidden}.mini i:after{content:"";display:block;height:100%;width:var(--w);background:var(--blue)}
-    #map{height:440px;border-radius:18px;overflow:hidden;border:1px solid var(--line)}.map-tools{display:flex;gap:8px;align-items:center;justify-content:space-between;margin-bottom:10px}.primary{border:0;background:var(--orange);color:white;font-weight:900;padding:11px 15px;border-radius:12px;cursor:pointer}.secondary{border:1px solid var(--line);background:white;color:var(--ink);font-weight:800;padding:10px 13px;border-radius:12px;cursor:pointer}.status{font-size:12px;color:var(--muted)}
-    .competitor-list{margin-top:10px;max-height:150px;overflow:auto;border-top:1px solid var(--line);padding-top:8px}.competitor{font-size:12px;padding:6px 0;border-bottom:1px dashed #eee1d2}
-    .decision-grid{grid-template-columns:1.1fr .9fr}.decision-box{background:linear-gradient(135deg,#fff2d1,#fff);border:1px solid #f1d894;border-radius:20px;padding:22px}.decision-box h3{font-size:28px;margin:0 0 8px}.decision-box p{color:#5c4c3c;line-height:1.55}.checklist{display:grid;gap:8px}.check{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:13px;padding:11px}.dot{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;background:#fff1d1;color:#9a5900;font-weight:950;flex:0 0 auto}
-    .sources{grid-template-columns:repeat(4,1fr)}.source{padding:15px}.source b{display:block;margin-bottom:6px}.source p{font-size:12px;color:var(--muted);line-height:1.45}.source a{font-size:12px;font-weight:850}
-    .notice{border-left:5px solid var(--yellow);background:#fff8dd;padding:13px 15px;border-radius:10px;font-size:13px;color:#5c4b2b}.footer{text-align:center;color:var(--muted);font-size:12px;padding:28px 0 42px}
-    @media(max-width:1000px){.facts{grid-template-columns:repeat(3,1fr)}.hero-grid,.model-grid,.location-grid,.decision-grid{grid-template-columns:1fr}.sources{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:640px){.wrap{padding:12px}.hero{padding:24px 18px;border-radius:22px}.facts,.sources,.inputs,.result-grid{grid-template-columns:1fr 1fr}.presets{grid-template-columns:1fr}.bar-row{grid-template-columns:75px 1fr 84px}.score{font-size:62px}#map{height:360px}}
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div class="wrap">
-  <header class="hero">
-    <div class="hero-grid">
-      <div>
-        <span class="eyebrow">Cameroon-born concept · Tucson test market</span>
-        <h1>SNAP Tucson<br/>Feasibility Lab</h1>
-        <p>A visual decision tool for testing a cold-beverage-first SNAP concept before committing to a full restaurant. Change the assumptions, scan live competitors, compare neighborhoods, and see the economics immediately.</p>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-mark">S</div><div><strong>SNAP Intelligence</strong><small>Tucson decision system</small></div></div>
+    <nav class="nav" id="nav">
+      <button class="active" data-view="command"><span class="icon">◉</span><span>Command Center</span></button>
+      <button data-view="ask"><span class="icon">✦</span><span>Ask SNAP</span></button>
+      <button data-view="competitors"><span class="icon">⌖</span><span>Competitor Scan</span></button>
+      <button data-view="pricing"><span class="icon">$</span><span>Price Lab</span></button>
+      <button data-view="land"><span class="icon">▱</span><span>Land Watch</span></button>
+      <button data-view="build"><span class="icon">▦</span><span>Build Model</span></button>
+      <button data-view="sources"><span class="icon">i</span><span>Sources & Status</span></button>
+    </nav>
+    <div class="sidebar-foot">Built to separate verified data, editable assumptions and missing diligence. A promising score is a reason to investigate—not a reason to buy or sign a lease.</div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <h1 id="pageTitle">Command Center</h1>
+      <div class="top-actions">
+        <span class="status-pill"><span class="status-dot"></span><span id="liveStatus">Dashboard online</span></span>
+        <button class="secondary" id="refreshAllBtn">Refresh data</button>
       </div>
-      <div class="score-card">
-        <div>Current model score</div>
-        <div class="score"><span id="overallScore">--</span><small>/100</small></div>
-        <div class="recommend" id="recommendation">CALCULATING</div>
-        <div class="score-note">This is a planning model, not a guarantee. The score updates when you change the inputs.</div>
-      </div>
-    </div>
-  </header>
+    </header>
 
-  <nav class="nav">
-    <a href="#evidence">Market evidence</a><a href="#model">Unit economics</a><a href="#locations">Where in Tucson</a><a href="#decision">Decision</a><a href="#sources">Sources</a>
-  </nav>
-
-  <section class="section" id="evidence">
-    <div class="section-head"><div><h2>Tucson market evidence</h2></div><p>Official baseline data is separated from assumptions. These cards are fixed evidence; the financial model below is editable.</p></div>
-    <div class="grid facts">
-      <div class="fact"><strong>548,371</strong><span>Tucson population estimate, 2025</span><div class="tag">Census · measured</div></div>
-      <div class="fact"><strong>$57,073</strong><span>Median household income, 2020–2024</span><div class="tag">Census · measured</div></div>
-      <div class="fact"><strong>$2.00B</strong><span>Accommodation & food-service sales, 2022</span><div class="tag">Census · measured</div></div>
-      <div class="fact"><strong>56,544</strong><span>UArizona undergraduate + graduate students, 2024</span><div class="tag">University · measured</div></div>
-      <div class="fact"><strong>101.2°F</strong><span>Normal June daily high</span><div class="tag">NOAA · climate normal</div></div>
-      <div class="fact"><strong>$18.83/hr</strong><span>Mean Tucson food-service wage, May 2025</span><div class="tag">BLS · measured</div></div>
-    </div>
-  </section>
-
-  <section class="section" id="model">
-    <div class="section-head"><div><h2>Can the concept make money?</h2></div><p>Use the sliders. The model calculates revenue, monthly operating profit, break-even traffic, and capital payback.</p></div>
-    <div class="grid model-grid">
-      <div class="panel">
-        <div class="presets">
-          <button class="preset active" data-preset="beverage"><b>SNAP Beverages</b><small>Lower capital · heat-led demand</small></button>
-          <button class="preset" data-preset="burger"><b>SNAP Burgers</b><small>Higher ticket · heavier kitchen</small></button>
-          <button class="preset" data-preset="hybrid"><b>SNAP Hybrid</b><small>Drinks + compact food menu</small></button>
+    <div class="content">
+      <section class="view active" id="view-command">
+        <div class="hero">
+          <div class="hero-grid">
+            <div>
+              <span class="eyebrow">Cameroon-born concept · Tucson market</span>
+              <h2>SNAP Site<br/>Intelligence</h2>
+              <p>Talk to the model, scan Tucson beverage competitors, compare land, test construction costs and decide what should happen next—without touching code.</p>
+            </div>
+            <div class="hero-score">
+              <div>Current concept score</div>
+              <div class="big-score"><span id="commandScore">--</span><small>/100</small></div>
+              <div class="verdict" id="commandVerdict">CALCULATING</div>
+              <p id="commandReason">Loading current assumptions and market signals.</p>
+            </div>
+          </div>
         </div>
-        <div class="inputs">
-          <div class="field"><label>Average customer spend <output id="avgTicketOut"></output></label><input id="avgTicket" type="range" min="5" max="25" step="0.5"></div>
-          <div class="field"><label>Customers per day <output id="dailyTxOut"></output></label><input id="dailyTx" type="range" min="20" max="220" step="5"></div>
-          <div class="field"><label>Food & packaging cost <output id="cogsOut"></output></label><input id="cogs" type="range" min="15" max="45" step="1"></div>
-          <div class="field"><label>Monthly labor <output id="laborOut"></output></label><input id="labor" type="range" min="3000" max="25000" step="500"></div>
-          <div class="field"><label>Monthly rent <output id="rentOut"></output></label><input id="rent" type="range" min="1200" max="10000" step="100"></div>
-          <div class="field"><label>Utilities + insurance <output id="utilitiesOut"></output></label><input id="utilities" type="range" min="300" max="4000" step="100"></div>
-          <div class="field"><label>Marketing + other fixed <output id="otherOut"></output></label><input id="other" type="range" min="300" max="6000" step="100"></div>
-          <div class="field"><label>Startup investment <output id="startupOut"></output></label><input id="startup" type="range" min="15000" max="350000" step="5000"></div>
-        </div>
-      </div>
-      <div class="panel">
-        <div class="result-grid">
-          <div class="metric"><span>Monthly revenue</span><b id="revenue">—</b></div>
-          <div class="metric" id="profitCard"><span>Operating profit</span><b id="profit">—</b></div>
-          <div class="metric" id="breakEvenCard"><span>Break-even customers/day</span><b id="breakEven">—</b></div>
-          <div class="metric" id="paybackCard"><span>Capital payback</span><b id="payback">—</b></div>
-        </div>
-        <div class="scenario">
-          <h3>Monthly profit by traffic scenario</h3>
-          <div id="scenarioBars"></div>
-        </div>
-        <div class="notice">Defaults are starter assumptions—not quoted rent, vendor pricing, or a bankable forecast. Replace them with actual site and supplier quotes before signing a lease.</div>
-      </div>
-    </div>
-  </section>
 
-  <section class="section" id="locations">
-    <div class="section-head"><div><h2>Where in Tucson should SNAP test?</h2></div><p>Select a district. Location scores are editable planning proxies; the competitor scan pulls current OpenStreetMap listings around the selected point.</p></div>
-    <div class="grid location-grid">
-      <div class="panel">
-        <div class="location-list" id="locationList"></div>
-        <div class="competitor-list" id="competitorList"><div class="status">Select a location and run the live scan.</div></div>
-      </div>
-      <div class="panel">
-        <div class="map-tools"><div><b id="selectedLocationName">University / Main Gate</b><div class="status" id="scanStatus">Live competitor count not loaded.</div></div><button class="primary" id="scanBtn">Scan live competitors</button></div>
-        <div id="map"></div>
-      </div>
-    </div>
-  </section>
+        <div class="grid kpis">
+          <div class="card"><span>Tracked competitors</span><strong id="kpiCompetitors">Not scanned</strong><small>Citywide open-data scan</small></div>
+          <div class="card"><span>Land candidates</span><strong id="kpiLand">—</strong><small>Current watchlist snapshot</small></div>
+          <div class="card"><span>Ground-up build</span><strong id="kpiBuild">—</strong><small>Low–high construction case</small></div>
+          <div class="card"><span>Break-even traffic</span><strong id="kpiBreakEven">—</strong><small>Customers per day</small></div>
+          <div class="card"><span>Best current path</span><strong id="kpiPath">—</strong><small>Model-generated direction</small></div>
+        </div>
 
-  <section class="section" id="decision">
-    <div class="section-head"><div><h2>What should you do next?</h2></div><p>The recommendation responds to the economics and the current location choice.</p></div>
-    <div class="grid decision-grid">
-      <div class="decision-box"><h3 id="decisionTitle">Loading model…</h3><p id="decisionText"></p><button class="primary" onclick="window.print()">Print this decision</button> <button class="secondary" id="resetBtn">Reset assumptions</button></div>
-      <div class="panel checklist">
-        <div class="check"><span class="dot">1</span><div><b>Run four paid pop-ups</b><div class="status">Two near UArizona/Main Gate and two on Fourth Avenue.</div></div></div>
-        <div class="check"><span class="dot">2</span><div><b>Require proof, not compliments</b><div class="status">Target 200+ paid orders, 30%+ repeat intent, and at least 65% gross margin.</div></div></div>
-        <div class="check"><span class="dot">3</span><div><b>Do not sign a full restaurant first</b><div class="status">Start with a kiosk, food hall, sublease, or second-generation beverage space.</div></div></div>
-        <div class="check"><span class="dot">4</span><div><b>Expand the SNAP family only after proof</b><div class="status">Beverages can validate the name and customer pull before SNAP Burgers or a larger Cameroon-inspired menu.</div></div></div>
-      </div>
-    </div>
-  </section>
+        <div class="section-head"><div><h2>What the system can do now</h2></div><p>Use the navigation on the left. Every section updates the shared recommendation.</p></div>
+        <div class="grid three-col">
+          <div class="panel"><h3>Ask in normal language</h3><p>Type or speak questions such as “show land under $200,000” or “what does the build cost at 1,100 square feet?”</p><button class="primary jump" data-view="ask">Open Ask SNAP</button></div>
+          <div class="panel"><h3>Scan Tucson</h3><p>Pull current coffee, juice, smoothie, tea and fast-breakfast listings from OpenStreetMap across the Tucson area.</p><button class="primary jump" data-view="competitors">Run market scan</button></div>
+          <div class="panel"><h3>Compare land and build</h3><p>Rank the current land watchlist, then combine land price with low and high ground-up construction assumptions.</p><button class="primary jump" data-view="land">Review land</button></div>
+        </div>
+      </section>
 
-  <section class="section" id="sources">
-    <div class="section-head"><div><h2>Data sources</h2></div><p>Official sources support the market baseline. OSM powers the live competitor scan. Financial inputs remain your assumptions.</p></div>
-    <div class="grid sources">
-      <div class="panel source"><b>U.S. Census Bureau</b><p>2025 population estimate; income, food-service sales, rent and demographic measures.</p><a target="_blank" rel="noreferrer" href="https://www.census.gov/quickfacts/fact/table/tucsoncityarizona/PST045225">Open source</a></div>
-      <div class="panel source"><b>NOAA / National Weather Service</b><p>1991–2020 Tucson monthly temperature and rainfall normals.</p><a target="_blank" rel="noreferrer" href="https://www.weather.gov/twc/TucsonMonthlyNormalExtremes">Open source</a></div>
-      <div class="panel source"><b>University of Arizona</b><p>Fall 2024 undergraduate and graduate enrollment totals.</p><a target="_blank" rel="noreferrer" href="https://enrollmentmanagement.arizona.edu/impact/enrollment-facts-figures">Open source</a></div>
-      <div class="panel source"><b>U.S. Bureau of Labor Statistics</b><p>May 2025 Tucson occupational employment and wage data.</p><a target="_blank" rel="noreferrer" href="https://www.bls.gov/regions/west/news-release/occupationalemploymentandwages_tucson.htm">Open source</a></div>
+      <section class="view" id="view-ask">
+        <div class="section-head"><div><h2>Ask SNAP</h2></div><p>A conversational layer over the dashboard. It can filter land, read the financial model, summarize competitors and change sections for you.</p></div>
+        <div class="chat-shell">
+          <div class="panel chat-panel">
+            <div class="chat-log" id="chatLog">
+              <div class="bubble bot">Tell me what you are trying to decide. Try: “Show me the best land under $200,000,” “How much would 1,100 square feet cost?” or “Where should we test first?”</div>
+            </div>
+            <form class="chat-form" id="chatForm">
+              <textarea id="chatInput" placeholder="Ask about land, competitors, prices, construction, traffic or the launch plan…"></textarea>
+              <button type="button" class="secondary mic" id="micBtn" title="Speak">🎙</button>
+              <button class="primary" type="submit">Send</button>
+            </form>
+          </div>
+          <div class="chat-side">
+            <div class="panel quick-prompts">
+              <h3>Quick questions</h3>
+              <button class="secondary prompt">Show me promising land under $200,000</button>
+              <button class="secondary prompt">What is the ground-up build range?</button>
+              <button class="secondary prompt">Which Tucson area should we test first?</button>
+              <button class="secondary prompt">How many customers do we need to break even?</button>
+              <button class="secondary prompt">What data is still missing?</button>
+            </div>
+            <div class="panel">
+              <h3>Connections</h3>
+              <div class="connection-card"><b>Local data assistant <span class="tag-live">Live</span></b><p>Works now with the dashboard’s land, market and financial data.</p></div>
+              <div class="connection-card" style="margin-top:8px"><b>Secure generative AI <span class="tag-ready" id="aiStatusTag">Ready</span></b><p>A secure backend endpoint can be connected later without exposing an API key in the browser.</p><button class="secondary" id="aiSettingsBtn">AI connection settings</button></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" id="view-competitors">
+        <div class="section-head"><div><h2>Tucson Competitor Scanner</h2></div><p>Scans the Tucson metro bounding area for beverage and fast-breakfast listings using current OpenStreetMap data.</p></div>
+        <div class="panel">
+          <div class="toolbar">
+            <button class="primary" id="scanCityBtn">Scan Tucson now</button>
+            <input type="search" id="competitorSearch" placeholder="Search business name or type" />
+            <select id="competitorCategory"><option value="all">All categories</option><option value="coffee">Coffee / cafe</option><option value="juice">Juice / smoothie</option><option value="tea">Tea / boba</option><option value="breakfast">Fast breakfast</option></select>
+            <span class="grow"></span><span id="competitorStatus" class="status-pill">Not scanned yet</span>
+          </div>
+          <div class="metric-strip">
+            <div class="metric"><span>Total listings</span><b id="compTotal">—</b></div>
+            <div class="metric"><span>Coffee / cafes</span><b id="compCoffee">—</b></div>
+            <div class="metric"><span>Juice / smoothie</span><b id="compJuice">—</b></div>
+            <div class="metric"><span>Tea / boba</span><b id="compTea">—</b></div>
+          </div>
+          <div class="grid map-layout">
+            <div id="competitorMap"></div>
+            <div class="scroll-list" id="competitorList"><div class="empty">Run the citywide scan to load current listings.</div></div>
+          </div>
+        </div>
+        <div class="notice warning" style="margin-top:12px">This is a broad open-data scan, not a claim that every Tucson business is captured. Google Places can be added through a secure backend later for broader coverage, ratings and review counts.</div>
+      </section>
+
+      <section class="view" id="view-pricing">
+        <div class="section-head"><div><h2>SNAP Price Lab</h2></div><p>Add verified menu prices from local competitors. The dashboard normalizes sizes and calculates the median, lower quartile and recommended SNAP opening range.</p></div>
+        <div class="grid price-summary">
+          <div class="card"><span>Verified price entries</span><strong id="priceEntryCount">0</strong><small>Saved in this browser</small></div>
+          <div class="card"><span>Median latte</span><strong id="medianLatte">Need data</strong><small>Based on verified entries</small></div>
+          <div class="card"><span>Median cold drink</span><strong id="medianCold">Need data</strong><small>Cold brew, juice or smoothie</small></div>
+          <div class="card"><span>Target average ticket</span><strong id="targetTicketPrice">$18.50</strong><small>Founder operating assumption</small></div>
+        </div>
+        <div class="panel" style="margin-top:14px">
+          <h3>Add a verified competitor price</h3>
+          <form id="priceForm" class="form-grid">
+            <div class="field"><label>Business</label><input id="priceBusiness" required placeholder="Example: Local cafe" /></div>
+            <div class="field"><label>Item category</label><select id="priceCategory"><option value="latte">Latte</option><option value="iced-latte">Iced latte</option><option value="cold-brew">Cold brew</option><option value="coffee">Drip coffee</option><option value="juice">Juice</option><option value="smoothie">Smoothie</option><option value="tea">Tea / boba</option><option value="sandwich">Breakfast sandwich</option><option value="combo">Combo</option></select></div>
+            <div class="field"><label>Size (ounces)</label><input id="priceSize" type="number" min="4" max="64" value="16" required /></div>
+            <div class="field"><label>Price</label><input id="priceAmount" type="number" min="1" max="50" step="0.01" required placeholder="5.95" /></div>
+            <div class="field"><label>Source URL</label><input id="priceUrl" type="url" placeholder="Official menu or ordering page" /></div>
+            <div class="field"><label>Date verified</label><input id="priceDate" type="date" /></div>
+            <div class="field"><label>Notes</label><input id="priceNotes" placeholder="Tax included? seasonal?" /></div>
+            <div class="field"><label>&nbsp;</label><button class="primary" type="submit">Add price</button></div>
+          </form>
+        </div>
+        <div class="panel" style="margin-top:14px">
+          <div class="toolbar"><strong>Verified menu table</strong><span class="grow"></span><button class="danger" id="clearPricesBtn">Clear saved prices</button></div>
+          <div class="table-wrap"><table><thead><tr><th>Business</th><th>Item</th><th>Size</th><th>Price</th><th>Price/oz</th><th>Verified</th><th>Source</th><th></th></tr></thead><tbody id="priceTableBody"></tbody></table></div>
+        </div>
+        <div class="notice" style="margin-top:12px">The dashboard will not invent a Tucson average. It only displays a market median after you add verified menu observations.</div>
+      </section>
+
+      <section class="view" id="view-land">
+        <div class="section-head"><div><h2>Tucson Land Watch</h2></div><p>Current listing snapshot plus separate operating-site and land-hold scores. Zoning and drive-through rights remain unverified until official diligence is completed.</p></div>
+        <div class="panel">
+          <div class="toolbar">
+            <input type="number" id="landMaxPrice" placeholder="Maximum price" value="250000" />
+            <input type="number" id="landMinSqft" placeholder="Minimum lot sqft" value="10000" />
+            <select id="landSort"><option value="site">Best operating site</option><option value="hold">Best land hold</option><option value="price">Lowest price</option><option value="size">Largest parcel</option></select>
+            <button class="primary" id="applyLandFilters">Apply filters</button>
+            <span class="grow"></span><span class="status-pill" id="landUpdated">Loading watchlist…</span>
+          </div>
+          <div class="metric-strip">
+            <div class="metric"><span>Watchlist parcels</span><b id="landCount">—</b></div>
+            <div class="metric"><span>Under current cap</span><b id="landUnderCap">—</b></div>
+            <div class="metric"><span>Top site score</span><b id="landTopSite">—</b></div>
+            <div class="metric"><span>Top hold score</span><b id="landTopHold">—</b></div>
+          </div>
+          <div class="grid map-layout">
+            <div id="landMap"></div>
+            <div class="panel" style="box-shadow:none"><h3>How to read the score</h3><p><b>Operating-site score:</b> a preliminary proxy for corridor, lot size, access potential and concept fit.</p><p><b>Land-hold score:</b> a preliminary proxy for price, acreage and downside flexibility.</p><div class="notice warning">Neither score verifies zoning, utilities, floodplain, access permits, environmental conditions, title or future appreciation.</div></div>
+          </div>
+        </div>
+        <div class="land-cards" id="landCards" style="margin-top:14px"></div>
+      </section>
+
+      <section class="view" id="view-build">
+        <div class="section-head"><div><h2>Build & Operating Model</h2></div><p>Compare ground-up construction, land price and store economics. Baselines come from the earlier Crisp & Bloom/SNAP planning work and remain editable.</p></div>
+        <div class="grid two-col">
+          <div class="panel">
+            <h3>Ground-up project cost</h3>
+            <div class="form-grid">
+              <div class="field"><label>Building size <output id="buildSqftOut"></output></label><input id="buildSqft" type="range" min="300" max="3000" step="50" value="1100" /></div>
+              <div class="field"><label>Low cost / sq ft <output id="lowPsfOut"></output></label><input id="lowPsf" type="range" min="100" max="500" step="10" value="250" /></div>
+              <div class="field"><label>High cost / sq ft <output id="highPsfOut"></output></label><input id="highPsf" type="range" min="150" max="700" step="10" value="400" /></div>
+              <div class="field"><label>Land purchase</label><input id="landPurchase" type="number" value="180000" step="5000" /></div>
+              <div class="field"><label>Site work & utilities</label><input id="siteWork" type="number" value="125000" step="5000" /></div>
+              <div class="field"><label>Kitchen & coffee equipment</label><input id="equipment" type="number" value="80000" step="5000" /></div>
+              <div class="field"><label>Design, permits & professional</label><input id="softCosts" type="number" value="65000" step="5000" /></div>
+              <div class="field"><label>Drive-through, signage & exterior</label><input id="driveThrough" type="number" value="60000" step="5000" /></div>
+              <div class="field"><label>Opening marketing & inventory</label><input id="opening" type="number" value="35000" step="5000" /></div>
+              <div class="field"><label>Working capital</label><input id="workingCapital" type="number" value="75000" step="5000" /></div>
+            </div>
+            <div class="metric-strip" style="margin-top:14px">
+              <div class="metric"><span>Low project total</span><b id="lowProjectTotal">—</b></div>
+              <div class="metric"><span>High project total</span><b id="highProjectTotal">—</b></div>
+              <div class="metric"><span>Construction only</span><b id="constructionOnly">—</b></div>
+              <div class="metric"><span>Project contingency</span><b id="contingencyDisplay">Included 10%</b></div>
+            </div>
+          </div>
+          <div class="panel">
+            <h3>Store operating economics</h3>
+            <div class="form-grid">
+              <div class="field"><label>Customers per day</label><input id="dailyCustomers" type="number" value="200" min="20" max="1500" /></div>
+              <div class="field"><label>Average ticket</label><input id="averageTicket" type="number" value="18.50" min="5" max="50" step="0.25" /></div>
+              <div class="field"><label>Operating days / month</label><input id="operatingDays" type="number" value="30" min="20" max="31" /></div>
+              <div class="field"><label>COGS %</label><input id="cogsPercent" type="number" value="31" min="10" max="60" /></div>
+              <div class="field"><label>Monthly labor</label><input id="monthlyLabor" type="number" value="29500" /></div>
+              <div class="field"><label>Monthly occupancy</label><input id="monthlyOccupancy" type="number" value="7500" /></div>
+              <div class="field"><label>Other monthly fixed costs</label><input id="monthlyOther" type="number" value="18350" /></div>
+              <div class="field"><label>Owner salary</label><input id="ownerSalary" type="number" value="5000" /></div>
+            </div>
+            <div class="metric-strip" style="margin-top:14px">
+              <div class="metric"><span>Monthly revenue</span><b id="monthlyRevenue">—</b></div>
+              <div class="metric"><span>Operating profit</span><b id="monthlyProfit">—</b></div>
+              <div class="metric"><span>Break-even / day</span><b id="buildBreakEven">—</b></div>
+              <div class="metric"><span>Low-case payback</span><b id="paybackMonths">—</b></div>
+            </div>
+            <div class="notice">Profit is before debt service, taxes and depreciation. Construction totals are planning ranges, not contractor bids.</div>
+          </div>
+        </div>
+        <div class="panel" style="margin-top:14px"><h3>Project cost breakdown</h3><div class="breakdown" id="costBreakdown"></div></div>
+      </section>
+
+      <section class="view" id="view-sources">
+        <div class="section-head"><div><h2>Sources, Connections & Gaps</h2></div><p>The system should make missing evidence obvious instead of filling the gap with confident guesses.</p></div>
+        <div class="grid three-col">
+          <div class="panel connection-card"><b>OpenStreetMap / Overpass <span class="tag-live">Live</span></b><p>Current citywide competitor discovery. Free and useful, but coverage depends on community-maintained listings.</p></div>
+          <div class="panel connection-card"><b>Zillow land snapshot <span class="tag-live">Live task</span></b><p>The connected Zillow search and scheduled ChatGPT task identify new land. The website displays the latest repository snapshot.</p></div>
+          <div class="panel connection-card"><b>Construction baseline <span class="tag-ready">Loaded</span></b><p>Uses 1,100 square feet and $250–$400 per square foot as editable starting assumptions.</p></div>
+          <div class="panel connection-card"><b>Verified menu prices <span class="tag-ready">Manual</span></b><p>Add local official menu observations. The system refuses to invent a median when the sample is empty.</p></div>
+          <div class="panel connection-card"><b>Google Places <span class="tag-pending">Not connected</span></b><p>Would add broader place coverage, ratings, review counts and business details through a secure paid API connection.</p></div>
+          <div class="panel connection-card"><b>Pima zoning & parcel verification <span class="tag-pending">Next layer</span></b><p>Needed before any land can be called commercially viable or drive-through eligible.</p></div>
+        </div>
+        <div class="panel" style="margin-top:14px">
+          <h3>Current decision rules</h3>
+          <div class="table-wrap"><table><thead><tr><th>Decision</th><th>What must be true</th><th>Current status</th></tr></thead><tbody>
+            <tr><td>Test the concept</td><td>Paid pop-up demand, gross margin and repeat-intent proof</td><td>Not yet measured</td></tr>
+            <tr><td>Lease second-generation space</td><td>Verified traffic, rent, utilities and permitted use</td><td>Not yet verified</td></tr>
+            <tr><td>Buy land</td><td>Zoning, access, utilities, drainage, title and development budget</td><td>Watchlist only</td></tr>
+            <tr><td>Build ground-up</td><td>Demand proof plus capital plan that survives the high construction case</td><td>Model available</td></tr>
+          </tbody></table></div>
+        </div>
+      </section>
+
+      <div class="footer">SNAP Tucson Intelligence System · interactive planning aid · no score is a guarantee</div>
     </div>
-  </section>
-  <div class="footer">SNAP Tucson Feasibility Lab · built as a decision aid · last baseline update: July 2026</div>
+  </main>
 </div>
+
+<div class="modal" id="aiModal">
+  <div class="modal-card">
+    <h3>Secure AI connection</h3>
+    <p>Enter only a secure backend URL. Never place an OpenAI API key in this browser field or in GitHub Pages.</p>
+    <input id="aiEndpointInput" type="url" placeholder="https://your-secure-backend.example.com/api/ask" />
+    <div class="modal-actions"><button class="secondary" id="closeAiModal">Cancel</button><button class="primary" id="saveAiEndpoint">Save endpoint</button></div>
+  </div>
+</div>
+
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-<script>
-const money=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n);
-const clamp=(n,min,max)=>Math.max(min,Math.min(max,n));
-const presets={
- beverage:{avgTicket:9.5,dailyTx:90,cogs:25,labor:8500,rent:3500,utilities:900,other:2000,startup:90000},
- burger:{avgTicket:15.5,dailyTx:105,cogs:33,labor:13000,rent:4800,utilities:1500,other:2800,startup:180000},
- hybrid:{avgTicket:13,dailyTx:100,cogs:31,labor:11500,rent:4300,utilities:1300,other:2500,startup:145000}
-};
-const locations=[
- {id:'university',name:'University / Main Gate',lat:32.2319,lng:-110.9501,traffic:92,fit:98,rentScore:54,note:'Best first pop-up zone: dense student traffic and a clear cold-drink occasion.'},
- {id:'fourth',name:'Fourth Avenue',lat:32.2283,lng:-110.9742,traffic:84,fit:91,rentScore:66,note:'Strong youth, nightlife and event traffic; test afternoon through late evening.'},
- {id:'downtown',name:'Downtown Tucson',lat:32.2226,lng:-110.9747,traffic:78,fit:76,rentScore:58,note:'Good brand visibility and tourism, but demand can vary sharply by block and daypart.'},
- {id:'south',name:'South Tucson',lat:32.1990,lng:-110.9687,traffic:59,fit:82,rentScore:84,note:'Lower-cost cultural fit; requires a destination-worthy product and strong local marketing.'}
-];
-let activePreset='beverage',selectedLocation=locations[0],competitorCount=null,map,zoneMarker,competitorLayer;
-const ids=['avgTicket','dailyTx','cogs','labor','rent','utilities','other','startup'];
-function applyPreset(name){activePreset=name;document.querySelectorAll('.preset').forEach(b=>b.classList.toggle('active',b.dataset.preset===name));Object.entries(presets[name]).forEach(([k,v])=>document.getElementById(k).value=v);calculate();}
-function val(id){return Number(document.getElementById(id).value)}
-function profitAt(tx){const rev=val('avgTicket')*tx*30;const variable=rev*((val('cogs')+3)/100);const fixed=val('labor')+val('rent')+val('utilities')+val('other');return rev-variable-fixed}
-function calculate(){
- const ticket=val('avgTicket'),tx=val('dailyTx'),days=30,cogs=val('cogs')/100,fees=.03;
- const revenue=ticket*tx*days,variable=revenue*(cogs+fees),fixed=val('labor')+val('rent')+val('utilities')+val('other'),profit=revenue-variable-fixed;
- const contribution=ticket*(1-cogs-fees),breakEven=fixed/(contribution*days),payback=profit>0?val('startup')/profit:Infinity;
- document.getElementById('avgTicketOut').textContent=money(ticket);document.getElementById('dailyTxOut').textContent=tx;document.getElementById('cogsOut').textContent=val('cogs')+'%';document.getElementById('laborOut').textContent=money(val('labor'));document.getElementById('rentOut').textContent=money(val('rent'));document.getElementById('utilitiesOut').textContent=money(val('utilities'));document.getElementById('otherOut').textContent=money(val('other'));document.getElementById('startupOut').textContent=money(val('startup'));
- document.getElementById('revenue').textContent=money(revenue);document.getElementById('profit').textContent=money(profit);document.getElementById('breakEven').textContent=Math.ceil(breakEven);document.getElementById('payback').textContent=isFinite(payback)?payback.toFixed(1)+' mo':'Not reached';
- const profitCard=document.getElementById('profitCard');profitCard.className='metric '+(profit>=5000?'good':profit>0?'warn':'bad');const beCard=document.getElementById('breakEvenCard');beCard.className='metric '+(breakEven<=60?'good':breakEven<=90?'warn':'bad');const pCard=document.getElementById('paybackCard');pCard.className='metric '+(payback<=18?'good':payback<=30?'warn':'bad');
- const scenarios=[['Conservative',Math.max(20,Math.round(tx*.67))],['Base',tx],['Strong',Math.round(tx*1.45)]];const profits=scenarios.map(s=>profitAt(s[1]));const max=Math.max(...profits.map(Math.abs),1);document.getElementById('scenarioBars').innerHTML=scenarios.map((s,i)=>`<div class="bar-row"><div class="bar-label">${s[0]} · ${s[1]}/day</div><div class="bar-shell"><div class="bar ${profits[i]<0?'negative':''}" style="width:${Math.max(3,Math.abs(profits[i])/max*100)}%"></div></div><div class="bar-value">${money(profits[i])}</div></div>`).join('');
- const econ=clamp(50+profit/180,0,100),beScore=clamp(105-breakEven*.75,0,100),locationScore=(selectedLocation.traffic+selectedLocation.fit+selectedLocation.rentScore)/3,competitionScore=competitorCount===null?60:clamp(100-competitorCount*2.3,15,95),conceptFit=activePreset==='beverage'?88:activePreset==='hybrid'?72:61;const score=Math.round(econ*.30+beScore*.20+locationScore*.22+competitionScore*.10+conceptFit*.18);
- document.getElementById('overallScore').textContent=score;let rec,title,text;if(profit>=5000&&breakEven<=65&&payback<=20){rec='GO — LEAN FORMAT';title='Proceed, but keep the first format small.';text=`The model supports a kiosk, food hall stall or compact second-generation beverage space in ${selectedLocation.name}. Preserve cash by proving repeat demand before building a full kitchen.`}else if(profit>0&&breakEven<=95){rec='TEST FIRST';title='The idea is promising, but the lease is not yet proven.';text=`At the current assumptions, SNAP produces ${money(profit)} monthly operating profit and needs about ${Math.ceil(breakEven)} customers per day to break even. Run paid pop-ups in ${selectedLocation.name} before taking permanent space.`}else{rec='NO-GO AT THESE INPUTS';title='Do not sign a permanent lease under these assumptions.';text=`The current model does not create enough margin for the risk. Raise average spend, lower fixed costs, improve traffic, or begin as a mobile/pop-up concept.`}
- document.getElementById('recommendation').textContent=rec;document.getElementById('decisionTitle').textContent=title;document.getElementById('decisionText').textContent=text;
- localStorage.setItem('snapModel',JSON.stringify({activePreset,selectedLocation:selectedLocation.id,values:Object.fromEntries(ids.map(id=>[id,val(id)]))}));
-}
-function renderLocations(){document.getElementById('locationList').innerHTML=locations.map(l=>`<div class="location ${l.id===selectedLocation.id?'selected':''}" data-id="${l.id}"><div class="location-head"><b>${l.name}</b><span class="location-score">${Math.round((l.traffic+l.fit+l.rentScore)/3)}</span></div><div class="status">${l.note}</div><div class="mini-bars"><div class="mini">Traffic<i style="--w:${l.traffic}%"></i></div><div class="mini">Concept fit<i style="--w:${l.fit}%"></i></div><div class="mini">Cost advantage<i style="--w:${l.rentScore}%"></i></div></div></div>`).join('');document.querySelectorAll('.location').forEach(el=>el.onclick=()=>selectLocation(el.dataset.id));}
-function selectLocation(id){selectedLocation=locations.find(l=>l.id===id);competitorCount=null;renderLocations();document.getElementById('selectedLocationName').textContent=selectedLocation.name;document.getElementById('scanStatus').textContent='Live competitor count not loaded.';document.getElementById('competitorList').innerHTML='<div class="status">Run the scan for this location.</div>';if(map){map.setView([selectedLocation.lat,selectedLocation.lng],15);if(zoneMarker)zoneMarker.setLatLng([selectedLocation.lat,selectedLocation.lng]).bindPopup(selectedLocation.name);competitorLayer.clearLayers();}calculate();}
-function initMap(){map=L.map('map',{scrollWheelZoom:false}).setView([selectedLocation.lat,selectedLocation.lng],15);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);competitorLayer=L.layerGroup().addTo(map);zoneMarker=L.circleMarker([selectedLocation.lat,selectedLocation.lng],{radius:11,color:'#ff6b2c',fillColor:'#ffc93c',fillOpacity:.9,weight:4}).addTo(map).bindPopup(selectedLocation.name).openPopup();}
-async function scanCompetitors(){const btn=document.getElementById('scanBtn'),status=document.getElementById('scanStatus');btn.disabled=true;btn.textContent='Scanning…';status.textContent='Querying current OpenStreetMap listings within 0.75 mile…';competitorLayer.clearLayers();const q=`[out:json][timeout:25];(nwr["amenity"="cafe"](around:1200,${selectedLocation.lat},${selectedLocation.lng});nwr["shop"~"beverages|coffee|tea"](around:1200,${selectedLocation.lat},${selectedLocation.lng});nwr["cuisine"~"juice|smoothie|bubble_tea",i](around:1200,${selectedLocation.lat},${selectedLocation.lng}););out center tags;`;
- try{const r=await fetch('https://overpass-api.de/api/interpreter',{method:'POST',body:q,headers:{'Content-Type':'text/plain'}});if(!r.ok)throw new Error('Network response '+r.status);const data=await r.json();const seen=new Set(),items=[];data.elements.forEach(e=>{const lat=e.lat||(e.center&&e.center.lat),lng=e.lon||(e.center&&e.center.lon),name=(e.tags&&e.tags.name)||'Unnamed beverage competitor';const key=name+'|'+Number(lat).toFixed(4)+'|'+Number(lng).toFixed(4);if(lat&&lng&&!seen.has(key)){seen.add(key);items.push({name,lat,lng,type:(e.tags&& (e.tags.cuisine||e.tags.shop||e.tags.amenity))||'beverage venue'});}});competitorCount=items.length;status.textContent=`${items.length} relevant OSM listings found within about 0.75 mile.`;items.forEach(i=>L.circleMarker([i.lat,i.lng],{radius:6,color:'#155e75',fillColor:'#2cb4c9',fillOpacity:.75,weight:2}).addTo(competitorLayer).bindPopup(`<b>${i.name}</b><br>${i.type}`));document.getElementById('competitorList').innerHTML=items.length?items.slice(0,30).map(i=>`<div class="competitor"><b>${i.name}</b> · ${i.type}</div>`).join(''):'<div class="status">No matching listings were returned. Verify manually before relying on this result.</div>';calculate();}
- catch(e){status.textContent='Live scan could not load. The financial model still works; verify competitors manually.';document.getElementById('competitorList').innerHTML='<div class="status">OpenStreetMap scan unavailable right now. No competitor score was invented.</div>';}
- finally{btn.disabled=false;btn.textContent='Scan live competitors';}}
-function loadSaved(){try{const saved=JSON.parse(localStorage.getItem('snapModel'));if(saved&&saved.values){activePreset=saved.activePreset||'beverage';selectedLocation=locations.find(l=>l.id===saved.selectedLocation)||locations[0];Object.entries(saved.values).forEach(([k,v])=>{if(document.getElementById(k))document.getElementById(k).value=v;});document.querySelectorAll('.preset').forEach(b=>b.classList.toggle('active',b.dataset.preset===activePreset));return true}}catch(e){}return false}
-document.querySelectorAll('.preset').forEach(b=>b.onclick=()=>applyPreset(b.dataset.preset));ids.forEach(id=>document.getElementById(id).addEventListener('input',calculate));document.getElementById('scanBtn').onclick=scanCompetitors;document.getElementById('resetBtn').onclick=()=>{localStorage.removeItem('snapModel');selectedLocation=locations[0];competitorCount=null;applyPreset('beverage');renderLocations();selectLocation('university');};
-if(!loadSaved())applyPreset('beverage');renderLocations();initMap();calculate();
-</script>
+<script src="app.js"></script>
 </body>
 </html>
