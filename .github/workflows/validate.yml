@@ -1,0 +1,32 @@
+name: Validate SNAP Dashboard
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/**'
+      - 'api/**'
+      - 'package.json'
+      - 'vercel.json'
+      - '.github/workflows/validate.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Check browser JavaScript syntax
+        run: node --check docs/app.js
+      - name: Check serverless JavaScript syntax
+        run: node --check api/ask.js && node --check api/places.js
+      - name: Validate JSON files
+        run: node -e "JSON.parse(require('fs').readFileSync('docs/land-data.json','utf8')); JSON.parse(require('fs').readFileSync('package.json','utf8')); JSON.parse(require('fs').readFileSync('vercel.json','utf8')); console.log('JSON valid')"
+      - name: Verify required dashboard files
+        run: test -f docs/index.html && test -f docs/style.css && test -f docs/app.js && test -f docs/land-data.json
