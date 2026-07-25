@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SNAP Tucson Feasibility Lab</title>
+  <meta name="description" content="A visual, data-grounded feasibility dashboard for a Cameroon-inspired SNAP beverage concept in Tucson, Arizona." />
+  <link rel="preconnect" href="https://unpkg.com" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+  <style>
+    :root{--ink:#17130f;--cream:#fff8ea;--paper:#fffdf7;--orange:#ff6b2c;--yellow:#ffc93c;--blue:#155e75;--green:#2f855a;--red:#c53030;--muted:#6d6258;--line:#eadfcf;--shadow:0 18px 50px rgba(67,43,19,.12)}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:linear-gradient(180deg,#fff7e6 0,#fffdf7 42%,#f7f4ee 100%);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink)}
+    button,input,select{font:inherit} a{color:var(--blue)}
+    .wrap{max-width:1240px;margin:auto;padding:22px}
+    .hero{position:relative;overflow:hidden;background:radial-gradient(circle at 88% 10%,rgba(255,201,60,.65),transparent 33%),linear-gradient(135deg,#1b1712 0,#33261b 58%,#6f321b 100%);border-radius:30px;padding:34px;color:white;box-shadow:var(--shadow)}
+    .hero:after{content:"SNAP";position:absolute;right:-24px;bottom:-36px;font-size:180px;font-weight:950;letter-spacing:-12px;color:rgba(255,255,255,.045);transform:rotate(-6deg)}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);padding:8px 12px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+    h1{font-size:clamp(42px,7vw,86px);line-height:.9;letter-spacing:-.055em;margin:22px 0 14px;max-width:780px}.hero p{max-width:720px;color:#f8e7d6;font-size:18px;line-height:1.55}.hero-grid{display:grid;grid-template-columns:1.45fr .75fr;gap:22px;align-items:end}
+    .score-card{position:relative;z-index:1;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(12px);border-radius:24px;padding:22px}.score{font-size:76px;font-weight:950;letter-spacing:-.08em}.score small{font-size:22px;color:#ffd77a;letter-spacing:0}.recommend{display:inline-block;margin-top:8px;padding:8px 13px;border-radius:999px;font-weight:900;background:var(--yellow);color:#30200b}.score-note{font-size:12px;color:#e8d8c7;margin-top:10px}
+    .nav{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}.nav a{text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);padding:9px 13px;border-radius:999px;font-weight:750;font-size:13px}
+    .section{margin:26px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:14px;margin-bottom:13px}.section h2{font-size:30px;letter-spacing:-.035em;margin:0}.section-head p{margin:0;color:var(--muted);max-width:680px}
+    .grid{display:grid;gap:14px}.facts{grid-template-columns:repeat(6,1fr)}.fact,.panel{background:rgba(255,255,255,.84);border:1px solid var(--line);border-radius:20px;box-shadow:0 8px 28px rgba(67,43,19,.06)}.fact{padding:18px;min-height:136px}.fact strong{font-size:26px;display:block;letter-spacing:-.04em}.fact span{font-size:12px;color:var(--muted);font-weight:700}.fact .tag{display:inline-block;margin-top:12px;padding:5px 8px;border-radius:8px;background:#edf7f7;color:#155e75;font-size:10px;text-transform:uppercase;letter-spacing:.08em;font-weight:900}
+    .model-grid{grid-template-columns:1fr 1.45fr}.panel{padding:20px}.presets{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}.preset{border:1px solid var(--line);background:#fff;border-radius:14px;padding:12px;cursor:pointer;text-align:left}.preset.active{outline:3px solid rgba(255,107,44,.25);border-color:var(--orange)}.preset b{display:block}.preset small{color:var(--muted)}
+    .inputs{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{background:#faf7f0;border:1px solid #eee3d5;border-radius:14px;padding:11px}.field label{display:flex;justify-content:space-between;font-size:12px;font-weight:850;color:#54483d;margin-bottom:8px}.field output{color:var(--orange)} input[type=range]{width:100%;accent-color:var(--orange)} select{width:100%;padding:9px;border-radius:10px;border:1px solid var(--line);background:white}
+    .result-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.metric{padding:15px;border-radius:15px;background:#1d1915;color:white}.metric span{font-size:11px;color:#d9c7b7;text-transform:uppercase;letter-spacing:.07em}.metric b{display:block;font-size:25px;margin-top:5px;letter-spacing:-.04em}.metric.good b{color:#8fe2b4}.metric.warn b{color:#ffd36c}.metric.bad b{color:#ff9c90}
+    .scenario{margin-top:15px}.bar-row{display:grid;grid-template-columns:92px 1fr 110px;align-items:center;gap:10px;margin:11px 0}.bar-shell{height:18px;background:#eee4d6;border-radius:999px;overflow:hidden;position:relative}.bar{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--orange),var(--yellow));min-width:2px}.bar.negative{background:linear-gradient(90deg,#b83232,#ff8e80)}.bar-label{font-size:12px;font-weight:850}.bar-value{text-align:right;font-size:13px;font-weight:900}
+    .location-grid{grid-template-columns:.88fr 1.12fr}.location-list{display:grid;gap:9px}.location{padding:14px;border:1px solid var(--line);border-radius:15px;background:#fff;cursor:pointer}.location.selected{border-color:var(--orange);box-shadow:0 0 0 3px rgba(255,107,44,.12)}.location-head{display:flex;justify-content:space-between;gap:10px}.location b{font-size:16px}.location-score{font-weight:950;color:var(--orange)}.mini-bars{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-top:10px}.mini{font-size:10px;color:var(--muted)}.mini i{display:block;height:5px;background:#eee4d6;border-radius:99px;margin-top:4px;overflow:hidden}.mini i:after{content:"";display:block;height:100%;width:var(--w);background:var(--blue)}
+    #map{height:440px;border-radius:18px;overflow:hidden;border:1px solid var(--line)}.map-tools{display:flex;gap:8px;align-items:center;justify-content:space-between;margin-bottom:10px}.primary{border:0;background:var(--orange);color:white;font-weight:900;padding:11px 15px;border-radius:12px;cursor:pointer}.secondary{border:1px solid var(--line);background:white;color:var(--ink);font-weight:800;padding:10px 13px;border-radius:12px;cursor:pointer}.status{font-size:12px;color:var(--muted)}
+    .competitor-list{margin-top:10px;max-height:150px;overflow:auto;border-top:1px solid var(--line);padding-top:8px}.competitor{font-size:12px;padding:6px 0;border-bottom:1px dashed #eee1d2}
+    .decision-grid{grid-template-columns:1.1fr .9fr}.decision-box{background:linear-gradient(135deg,#fff2d1,#fff);border:1px solid #f1d894;border-radius:20px;padding:22px}.decision-box h3{font-size:28px;margin:0 0 8px}.decision-box p{color:#5c4c3c;line-height:1.55}.checklist{display:grid;gap:8px}.check{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:13px;padding:11px}.dot{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;background:#fff1d1;color:#9a5900;font-weight:950;flex:0 0 auto}
+    .sources{grid-template-columns:repeat(4,1fr)}.source{padding:15px}.source b{display:block;margin-bottom:6px}.source p{font-size:12px;color:var(--muted);line-height:1.45}.source a{font-size:12px;font-weight:850}
+    .notice{border-left:5px solid var(--yellow);background:#fff8dd;padding:13px 15px;border-radius:10px;font-size:13px;color:#5c4b2b}.footer{text-align:center;color:var(--muted);font-size:12px;padding:28px 0 42px}
+    @media(max-width:1000px){.facts{grid-template-columns:repeat(3,1fr)}.hero-grid,.model-grid,.location-grid,.decision-grid{grid-template-columns:1fr}.sources{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:640px){.wrap{padding:12px}.hero{padding:24px 18px;border-radius:22px}.facts,.sources,.inputs,.result-grid{grid-template-columns:1fr 1fr}.presets{grid-template-columns:1fr}.bar-row{grid-template-columns:75px 1fr 84px}.score{font-size:62px}#map{height:360px}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Cameroon-born concept · Tucson test market</span>
+        <h1>SNAP Tucson<br/>Feasibility Lab</h1>
+        <p>A visual decision tool for testing a cold-beverage-first SNAP concept before committing to a full restaurant. Change the assumptions, scan live competitors, compare neighborhoods, and see the economics immediately.</p>
+      </div>
+      <div class="score-card">
+        <div>Current model score</div>
+        <div class="score"><span id="overallScore">--</span><small>/100</small></div>
+        <div class="recommend" id="recommendation">CALCULATING</div>
+        <div class="score-note">This is a planning model, not a guarantee. The score updates when you change the inputs.</div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <a href="#evidence">Market evidence</a><a href="#model">Unit economics</a><a href="#locations">Where in Tucson</a><a href="#decision">Decision</a><a href="#sources">Sources</a>
+  </nav>
+
+  <section class="section" id="evidence">
+    <div class="section-head"><div><h2>Tucson market evidence</h2></div><p>Official baseline data is separated from assumptions. These cards are fixed evidence; the financial model below is editable.</p></div>
+    <div class="grid facts">
+      <div class="fact"><strong>548,371</strong><span>Tucson population estimate, 2025</span><div class="tag">Census · measured</div></div>
+      <div class="fact"><strong>$57,073</strong><span>Median household income, 2020–2024</span><div class="tag">Census · measured</div></div>
+      <div class="fact"><strong>$2.00B</strong><span>Accommodation & food-service sales, 2022</span><div class="tag">Census · measured</div></div>
+      <div class="fact"><strong>56,544</strong><span>UArizona undergraduate + graduate students, 2024</span><div class="tag">University · measured</div></div>
+      <div class="fact"><strong>101.2°F</strong><span>Normal June daily high</span><div class="tag">NOAA · climate normal</div></div>
+      <div class="fact"><strong>$18.83/hr</strong><span>Mean Tucson food-service wage, May 2025</span><div class="tag">BLS · measured</div></div>
+    </div>
+  </section>
+
+  <section class="section" id="model">
+    <div class="section-head"><div><h2>Can the concept make money?</h2></div><p>Use the sliders. The model calculates revenue, monthly operating profit, break-even traffic, and capital payback.</p></div>
+    <div class="grid model-grid">
+      <div class="panel">
+        <div class="presets">
+          <button class="preset active" data-preset="beverage"><b>SNAP Beverages</b><small>Lower capital · heat-led demand</small></button>
+          <button class="preset" data-preset="burger"><b>SNAP Burgers</b><small>Higher ticket · heavier kitchen</small></button>
+          <button class="preset" data-preset="hybrid"><b>SNAP Hybrid</b><small>Drinks + compact food menu</small></button>
+        </div>
+        <div class="inputs">
+          <div class="field"><label>Average customer spend <output id="avgTicketOut"></output></label><input id="avgTicket" type="range" min="5" max="25" step="0.5"></div>
+          <div class="field"><label>Customers per day <output id="dailyTxOut"></output></label><input id="dailyTx" type="range" min="20" max="220" step="5"></div>
+          <div class="field"><label>Food & packaging cost <output id="cogsOut"></output></label><input id="cogs" type="range" min="15" max="45" step="1"></div>
+          <div class="field"><label>Monthly labor <output id="laborOut"></output></label><input id="labor" type="range" min="3000" max="25000" step="500"></div>
+          <div class="field"><label>Monthly rent <output id="rentOut"></output></label><input id="rent" type="range" min="1200" max="10000" step="100"></div>
+          <div class="field"><label>Utilities + insurance <output id="utilitiesOut"></output></label><input id="utilities" type="range" min="300" max="4000" step="100"></div>
+          <div class="field"><label>Marketing + other fixed <output id="otherOut"></output></label><input id="other" type="range" min="300" max="6000" step="100"></div>
+          <div class="field"><label>Startup investment <output id="startupOut"></output></label><input id="startup" type="range" min="15000" max="350000" step="5000"></div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="result-grid">
+          <div class="metric"><span>Monthly revenue</span><b id="revenue">—</b></div>
+          <div class="metric" id="profitCard"><span>Operating profit</span><b id="profit">—</b></div>
+          <div class="metric" id="breakEvenCard"><span>Break-even customers/day</span><b id="breakEven">—</b></div>
+          <div class="metric" id="paybackCard"><span>Capital payback</span><b id="payback">—</b></div>
+        </div>
+        <div class="scenario">
+          <h3>Monthly profit by traffic scenario</h3>
+          <div id="scenarioBars"></div>
+        </div>
+        <div class="notice">Defaults are starter assumptions—not quoted rent, vendor pricing, or a bankable forecast. Replace them with actual site and supplier quotes before signing a lease.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="locations">
+    <div class="section-head"><div><h2>Where in Tucson should SNAP test?</h2></div><p>Select a district. Location scores are editable planning proxies; the competitor scan pulls current OpenStreetMap listings around the selected point.</p></div>
+    <div class="grid location-grid">
+      <div class="panel">
+        <div class="location-list" id="locationList"></div>
+        <div class="competitor-list" id="competitorList"><div class="status">Select a location and run the live scan.</div></div>
+      </div>
+      <div class="panel">
+        <div class="map-tools"><div><b id="selectedLocationName">University / Main Gate</b><div class="status" id="scanStatus">Live competitor count not loaded.</div></div><button class="primary" id="scanBtn">Scan live competitors</button></div>
+        <div id="map"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="decision">
+    <div class="section-head"><div><h2>What should you do next?</h2></div><p>The recommendation responds to the economics and the current location choice.</p></div>
+    <div class="grid decision-grid">
+      <div class="decision-box"><h3 id="decisionTitle">Loading model…</h3><p id="decisionText"></p><button class="primary" onclick="window.print()">Print this decision</button> <button class="secondary" id="resetBtn">Reset assumptions</button></div>
+      <div class="panel checklist">
+        <div class="check"><span class="dot">1</span><div><b>Run four paid pop-ups</b><div class="status">Two near UArizona/Main Gate and two on Fourth Avenue.</div></div></div>
+        <div class="check"><span class="dot">2</span><div><b>Require proof, not compliments</b><div class="status">Target 200+ paid orders, 30%+ repeat intent, and at least 65% gross margin.</div></div></div>
+        <div class="check"><span class="dot">3</span><div><b>Do not sign a full restaurant first</b><div class="status">Start with a kiosk, food hall, sublease, or second-generation beverage space.</div></div></div>
+        <div class="check"><span class="dot">4</span><div><b>Expand the SNAP family only after proof</b><div class="status">Beverages can validate the name and customer pull before SNAP Burgers or a larger Cameroon-inspired menu.</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="sources">
+    <div class="section-head"><div><h2>Data sources</h2></div><p>Official sources support the market baseline. OSM powers the live competitor scan. Financial inputs remain your assumptions.</p></div>
+    <div class="grid sources">
+      <div class="panel source"><b>U.S. Census Bureau</b><p>2025 population estimate; income, food-service sales, rent and demographic measures.</p><a target="_blank" rel="noreferrer" href="https://www.census.gov/quickfacts/fact/table/tucsoncityarizona/PST045225">Open source</a></div>
+      <div class="panel source"><b>NOAA / National Weather Service</b><p>1991–2020 Tucson monthly temperature and rainfall normals.</p><a target="_blank" rel="noreferrer" href="https://www.weather.gov/twc/TucsonMonthlyNormalExtremes">Open source</a></div>
+      <div class="panel source"><b>University of Arizona</b><p>Fall 2024 undergraduate and graduate enrollment totals.</p><a target="_blank" rel="noreferrer" href="https://enrollmentmanagement.arizona.edu/impact/enrollment-facts-figures">Open source</a></div>
+      <div class="panel source"><b>U.S. Bureau of Labor Statistics</b><p>May 2025 Tucson occupational employment and wage data.</p><a target="_blank" rel="noreferrer" href="https://www.bls.gov/regions/west/news-release/occupationalemploymentandwages_tucson.htm">Open source</a></div>
+    </div>
+  </section>
+  <div class="footer">SNAP Tucson Feasibility Lab · built as a decision aid · last baseline update: July 2026</div>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script>
+const money=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n);
+const clamp=(n,min,max)=>Math.max(min,Math.min(max,n));
+const presets={
+ beverage:{avgTicket:9.5,dailyTx:90,cogs:25,labor:8500,rent:3500,utilities:900,other:2000,startup:90000},
+ burger:{avgTicket:15.5,dailyTx:105,cogs:33,labor:13000,rent:4800,utilities:1500,other:2800,startup:180000},
+ hybrid:{avgTicket:13,dailyTx:100,cogs:31,labor:11500,rent:4300,utilities:1300,other:2500,startup:145000}
+};
+const locations=[
+ {id:'university',name:'University / Main Gate',lat:32.2319,lng:-110.9501,traffic:92,fit:98,rentScore:54,note:'Best first pop-up zone: dense student traffic and a clear cold-drink occasion.'},
+ {id:'fourth',name:'Fourth Avenue',lat:32.2283,lng:-110.9742,traffic:84,fit:91,rentScore:66,note:'Strong youth, nightlife and event traffic; test afternoon through late evening.'},
+ {id:'downtown',name:'Downtown Tucson',lat:32.2226,lng:-110.9747,traffic:78,fit:76,rentScore:58,note:'Good brand visibility and tourism, but demand can vary sharply by block and daypart.'},
+ {id:'south',name:'South Tucson',lat:32.1990,lng:-110.9687,traffic:59,fit:82,rentScore:84,note:'Lower-cost cultural fit; requires a destination-worthy product and strong local marketing.'}
+];
+let activePreset='beverage',selectedLocation=locations[0],competitorCount=null,map,zoneMarker,competitorLayer;
+const ids=['avgTicket','dailyTx','cogs','labor','rent','utilities','other','startup'];
+function applyPreset(name){activePreset=name;document.querySelectorAll('.preset').forEach(b=>b.classList.toggle('active',b.dataset.preset===name));Object.entries(presets[name]).forEach(([k,v])=>document.getElementById(k).value=v);calculate();}
+function val(id){return Number(document.getElementById(id).value)}
+function profitAt(tx){const rev=val('avgTicket')*tx*30;const variable=rev*((val('cogs')+3)/100);const fixed=val('labor')+val('rent')+val('utilities')+val('other');return rev-variable-fixed}
+function calculate(){
+ const ticket=val('avgTicket'),tx=val('dailyTx'),days=30,cogs=val('cogs')/100,fees=.03;
+ const revenue=ticket*tx*days,variable=revenue*(cogs+fees),fixed=val('labor')+val('rent')+val('utilities')+val('other'),profit=revenue-variable-fixed;
+ const contribution=ticket*(1-cogs-fees),breakEven=fixed/(contribution*days),payback=profit>0?val('startup')/profit:Infinity;
+ document.getElementById('avgTicketOut').textContent=money(ticket);document.getElementById('dailyTxOut').textContent=tx;document.getElementById('cogsOut').textContent=val('cogs')+'%';document.getElementById('laborOut').textContent=money(val('labor'));document.getElementById('rentOut').textContent=money(val('rent'));document.getElementById('utilitiesOut').textContent=money(val('utilities'));document.getElementById('otherOut').textContent=money(val('other'));document.getElementById('startupOut').textContent=money(val('startup'));
+ document.getElementById('revenue').textContent=money(revenue);document.getElementById('profit').textContent=money(profit);document.getElementById('breakEven').textContent=Math.ceil(breakEven);document.getElementById('payback').textContent=isFinite(payback)?payback.toFixed(1)+' mo':'Not reached';
+ const profitCard=document.getElementById('profitCard');profitCard.className='metric '+(profit>=5000?'good':profit>0?'warn':'bad');const beCard=document.getElementById('breakEvenCard');beCard.className='metric '+(breakEven<=60?'good':breakEven<=90?'warn':'bad');const pCard=document.getElementById('paybackCard');pCard.className='metric '+(payback<=18?'good':payback<=30?'warn':'bad');
+ const scenarios=[['Conservative',Math.max(20,Math.round(tx*.67))],['Base',tx],['Strong',Math.round(tx*1.45)]];const profits=scenarios.map(s=>profitAt(s[1]));const max=Math.max(...profits.map(Math.abs),1);document.getElementById('scenarioBars').innerHTML=scenarios.map((s,i)=>`<div class="bar-row"><div class="bar-label">${s[0]} · ${s[1]}/day</div><div class="bar-shell"><div class="bar ${profits[i]<0?'negative':''}" style="width:${Math.max(3,Math.abs(profits[i])/max*100)}%"></div></div><div class="bar-value">${money(profits[i])}</div></div>`).join('');
+ const econ=clamp(50+profit/180,0,100),beScore=clamp(105-breakEven*.75,0,100),locationScore=(selectedLocation.traffic+selectedLocation.fit+selectedLocation.rentScore)/3,competitionScore=competitorCount===null?60:clamp(100-competitorCount*2.3,15,95),conceptFit=activePreset==='beverage'?88:activePreset==='hybrid'?72:61;const score=Math.round(econ*.30+beScore*.20+locationScore*.22+competitionScore*.10+conceptFit*.18);
+ document.getElementById('overallScore').textContent=score;let rec,title,text;if(profit>=5000&&breakEven<=65&&payback<=20){rec='GO — LEAN FORMAT';title='Proceed, but keep the first format small.';text=`The model supports a kiosk, food hall stall or compact second-generation beverage space in ${selectedLocation.name}. Preserve cash by proving repeat demand before building a full kitchen.`}else if(profit>0&&breakEven<=95){rec='TEST FIRST';title='The idea is promising, but the lease is not yet proven.';text=`At the current assumptions, SNAP produces ${money(profit)} monthly operating profit and needs about ${Math.ceil(breakEven)} customers per day to break even. Run paid pop-ups in ${selectedLocation.name} before taking permanent space.`}else{rec='NO-GO AT THESE INPUTS';title='Do not sign a permanent lease under these assumptions.';text=`The current model does not create enough margin for the risk. Raise average spend, lower fixed costs, improve traffic, or begin as a mobile/pop-up concept.`}
+ document.getElementById('recommendation').textContent=rec;document.getElementById('decisionTitle').textContent=title;document.getElementById('decisionText').textContent=text;
+ localStorage.setItem('snapModel',JSON.stringify({activePreset,selectedLocation:selectedLocation.id,values:Object.fromEntries(ids.map(id=>[id,val(id)]))}));
+}
+function renderLocations(){document.getElementById('locationList').innerHTML=locations.map(l=>`<div class="location ${l.id===selectedLocation.id?'selected':''}" data-id="${l.id}"><div class="location-head"><b>${l.name}</b><span class="location-score">${Math.round((l.traffic+l.fit+l.rentScore)/3)}</span></div><div class="status">${l.note}</div><div class="mini-bars"><div class="mini">Traffic<i style="--w:${l.traffic}%"></i></div><div class="mini">Concept fit<i style="--w:${l.fit}%"></i></div><div class="mini">Cost advantage<i style="--w:${l.rentScore}%"></i></div></div></div>`).join('');document.querySelectorAll('.location').forEach(el=>el.onclick=()=>selectLocation(el.dataset.id));}
+function selectLocation(id){selectedLocation=locations.find(l=>l.id===id);competitorCount=null;renderLocations();document.getElementById('selectedLocationName').textContent=selectedLocation.name;document.getElementById('scanStatus').textContent='Live competitor count not loaded.';document.getElementById('competitorList').innerHTML='<div class="status">Run the scan for this location.</div>';if(map){map.setView([selectedLocation.lat,selectedLocation.lng],15);if(zoneMarker)zoneMarker.setLatLng([selectedLocation.lat,selectedLocation.lng]).bindPopup(selectedLocation.name);competitorLayer.clearLayers();}calculate();}
+function initMap(){map=L.map('map',{scrollWheelZoom:false}).setView([selectedLocation.lat,selectedLocation.lng],15);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);competitorLayer=L.layerGroup().addTo(map);zoneMarker=L.circleMarker([selectedLocation.lat,selectedLocation.lng],{radius:11,color:'#ff6b2c',fillColor:'#ffc93c',fillOpacity:.9,weight:4}).addTo(map).bindPopup(selectedLocation.name).openPopup();}
+async function scanCompetitors(){const btn=document.getElementById('scanBtn'),status=document.getElementById('scanStatus');btn.disabled=true;btn.textContent='Scanning…';status.textContent='Querying current OpenStreetMap listings within 0.75 mile…';competitorLayer.clearLayers();const q=`[out:json][timeout:25];(nwr["amenity"="cafe"](around:1200,${selectedLocation.lat},${selectedLocation.lng});nwr["shop"~"beverages|coffee|tea"](around:1200,${selectedLocation.lat},${selectedLocation.lng});nwr["cuisine"~"juice|smoothie|bubble_tea",i](around:1200,${selectedLocation.lat},${selectedLocation.lng}););out center tags;`;
+ try{const r=await fetch('https://overpass-api.de/api/interpreter',{method:'POST',body:q,headers:{'Content-Type':'text/plain'}});if(!r.ok)throw new Error('Network response '+r.status);const data=await r.json();const seen=new Set(),items=[];data.elements.forEach(e=>{const lat=e.lat||(e.center&&e.center.lat),lng=e.lon||(e.center&&e.center.lon),name=(e.tags&&e.tags.name)||'Unnamed beverage competitor';const key=name+'|'+Number(lat).toFixed(4)+'|'+Number(lng).toFixed(4);if(lat&&lng&&!seen.has(key)){seen.add(key);items.push({name,lat,lng,type:(e.tags&& (e.tags.cuisine||e.tags.shop||e.tags.amenity))||'beverage venue'});}});competitorCount=items.length;status.textContent=`${items.length} relevant OSM listings found within about 0.75 mile.`;items.forEach(i=>L.circleMarker([i.lat,i.lng],{radius:6,color:'#155e75',fillColor:'#2cb4c9',fillOpacity:.75,weight:2}).addTo(competitorLayer).bindPopup(`<b>${i.name}</b><br>${i.type}`));document.getElementById('competitorList').innerHTML=items.length?items.slice(0,30).map(i=>`<div class="competitor"><b>${i.name}</b> · ${i.type}</div>`).join(''):'<div class="status">No matching listings were returned. Verify manually before relying on this result.</div>';calculate();}
+ catch(e){status.textContent='Live scan could not load. The financial model still works; verify competitors manually.';document.getElementById('competitorList').innerHTML='<div class="status">OpenStreetMap scan unavailable right now. No competitor score was invented.</div>';}
+ finally{btn.disabled=false;btn.textContent='Scan live competitors';}}
+function loadSaved(){try{const saved=JSON.parse(localStorage.getItem('snapModel'));if(saved&&saved.values){activePreset=saved.activePreset||'beverage';selectedLocation=locations.find(l=>l.id===saved.selectedLocation)||locations[0];Object.entries(saved.values).forEach(([k,v])=>{if(document.getElementById(k))document.getElementById(k).value=v;});document.querySelectorAll('.preset').forEach(b=>b.classList.toggle('active',b.dataset.preset===activePreset));return true}}catch(e){}return false}
+document.querySelectorAll('.preset').forEach(b=>b.onclick=()=>applyPreset(b.dataset.preset));ids.forEach(id=>document.getElementById(id).addEventListener('input',calculate));document.getElementById('scanBtn').onclick=scanCompetitors;document.getElementById('resetBtn').onclick=()=>{localStorage.removeItem('snapModel');selectedLocation=locations[0];competitorCount=null;applyPreset('beverage');renderLocations();selectLocation('university');};
+if(!loadSaved())applyPreset('beverage');renderLocations();initMap();calculate();
+</script>
+</body>
+</html>
