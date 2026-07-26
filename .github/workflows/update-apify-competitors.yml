@@ -1,0 +1,50 @@
+name: Refresh Tucson Google Maps data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 13 * * 1'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/update-apify-competitors.yml'
+      - 'scripts/update-apify-competitors.mjs'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: apify-tucson-competitors
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Pull Google Maps competitor data through Apify
+        env:
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+          APIFY_ACTOR_ID: ${{ secrets.APIFY_ACTOR_ID }}
+          APIFY_LOCATION_QUERY: Tucson, Arizona, USA
+        run: node scripts/update-apify-competitors.mjs
+
+      - name: Commit refreshed dashboard data
+        run: |
+          if git diff --quiet -- docs/competitor-data.json; then
+            echo 'No competitor data changes to commit.'
+            exit 0
+          fi
+          git config user.name 'Randalls59'
+          git config user.email 'Randalls59@users.noreply.github.com'
+          git add docs/competitor-data.json
+          git commit -m 'Refresh Tucson competitor data'
+          git push
