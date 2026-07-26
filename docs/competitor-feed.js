@@ -51,9 +51,13 @@
       if(state.competitors.length)renderCompetitors();
     }
   }
-  const kolb=document.createElement('script');
-  kolb.src=`kolb-land.js?v=20260726-1`;
-  kolb.defer=true;
-  document.body.appendChild(kolb);
+  const loadScript = (src) => new Promise((resolve,reject)=>{
+    const script=document.createElement('script');
+    script.src=src;script.onload=resolve;script.onerror=reject;
+    document.body.appendChild(script);
+  });
+  loadScript(`kolb-land.js?v=20260726-2`)
+    .then(()=>loadScript(`concept-studio.js?v=20260726-1`))
+    .catch(error=>console.warn('Dashboard extension failed to load.',error));
   loadStoredCompetitors();
 })();
