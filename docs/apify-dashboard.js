@@ -10,7 +10,9 @@
 
   const validUrl = value => {
     try {
-      const url = new URL(value, window.location.href);
+      const text = String(value || '').trim();
+      if (!text || ['undefined','null'].includes(text.toLowerCase())) return '';
+      const url = new URL(text, window.location.href);
       return ['http:', 'https:'].includes(url.protocol) ? url.href : '';
     } catch {
       return '';
@@ -19,15 +21,29 @@
 
   function displayPrice(value) {
     if (!value) return '—';
-    const text = String(value);
+    const text = String(value).trim();
+    if (!text || ['undefined','null'].includes(text.toLowerCase())) return '—';
     if (/^\d+$/.test(text)) return '$'.repeat(Math.min(4, Math.max(1, Number(text))));
     return text.length > 18 ? `${text.slice(0, 18)}…` : text;
   }
 
+  function displayHours(value) {
+    const text = String(value || '').trim();
+    if (!text || text.includes('[object Object]')) return 'Open Maps for hours';
+    return text.length > 105 ? `${text.slice(0, 105)}…` : text;
+  }
+
+  function isRelevantBusiness(item) {
+    const subtype = String(item.subtype || '').toLowerCase();
+    const fallback = subtype && subtype !== 'business' ? subtype : String(item.name || '').toLowerCase();
+    return /coffee|cafe|café|espresso|juice|smoothie|açaí|acai|boba|bubble tea|tea house|tea shop|tea room|breakfast|bakery|bagel|donut|doughnut|brunch|sandwich/.test(fallback);
+  }
+
   function driveStatus(value) {
     const text = String(value || 'unknown').toLowerCase();
-    if (['yes', 'true', 'possible'].includes(text)) return { label: text === 'possible' ? 'Possible' : 'Yes', klass: 'yes' };
+    if (['yes', 'true'].includes(text)) return { label: 'Yes', klass: 'yes' };
     if (['no', 'false'].includes(text)) return { label: 'No', klass: 'no' };
+    if (text === 'possible') return { label: 'Unverified', klass: 'unknown' };
     return { label: 'Unknown', klass: 'unknown' };
   }
 
@@ -74,7 +90,7 @@
         <td class="rating-cell">${item.rating ? `<span class="rating-star">★</span>${Number(item.rating).toFixed(1)}<span class="review-count">${number(item.reviewsCount || 0)} reviews</span>` : '—'}</td>
         <td>${escapeHtml(displayPrice(item.priceLevel))}</td>
         <td><span class="drive-pill ${drive.klass}">${drive.label}</span></td>
-        <td class="hours-cell">${escapeHtml(item.openingHours || 'Not captured')}</td>
+        <td class="hours-cell">${escapeHtml(displayHours(item.openingHours))}</td>
         <td><div class="table-actions">${maps ? `<a class="secondary" href="${maps}" target="_blank" rel="noreferrer">Maps</a>` : ''}${website ? `<a class="secondary" href="${website}" target="_blank" rel="noreferrer">Website</a>` : ''}${menu ? `<a class="secondary" href="${menu}" target="_blank" rel="noreferrer">Menu</a>` : ''}<button class="secondary focus-business" data-index="${index}">Show map</button></div></td>
       </tr>`;
     }).join('')}</tbody></table></div>`;
@@ -112,12 +128,12 @@
         category: item.category || 'coffee',
         subtype: item.subtype || 'business',
         driveThrough: item.driveThrough || 'unknown',
-      })).filter(item => Number.isFinite(item.lat) && Number.isFinite(item.lng) && !item.permanentlyClosed);
+      })).filter(item => Number.isFinite(item.lat) && Number.isFinite(item.lng) && !item.permanentlyClosed && isRelevantBusiness(item));
       state.competitorScannedAt = payload.updated_at || new Date().toISOString();
       localStorage.setItem('snapCompetitors', JSON.stringify(state.competitors));
       localStorage.setItem('snapCompetitorsAt', state.competitorScannedAt);
       renderCompetitors();
-      if (status) status.textContent = `${state.competitors.length} Google Maps listings`;
+      if (status) status.textContent = `${state.competitors.length} relevant Google Maps listings`;
       if (byId('liveStatus')) byId('liveStatus').textContent = 'Apify competitor feed loaded';
       const button = byId('scanCityBtn');
       if (button) button.textContent = 'Refresh Google Maps data';
