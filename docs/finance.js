@@ -109,3 +109,11 @@
   byId('openLenderMatch')?.addEventListener('click',()=>window.open('https://www.sba.gov/funding-programs/loans/lender-match-connects-you-lenders','_blank','noopener'));
   const wait=setInterval(()=>{if(state.build?.lowTotal){clearInterval(wait);calculateFinance();}},100);setTimeout(()=>clearInterval(wait),12000);
 })();
+
+const apifyStyle = document.createElement('link');
+apifyStyle.rel = 'stylesheet';
+apifyStyle.href = 'apify-dashboard.css?v=20260726-1';
+document.head.appendChild(apifyStyle);
+const apifyScript = document.createElement('script');
+apifyScript.src = 'apify-dashboard.js?v=20260726-1';
+document.body.appendChild(apifyScript);
