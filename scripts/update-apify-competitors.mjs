@@ -175,3 +175,5 @@ const output = {
 await mkdir('docs', { recursive: true });
 await writeFile('docs/competitor-data.json', `${JSON.stringify(output, null, 2)}\n`, 'utf8');
 console.log(`Saved ${listings.length} normalized Tucson competitors from ${rawItems.length} Apify results.`);
+
+// Workflow refresh marker: 2026-07-26
