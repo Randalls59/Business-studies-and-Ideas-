@@ -3,6 +3,11 @@
   let focusMarker = null;
   let apifyMeta = null;
 
+  const competitorIntro = document.querySelector('#view-competitors .section-head p');
+  if (competitorIntro) competitorIntro.textContent = 'Google Maps business intelligence pulled securely through Apify, with an OpenStreetMap fallback when the stored feed is unavailable.';
+  const competitorNotice = document.querySelector('#view-competitors .notice.warning');
+  if (competitorNotice) competitorNotice.textContent = 'The API token stays inside GitHub Actions. The browser reads a sanitized data file containing names, locations, ratings, review counts, hours and links—not your secret.';
+
   const validUrl = value => {
     try {
       const url = new URL(value, window.location.href);
