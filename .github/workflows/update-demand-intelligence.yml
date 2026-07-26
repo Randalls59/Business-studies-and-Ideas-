@@ -8,8 +8,7 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/update-demand-intelligence.yml'
-      - 'scripts/update-demand-intelligence.mjs'
-      - 'scripts/run-demand-intelligence.mjs'
+      - 'scripts/demand-v2.mjs'
       - 'scripts/demand-trigger.txt'
       - 'docs/competitor-data.json'
 
@@ -40,15 +39,19 @@ jobs:
           SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
         run: |
           if [ -z "$SERPAPI_KEY" ]; then
-            echo "SERPAPI_KEY is missing or empty. The run will create a clearly labeled review-based fallback dataset instead of failing silently."
+            echo "SERPAPI_KEY is unavailable. The demand file will still be generated from stored review and supply data with reduced confidence."
           else
             echo "SERPAPI_KEY is available to the workflow."
           fi
 
-      - name: Build demand intelligence
+      - name: Build demand intelligence v2
         env:
           SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
-        run: node scripts/run-demand-intelligence.mjs
+        run: node scripts/demand-v2.mjs
+
+      - name: Validate generated files
+        run: |
+          node -e "const fs=require('fs'); const d=JSON.parse(fs.readFileSync('docs/demand-data.json','utf8')); if(!Array.isArray(d.rankings)||d.rankings.length!==4) throw new Error('Demand ranking file is incomplete'); console.log('Validated',d.rankings.length,'concept rankings and',d.competitor_snapshot.analyzed_count,'qualified businesses.');"
 
       - name: Commit refreshed demand data
         run: |
@@ -60,9 +63,6 @@ jobs:
             exit 0
           fi
           git commit -m 'Refresh Tucson demand intelligence'
-
-          # Main may advance while the API work is running. Rebase the generated
-          # data commit onto the newest dashboard code before pushing.
           for attempt in 1 2 3; do
             git fetch origin main
             if git rebase origin/main && git push origin HEAD:main; then
@@ -73,6 +73,5 @@ jobs:
             git rebase --abort 2>/dev/null || true
             sleep $((attempt * 3))
           done
-
           echo 'Unable to publish demand data after three attempts.'
           exit 1
