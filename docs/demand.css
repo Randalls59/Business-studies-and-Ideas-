@@ -1,0 +1,45 @@
+/* SNAP Demand Lab — bright analytical surfaces inside the premium control room */
+.demand-hero{display:grid;grid-template-columns:1.25fr .75fr;gap:14px;margin-bottom:15px}
+.demand-hero-main{position:relative;overflow:hidden;min-height:285px;padding:30px;border:1px solid rgba(73,198,255,.15);border-radius:26px;background:radial-gradient(circle at 86% 20%,rgba(85,230,165,.17),transparent 28%),radial-gradient(circle at 62% 100%,rgba(73,198,255,.12),transparent 36%),linear-gradient(145deg,#101b27,#0a1019);box-shadow:var(--glow)}
+.demand-hero-main:after{content:"DEMAND";position:absolute;right:-18px;bottom:-34px;font:700 100px/1 'Space Grotesk';letter-spacing:-8px;color:rgba(255,255,255,.025)}
+.demand-kicker{display:inline-flex;padding:6px 9px;border-radius:999px;border:1px solid rgba(85,230,165,.2);background:rgba(85,230,165,.08);color:var(--green);font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.demand-hero-main h2{font:700 clamp(40px,5vw,69px)/.96 'Space Grotesk';letter-spacing:-.06em;margin:18px 0 12px;max-width:800px}
+.demand-hero-main p{max-width:760px;color:#9eacbd;line-height:1.6}
+.demand-verdict-card{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:24px}
+.demand-score-ring{--demand-score:0;width:156px;height:156px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--green) calc(var(--demand-score)*1%),rgba(255,255,255,.07) 0);position:relative;margin-bottom:14px;box-shadow:0 0 45px rgba(85,230,165,.1)}
+.demand-score-ring:before{content:"";position:absolute;inset:12px;border-radius:50%;background:#0c121c;border:1px solid rgba(255,255,255,.08)}
+.demand-score-ring div{position:relative;z-index:1}.demand-score-ring strong{font:700 42px/1 'Space Grotesk'}.demand-score-ring span{display:block;color:#7e8b9e;font-size:10px;text-transform:uppercase;letter-spacing:.08em;margin-top:5px}
+.demand-verdict-card h3{margin:0;font-size:20px}.demand-verdict-card p{font-size:12px;margin:8px 0 0}
+.demand-kpis{grid-template-columns:repeat(5,minmax(0,1fr));margin-bottom:15px}
+.demand-toolbar{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.demand-toolbar .grow{flex:1}.demand-toolbar select{background:#0b1019;border:1px solid var(--line);border-radius:11px;padding:9px 11px}
+.demand-grid-2{display:grid;grid-template-columns:1.08fr .92fr;gap:14px}
+.demand-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+
+.demand-table-wrap{overflow:auto;border:1px solid #dce3eb;border-radius:18px;background:#f8fafc;box-shadow:0 18px 50px rgba(0,0,0,.18)}
+.demand-table{width:100%;min-width:1050px;border-collapse:separate;border-spacing:0;color:#111827}
+.demand-table th{position:sticky;top:0;z-index:2;background:#edf2f7;color:#526174;border-bottom:1px solid #d8e0e9;padding:13px 14px;font-size:10px;text-transform:uppercase;letter-spacing:.075em}
+.demand-table td{background:#fff;color:#1f2937;border-bottom:1px solid #e8edf3;padding:13px 14px;font-size:12px;vertical-align:middle}
+.demand-table tbody tr:last-child td{border-bottom:0}.demand-table tbody tr:hover td{background:#edf8ff}
+.demand-rank{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:10px;background:#e7f5ff;color:#075985;font-weight:900}
+.demand-concept strong{display:block;font-size:13px}.demand-concept small{display:block;color:#6b7280;margin-top:3px}
+.score-bar{min-width:110px}.score-bar-head{display:flex;justify-content:space-between;gap:8px;font-weight:800;margin-bottom:5px}.score-bar-track{height:7px;border-radius:999px;background:#e8edf3;overflow:hidden}.score-bar-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,#0ea5e9,#22c55e)}
+.saturation-fill{background:linear-gradient(90deg,#fbbf24,#f97316)}
+.demand-pill{display:inline-flex;padding:5px 8px;border-radius:999px;font-size:10px;font-weight:900;white-space:nowrap}.demand-pill.go{background:#dcfce7;color:#166534}.demand-pill.promising{background:#dbeafe;color:#1d4ed8}.demand-pill.validate{background:#fef3c7;color:#92400e}.demand-pill.crowded{background:#fee2e2;color:#991b1b}.demand-pill.low{background:#f1f5f9;color:#64748b}
+.confidence-chip{font-weight:800;color:#475569}.proxy-note{display:block;color:#64748b;font-size:10px;margin-top:3px}
+
+.quadrant{position:relative;min-height:420px;border-radius:20px;background:linear-gradient(90deg,rgba(85,230,165,.07) 0 50%,rgba(255,107,122,.055) 50%),linear-gradient(0deg,rgba(255,209,102,.05) 0 50%,rgba(73,198,255,.055) 50%);border:1px solid var(--line);overflow:hidden;padding:26px}
+.quadrant:before,.quadrant:after{content:"";position:absolute;background:rgba(255,255,255,.11)}.quadrant:before{left:50%;top:18px;bottom:38px;width:1px}.quadrant:after{top:50%;left:40px;right:18px;height:1px}
+.quadrant-label{position:absolute;font-size:10px;font-weight:800;color:#728095;text-transform:uppercase;letter-spacing:.07em}.ql-top{top:12px;left:48%;transform:translateX(-50%)}.ql-bottom{bottom:11px;left:48%;transform:translateX(-50%)}.ql-left{left:8px;top:50%;transform:rotate(-90deg) translateX(-50%);transform-origin:left top}.ql-right{right:7px;top:50%;transform:rotate(90deg) translateX(50%);transform-origin:right top}
+.quadrant-point{position:absolute;transform:translate(-50%,50%);min-width:112px;max-width:150px;padding:9px 10px;border:1px solid rgba(255,255,255,.12);border-radius:13px;background:rgba(7,12,19,.88);box-shadow:0 12px 32px rgba(0,0,0,.25);cursor:pointer;transition:.18s ease;z-index:3}.quadrant-point:hover{transform:translate(-50%,50%) scale(1.04);border-color:rgba(73,198,255,.4)}.quadrant-point b{display:block;font-size:11px}.quadrant-point span{display:block;color:#8f9bad;font-size:10px;margin-top:3px}
+
+.trend-panel{overflow:hidden}.trend-chart{width:100%;height:390px;display:block}.trend-axis{stroke:rgba(255,255,255,.11);stroke-width:1}.trend-grid{stroke:rgba(255,255,255,.055);stroke-width:1}.trend-line{fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.trend-dot{stroke:#07111c;stroke-width:2}.trend-legend{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}.trend-legend span{display:flex;align-items:center;gap:6px;color:#909caf;font-size:11px}.trend-legend i{width:9px;height:9px;border-radius:50%}
+
+.corridor-table{min-width:1100px}.corridor-title strong{display:block}.corridor-title small{display:block;color:#6b7280;margin-top:3px}.traffic-value{font-weight:900}.traffic-value small{display:block;color:#64748b;font-weight:500;margin-top:3px}.gap-score{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:14px;background:#e0f2fe;color:#075985;font:800 15px 'Space Grotesk'}.rationale{max-width:420px;color:#475569;line-height:1.45}
+
+.related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.related-card{padding:16px;border:1px solid var(--line);border-radius:17px;background:rgba(255,255,255,.025)}.related-card h4{margin:0 0 10px;font:600 15px 'Space Grotesk'}.query-list{display:flex;flex-wrap:wrap;gap:6px}.query-chip{padding:6px 8px;border-radius:9px;background:rgba(73,198,255,.07);border:1px solid rgba(73,198,255,.12);color:#bcdcef;font-size:10px}
+.method-card{padding:17px;border:1px solid var(--line);border-radius:17px;background:rgba(255,255,255,.025)}.method-card b{display:block;font:600 15px 'Space Grotesk';margin-bottom:7px}.method-card p{font-size:12px;margin:0;color:#8895a7;line-height:1.55}
+.demand-warning{margin-top:13px;padding:14px 16px;border-radius:14px;border:1px solid rgba(255,209,102,.18);background:rgba(255,209,102,.055);color:#c1b797;font-size:12px;line-height:1.55}
+
+@media(max-width:1180px){.demand-kpis{grid-template-columns:repeat(3,1fr)}.demand-grid-2{grid-template-columns:1fr}.related-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:800px){.demand-hero{grid-template-columns:1fr}.demand-kpis{grid-template-columns:repeat(2,1fr)}.demand-grid-3{grid-template-columns:1fr}.quadrant{min-height:390px}.related-grid{grid-template-columns:1fr}.demand-hero-main{min-height:auto;padding:24px}.demand-hero-main h2{font-size:44px}}
+@media(max-width:520px){.demand-kpis{grid-template-columns:1fr}.demand-toolbar>*{width:100%}.demand-score-ring{width:135px;height:135px}.quadrant-point{min-width:90px;padding:7px}.quadrant-point span{display:none}}
