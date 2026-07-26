@@ -1,0 +1,320 @@
+{
+  "updated_at": "2026-07-26T04:30:00Z",
+  "brand": {
+    "name": "OH SNAP",
+    "descriptor": "Smoothies + Cold Fuel",
+    "tagline": "Cold. Fast. Craveable.",
+    "positioning": "A high-speed Tucson smoothie concept built around fruit-forward flavor, protein options, local desert signatures and a very small food layer.",
+    "working_name_status": "Working brand — trademark and legal clearance required before major spend",
+    "palette": [
+      {"name":"Snap Orange","hex":"#FF6B35"},
+      {"name":"Desert Lime","hex":"#B7E44A"},
+      {"name":"Prickly Pear","hex":"#E83E8C"},
+      {"name":"Cream","hex":"#FFF8E8"},
+      {"name":"Night Plum","hex":"#24152D"}
+    ]
+  },
+  "strategic_verdict": {
+    "concept": "Smoothie-led cold beverage drive-through / walk-up",
+    "launch_format": "Paid pop-up or trailer first; second-generation end-cap next; raw-land purchase last",
+    "first_test_zone": "Golf Links Road at or near Kolb Road",
+    "second_test_zone": "Speedway Boulevard at or near Kolb Road",
+    "land_rule": "Do not buy raw land just because it is under $200,000. The site must also support commercial use, access, stacking, utilities and the full project budget.",
+    "reason": "The current dashboard shows stronger juice/smoothie white space on Golf Links and Speedway than on Kolb Road alone. The intersection strategy captures Kolb access while using the stronger cross-corridor demand signal."
+  },
+  "menu_rules": [
+    "Launch with six core smoothies, two cold refreshers and no build-your-own menu.",
+    "Use only two cup sizes: 16 oz and 24 oz.",
+    "Keep at least 70% of ingredients shared across multiple products.",
+    "Do not launch fresh-pressed juice, a large bowl menu or a full kitchen during the first paid test.",
+    "Add bowls and one hot breakfast item only after the drink menu proves demand and speed.",
+    "Every recipe must have a weighed build card, target cost and service-time target."
+  ],
+  "menu": [
+    {
+      "id":"sun-snap",
+      "category":"Core smoothie",
+      "phase":"Pilot",
+      "name":"Sun Snap",
+      "description":"Bright tropical flavor with a clean ginger finish.",
+      "ingredients":"Mango, pineapple, orange juice, banana, ginger",
+      "price16":7.49,
+      "price24":9.49,
+      "cost16":2.05,
+      "cost24":2.65,
+      "service_seconds":85,
+      "role":"Broad-appeal entry drink"
+    },
+    {
+      "id":"berry-bolt",
+      "category":"Core smoothie",
+      "phase":"Pilot",
+      "name":"Berry Bolt",
+      "description":"Creamy berry profile designed for everyday repeat purchase.",
+      "ingredients":"Strawberry, blueberry, banana, Greek yogurt, oat milk",
+      "price16":7.99,
+      "price24":9.99,
+      "cost16":2.32,
+      "cost24":2.98,
+      "service_seconds":90,
+      "role":"Family and breakfast favorite"
+    },
+    {
+      "id":"pb-power",
+      "category":"Protein smoothie",
+      "phase":"Pilot",
+      "name":"PB Power",
+      "description":"A meal-like chocolate peanut butter protein smoothie.",
+      "ingredients":"Banana, peanut butter, cacao, oat milk, vanilla protein",
+      "price16":8.99,
+      "price24":10.99,
+      "cost16":2.73,
+      "cost24":3.42,
+      "service_seconds":95,
+      "role":"High-ticket fitness product"
+    },
+    {
+      "id":"green-light",
+      "category":"Green smoothie",
+      "phase":"Pilot",
+      "name":"Green Light",
+      "description":"Tropical-first green smoothie without a grassy finish.",
+      "ingredients":"Pineapple, mango, spinach, avocado, coconut water, lime",
+      "price16":8.49,
+      "price24":10.49,
+      "cost16":2.55,
+      "cost24":3.25,
+      "service_seconds":95,
+      "role":"Wellness credibility"
+    },
+    {
+      "id":"desert-glow",
+      "category":"Local signature",
+      "phase":"Pilot",
+      "name":"Desert Glow",
+      "description":"A Tucson signature built around prickly pear and lime.",
+      "ingredients":"Prickly pear puree, strawberry, pineapple, lime, coconut water",
+      "price16":8.49,
+      "price24":10.49,
+      "cost16":2.48,
+      "cost24":3.18,
+      "service_seconds":90,
+      "role":"Brand-defining local product"
+    },
+    {
+      "id":"cold-brew-crunch",
+      "category":"Protein smoothie",
+      "phase":"Pilot",
+      "name":"Cold Brew Crunch",
+      "description":"Coffee, protein and breakfast energy in one cup.",
+      "ingredients":"Cold brew, banana, oat milk, cacao, peanut butter, vanilla protein",
+      "price16":8.99,
+      "price24":10.99,
+      "cost16":2.62,
+      "cost24":3.32,
+      "service_seconds":95,
+      "role":"Bridge from coffee demand"
+    },
+    {
+      "id":"prickly-pear-limeade",
+      "category":"Cold refresher",
+      "phase":"Pilot",
+      "name":"Prickly Pear Limeade",
+      "description":"Fast, colorful and lower-ticket than a smoothie.",
+      "ingredients":"Prickly pear, lime, filtered water, light agave",
+      "price16":5.49,
+      "price24":6.99,
+      "cost16":1.12,
+      "cost24":1.42,
+      "service_seconds":35,
+      "role":"High-margin speed drink"
+    },
+    {
+      "id":"hibiscus-mango-tea",
+      "category":"Cold refresher",
+      "phase":"Pilot",
+      "name":"Hibiscus Mango Tea",
+      "description":"Tart hibiscus with mango and citrus.",
+      "ingredients":"Hibiscus tea, mango, lemon, light agave",
+      "price16":5.49,
+      "price24":6.99,
+      "cost16":0.94,
+      "cost24":1.22,
+      "service_seconds":30,
+      "role":"Afternoon and heat-day traffic"
+    },
+    {
+      "id":"berry-crunch-bowl",
+      "category":"Bowl",
+      "phase":"Expansion",
+      "name":"Berry Crunch Bowl",
+      "description":"Açaí berry base with fruit, granola and chia.",
+      "ingredients":"Açaí, strawberry, blueberry, banana, granola, chia, honey",
+      "price16":11.49,
+      "price24":null,
+      "cost16":4.05,
+      "cost24":null,
+      "service_seconds":150,
+      "role":"Higher-ticket meal occasion"
+    },
+    {
+      "id":"pb-protein-bowl",
+      "category":"Bowl",
+      "phase":"Expansion",
+      "name":"PB Protein Bowl",
+      "description":"Greek yogurt and fruit bowl with peanut butter protein crunch.",
+      "ingredients":"Greek yogurt, banana, strawberry, protein granola, peanut butter, chia",
+      "price16":12.49,
+      "price24":null,
+      "cost16":4.32,
+      "cost24":null,
+      "service_seconds":155,
+      "role":"Protein-led meal occasion"
+    },
+    {
+      "id":"hot-honey-egg-baguette",
+      "category":"Food",
+      "phase":"Expansion",
+      "name":"Hot Honey Egg Baguette",
+      "description":"A compact premium breakfast item carried forward from the earlier concept work.",
+      "ingredients":"Egg, cheddar, hot honey, arugula, small toasted baguette",
+      "price16":9.95,
+      "price24":null,
+      "cost16":3.18,
+      "cost24":null,
+      "service_seconds":120,
+      "role":"Average-ticket builder"
+    },
+    {
+      "id":"overnight-oats",
+      "category":"Food",
+      "phase":"Expansion",
+      "name":"Berry Overnight Oats",
+      "description":"Grab-and-go oats with berry compote and chia.",
+      "ingredients":"Oats, oat milk, chia, berry compote, granola",
+      "price16":6.49,
+      "price24":null,
+      "cost16":1.82,
+      "cost24":null,
+      "service_seconds":15,
+      "role":"Low-labor breakfast add-on"
+    }
+  ],
+  "add_ons": [
+    {"name":"Whey or plant protein","price":1.50,"estimated_cost":0.55},
+    {"name":"Collagen","price":1.50,"estimated_cost":0.62},
+    {"name":"Creatine","price":1.00,"estimated_cost":0.24},
+    {"name":"Chia or flax","price":0.75,"estimated_cost":0.18},
+    {"name":"Greens boost","price":0.75,"estimated_cost":0.22}
+  ],
+  "zones": [
+    {
+      "rank":1,
+      "name":"Golf Links × Kolb",
+      "lat":32.1924,
+      "lng":-110.8410,
+      "gap_score":80,
+      "traffic_proxy":13076,
+      "juice_supply":0,
+      "confidence":100,
+      "format":"Trailer, shopping-center pad, end-cap or ground lease",
+      "verdict":"First paid pilot zone",
+      "reason":"Golf Links leads the current juice/smoothie corridor ranking and the captured dataset shows no dedicated juice/smoothie listing on the corridor."
+    },
+    {
+      "rank":2,
+      "name":"Speedway × Kolb",
+      "lat":32.2362,
+      "lng":-110.8408,
+      "gap_score":77,
+      "traffic_proxy":12538,
+      "juice_supply":0,
+      "confidence":100,
+      "format":"Second-generation end-cap, pad lease or backup position on a compact drive-through site",
+      "verdict":"Best established-demand test",
+      "reason":"Speedway combines strong review activity and zero captured dedicated juice/smoothie supply, but compact commercial land is expensive and scarce."
+    },
+    {
+      "rank":3,
+      "name":"22nd × Kolb",
+      "lat":32.2066,
+      "lng":-110.8408,
+      "gap_score":63,
+      "traffic_proxy":12271,
+      "juice_supply":1,
+      "confidence":100,
+      "format":"End-cap, inline pickup store or mobile test",
+      "verdict":"Third validation zone",
+      "reason":"The corridor has very strong review activity, one captured juice/smoothie competitor and meaningful breakfast demand."
+    },
+    {
+      "rank":4,
+      "name":"Kolb corridor alone",
+      "lat":32.2200,
+      "lng":-110.8408,
+      "gap_score":61,
+      "traffic_proxy":12489,
+      "juice_supply":0,
+      "confidence":88,
+      "format":"Use only where a strong cross-street and practical site exist",
+      "verdict":"Do not choose only because it says Kolb",
+      "reason":"Kolb has white space, but the underlying demand signal is weaker than Golf Links and Speedway. The intersection matters more than the street name."
+    }
+  ],
+  "site_requirements": [
+    "Target a 0.25–0.75 acre pad or an 800–1,200 square foot second-generation end-cap.",
+    "Require legal beverage/restaurant use and written confirmation that drive-through or pickup-window use is allowed.",
+    "Require practical ingress and egress, visibility from the arterial and room for at least 12 vehicles if using a drive-through.",
+    "Prefer shared access through a shopping center over paying to create a new curb cut.",
+    "Verify electrical capacity, water, sewer, drainage, grease-interceptor requirements and signage before signing.",
+    "Stay near gyms, schools, medical offices, apartment clusters and commuter routes, but avoid a site that is difficult to enter during peak traffic.",
+    "With a land budget under $200,000, prioritize a lease, ground lease, subdivided pad or second-generation space over raw-land ownership."
+  ],
+  "launch_plan": [
+    {
+      "phase":"1",
+      "name":"Recipe lab",
+      "duration":"2 weeks",
+      "budget":"$3,000–$7,500",
+      "deliverable":"Six weighed smoothie recipes, two refreshers, exact food cost and 40–60 blind taste tests."
+    },
+    {
+      "phase":"2",
+      "name":"Paid corridor test",
+      "duration":"4–6 test days",
+      "budget":"$5,000–$15,000",
+      "deliverable":"Test Golf Links × Kolb and Speedway × Kolb using a permitted pop-up, shared kitchen, trailer partner or event setup."
+    },
+    {
+      "phase":"3",
+      "name":"90-day mobile or kiosk pilot",
+      "duration":"3 months",
+      "budget":"$25,000–$75,000",
+      "deliverable":"Prove repeat purchase, daypart demand, staffing, service time and a stable top-selling menu."
+    },
+    {
+      "phase":"4",
+      "name":"Second-generation store",
+      "duration":"After proof",
+      "budget":"Model separately",
+      "deliverable":"Lease an end-cap or existing food-use location. Do not make raw-land ownership a prerequisite."
+    }
+  ],
+  "pilot_targets": {
+    "paid_transactions":300,
+    "average_ticket":11.50,
+    "gross_margin_percent":68,
+    "service_seconds":180,
+    "top_sku_share_percent":70,
+    "repeat_intent_percent":30,
+    "note":"These are working validation thresholds, not guarantees or lender standards."
+  },
+  "sources": [
+    {"name":"SNAP Demand Lab","role":"Tucson demand, supply and corridor ranking","url":"demand-data.json"},
+    {"name":"Açaí Paradise Tucson","role":"Local smoothie and juice price benchmark","url":"https://acaiparadiseaz.com/menu/"},
+    {"name":"Vitality Bowls Tanque Verde","role":"Local smoothie, bowl and juice benchmark","url":"https://www.toasttab.com/local/order/vitality-bowls-tanque-verde-az"},
+    {"name":"Jamba Tucson","role":"Local operating-hour and category benchmark","url":"https://locations.jamba.com/az/tucson/6601-east-grant-rd"},
+    {"name":"Nékter Juice Bar","role":"Menu architecture benchmark","url":"https://www.nekterjuicebar.com/pages/menu"},
+    {"name":"Earlier concept files","role":"Small-menu, drive-through, pickup and breakfast operating discipline","url":"library"}
+  ]
+}
