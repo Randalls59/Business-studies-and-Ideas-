@@ -1,0 +1,49 @@
+name: Refresh Tucson demand intelligence
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '35 13 * * 2'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/update-demand-intelligence.yml'
+      - 'scripts/update-demand-intelligence.mjs'
+      - 'docs/competitor-data.json'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: tucson-demand-intelligence
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build demand intelligence
+        env:
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+        run: node scripts/update-demand-intelligence.mjs
+
+      - name: Commit refreshed demand data
+        run: |
+          if git diff --quiet -- docs/demand-data.json; then
+            echo 'No demand-data changes to commit.'
+            exit 0
+          fi
+          git config user.name 'Randalls59'
+          git config user.email 'Randalls59@users.noreply.github.com'
+          git add docs/demand-data.json
+          git commit -m 'Refresh Tucson demand intelligence'
+          git push
