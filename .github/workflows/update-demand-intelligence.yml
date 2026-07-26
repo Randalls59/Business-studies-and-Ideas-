@@ -47,3 +47,5 @@ jobs:
           git add docs/demand-data.json
           git commit -m 'Refresh Tucson demand intelligence'
           git push
+
+# Initial secure demand refresh trigger: 2026-07-26
