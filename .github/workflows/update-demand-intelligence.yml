@@ -9,6 +9,7 @@ on:
     paths:
       - '.github/workflows/update-demand-intelligence.yml'
       - 'scripts/update-demand-intelligence.mjs'
+      - 'scripts/run-demand-intelligence.mjs'
       - 'scripts/demand-trigger.txt'
       - 'docs/competitor-data.json'
 
@@ -32,29 +33,29 @@ jobs:
         with:
           node-version: '24'
 
-      - name: Verify SerpApi secret
+      - name: Check SerpApi secret status
         env:
           SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
         run: |
           if [ -z "$SERPAPI_KEY" ]; then
-            echo "::error::The repository secret named SERPAPI_KEY is missing or empty. Open Settings > Secrets and variables > Actions and confirm that exact secret name."
-            exit 1
+            echo "SERPAPI_KEY is missing or empty. The run will create a clearly labeled review-based fallback dataset instead of failing silently."
+          else
+            echo "SERPAPI_KEY is available to the workflow."
           fi
-          echo "SERPAPI_KEY is available to the workflow."
 
       - name: Build demand intelligence
         env:
           SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
-        run: node scripts/update-demand-intelligence.mjs
+        run: node scripts/run-demand-intelligence.mjs
 
       - name: Commit refreshed demand data
         run: |
-          if git diff --quiet -- docs/demand-data.json; then
+          git config user.name 'Randalls59'
+          git config user.email 'Randalls59@users.noreply.github.com'
+          git add docs/demand-data.json docs/demand-error.json
+          if git diff --cached --quiet; then
             echo 'No demand-data changes to commit.'
             exit 0
           fi
-          git config user.name 'Randalls59'
-          git config user.email 'Randalls59@users.noreply.github.com'
-          git add docs/demand-data.json
           git commit -m 'Refresh Tucson demand intelligence'
           git push
