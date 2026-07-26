@@ -26,10 +26,12 @@ jobs:
     timeout-minutes: 20
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
 
       - name: Set up Node 24
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: '24'
 
@@ -58,4 +60,19 @@ jobs:
             exit 0
           fi
           git commit -m 'Refresh Tucson demand intelligence'
-          git push
+
+          # Main may advance while the API work is running. Rebase the generated
+          # data commit onto the newest dashboard code before pushing.
+          for attempt in 1 2 3; do
+            git fetch origin main
+            if git rebase origin/main && git push origin HEAD:main; then
+              echo 'Demand intelligence published successfully.'
+              exit 0
+            fi
+            echo "Push attempt $attempt failed; retrying against the latest main branch."
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 3))
+          done
+
+          echo 'Unable to publish demand data after three attempts.'
+          exit 1
