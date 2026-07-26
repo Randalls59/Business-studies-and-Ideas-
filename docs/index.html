@@ -4,10 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SNAP Tucson Intelligence System</title>
-  <meta name="description" content="Interactive Tucson market, site, land, pricing and build intelligence for the SNAP concept." />
+  <meta name="description" content="Interactive Tucson demand, supply, corridor, land, pricing, financing and build intelligence for the SNAP concept." />
   <link rel="preconnect" href="https://unpkg.com" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="table-visibility.css" />
+  <link rel="stylesheet" href="demand.css" />
 </head>
 <body>
 <div class="app">
@@ -22,61 +24,58 @@
       <button data-view="build"><span class="icon">▦</span><span>Build Model</span></button>
       <button data-view="sources"><span class="icon">i</span><span>Sources & Status</span></button>
     </nav>
-    <div class="sidebar-foot">Verified data, editable assumptions and missing diligence stay separate. A promising score is a reason to investigate—not a reason to buy.</div>
+    <div class="sidebar-foot">Verified data, editable assumptions and missing diligence stay separate. A promising score is a reason to test—not a reason to invest blindly.</div>
   </aside>
 
   <main class="main">
     <header class="topbar">
       <h1 id="pageTitle">Command Center</h1>
-      <div class="top-actions">
-        <span class="status-pill"><span class="status-dot"></span><span id="liveStatus">Dashboard online</span></span>
-        <button class="secondary" id="refreshAllBtn">Refresh data</button>
-      </div>
+      <div class="top-actions"><span class="status-pill"><span class="status-dot"></span><span id="liveStatus">Dashboard online</span></span><button class="secondary" id="refreshAllBtn">Refresh data</button></div>
     </header>
 
     <div class="content">
       <section class="view active" id="view-command">
         <div class="hero"><div class="hero-grid">
-          <div><span class="eyebrow">Cameroon-born concept · Tucson market</span><h2>SNAP Site<br/>Intelligence</h2><p>Talk to the model, scan Tucson beverage competitors, compare land, test construction costs and decide what should happen next—without touching code.</p></div>
+          <div><span class="eyebrow">Cameroon-born concept · Tucson market</span><h2>SNAP Market<br/>Intelligence</h2><p>Compare demand and supply, inspect competitors, rank corridors, test capital requirements and decide which beverage concept deserves a real-world pilot.</p></div>
           <div class="hero-score"><div>Current concept score</div><div class="big-score"><span id="commandScore">--</span><small>/100</small></div><div class="verdict" id="commandVerdict">CALCULATING</div><p id="commandReason">Loading current assumptions and market signals.</p></div>
         </div></div>
         <div class="grid kpis">
-          <div class="card"><span>Tracked competitors</span><strong id="kpiCompetitors">Not scanned</strong><small>Citywide open-data scan</small></div>
+          <div class="card"><span>Tracked competitors</span><strong id="kpiCompetitors">Not scanned</strong><small>Current Tucson snapshot</small></div>
           <div class="card"><span>Land candidates</span><strong id="kpiLand">—</strong><small>Current watchlist snapshot</small></div>
           <div class="card"><span>Ground-up build</span><strong id="kpiBuild">—</strong><small>Low–high construction case</small></div>
           <div class="card"><span>Break-even traffic</span><strong id="kpiBreakEven">—</strong><small>Customers per day</small></div>
           <div class="card"><span>Best current path</span><strong id="kpiPath">—</strong><small>Model-generated direction</small></div>
         </div>
-        <div class="section-head"><div><h2>Explore the system</h2></div><p>Each section shares data with the others.</p></div>
+        <div class="section-head"><div><h2>Explore the system</h2></div><p>Demand, supply, corridors, land and financing now share one decision model.</p></div>
         <div class="grid three-col">
-          <div class="panel"><h3>Ask and see the answer</h3><p>Ask for parcels under a budget and see them immediately as cards and map markers.</p><button class="primary jump" data-view="ask">Open Ask SNAP</button></div>
-          <div class="panel"><h3>Scan Tucson</h3><p>Map coffee, juice, smoothie, tea and fast-breakfast listings across Tucson.</p><button class="primary jump" data-view="competitors">Run market scan</button></div>
-          <div class="panel"><h3>Compare land and build</h3><p>Open a parcel, zoom to it, view the listing and move its price into the build model.</p><button class="primary jump" data-view="land">Review land</button></div>
+          <div class="panel"><h3>Rank demand and supply</h3><p>Compare coffee, juice/smoothie, tea/boba and fast breakfast using search demand, reviews and captured supply.</p><button class="primary jump" data-view="demand">Open Demand Lab</button></div>
+          <div class="panel"><h3>Map the competitive pattern</h3><p>Inspect where businesses cluster and which arterial corridors still have category white space.</p><button class="primary jump" data-view="competitors">Open competitor scan</button></div>
+          <div class="panel"><h3>Connect the thesis to money</h3><p>Move a parcel into the build model and compare pilot, second-generation and ground-up funding paths.</p><button class="primary jump" data-view="build">Open build model</button></div>
         </div>
       </section>
 
       <section class="view" id="view-ask">
-        <div class="section-head"><div><h2>Ask SNAP</h2></div><p>Ask in plain language. Land answers appear below as interactive parcel cards and a map—not only text.</p></div>
+        <div class="section-head"><div><h2>Ask SNAP</h2></div><p>Ask in plain language. The assistant reads the stored demand, competitor, land, financial and construction evidence.</p></div>
         <div class="chat-shell">
           <div class="panel chat-panel">
-            <div class="chat-log" id="chatLog"><div class="bubble bot">Tell me what you are trying to decide. Try: “Show me the best land under $200,000,” “How much would 1,100 square feet cost?” or “Where should we test first?”</div></div>
-            <form class="chat-form" id="chatForm"><textarea id="chatInput" placeholder="Ask about land, competitors, prices, construction, traffic or the launch plan…"></textarea><button type="button" class="secondary mic" id="micBtn" title="Speak">🎙</button><button class="primary" type="submit">Send</button></form>
+            <div class="chat-log" id="chatLog"><div class="bubble bot">Ask: “Which beverage concept has the strongest demand?”, “How many coffee shops are captured?”, “Show land under $200,000,” or “What can the current cash flow finance?”</div></div>
+            <form class="chat-form" id="chatForm"><textarea id="chatInput" placeholder="Ask about demand, saturation, corridors, land, competitors, construction or financing…"></textarea><button type="button" class="secondary mic" id="micBtn" title="Speak">🎙</button><button class="primary" type="submit">Send</button></form>
           </div>
           <div class="chat-side">
-            <div class="panel quick-prompts"><h3>Quick questions</h3><button class="secondary prompt">Show me promising land under $200,000</button><button class="secondary prompt">What is the ground-up build range?</button><button class="secondary prompt">Which Tucson area should we test first?</button><button class="secondary prompt">How many customers do we need to break even?</button><button class="secondary prompt">What data is still missing?</button></div>
-            <div class="panel"><h3>Connections</h3><div class="connection-card"><b>Local data assistant <span class="tag-live">Live</span></b><p>Reads the dashboard’s land, market and financial data.</p></div><div class="connection-card" style="margin-top:8px"><b>Secure generative AI <span class="tag-ready" id="aiStatusTag">Ready</span></b><p>A secure backend can be connected without exposing a key.</p><button class="secondary" id="aiSettingsBtn">AI connection settings</button></div></div>
+            <div class="panel quick-prompts"><h3>Quick questions</h3><button class="secondary prompt">Which beverage concept has the strongest demand?</button><button class="secondary prompt">Which concept is least saturated?</button><button class="secondary prompt">How many coffee shops are captured in Tucson?</button><button class="secondary prompt">Show me promising land under $200,000</button><button class="secondary prompt">How much can this project finance?</button></div>
+            <div class="panel"><h3>Connections</h3><div class="connection-card"><b>Dashboard data assistant <span class="tag-live">Live</span></b><p>Reads the latest stored demand, market, land and financial data.</p></div><div class="connection-card" style="margin-top:8px"><b>Secure generative AI <span class="tag-ready" id="aiStatusTag">Ready</span></b><p>A secure backend can be connected without exposing a key.</p><button class="secondary" id="aiSettingsBtn">AI connection settings</button></div></div>
           </div>
         </div>
       </section>
 
       <section class="view" id="view-competitors">
-        <div class="section-head"><div><h2>Tucson Competitor Scanner</h2></div><p>Current OpenStreetMap discovery for beverage and fast-breakfast listings across Tucson.</p></div>
+        <div class="section-head"><div><h2>Tucson Competitor Scanner</h2></div><p>Google Maps business intelligence stored through a secure workflow, with an OpenStreetMap fallback.</p></div>
         <div class="panel">
-          <div class="toolbar"><button class="primary" id="scanCityBtn">Scan Tucson now</button><input type="search" id="competitorSearch" placeholder="Search business name or type" /><select id="competitorCategory"><option value="all">All categories</option><option value="coffee">Coffee / cafe</option><option value="juice">Juice / smoothie</option><option value="tea">Tea / boba</option><option value="breakfast">Fast breakfast</option></select><span class="grow"></span><span id="competitorStatus" class="status-pill">Not scanned yet</span></div>
+          <div class="toolbar"><button class="primary" id="scanCityBtn">Refresh Google Maps data</button><input type="search" id="competitorSearch" placeholder="Search business name or type" /><select id="competitorCategory"><option value="all">All categories</option><option value="coffee">Coffee / cafe</option><option value="juice">Juice / smoothie</option><option value="tea">Tea / boba</option><option value="breakfast">Fast breakfast</option></select><span class="grow"></span><span id="competitorStatus" class="status-pill">Loading stored feed…</span></div>
           <div class="metric-strip"><div class="metric"><span>Total listings</span><b id="compTotal">—</b></div><div class="metric"><span>Coffee / cafes</span><b id="compCoffee">—</b></div><div class="metric"><span>Juice / smoothie</span><b id="compJuice">—</b></div><div class="metric"><span>Tea / boba</span><b id="compTea">—</b></div></div>
-          <div class="grid map-layout"><div id="competitorMap"></div><div class="scroll-list" id="competitorList"><div class="empty">Run the citywide scan to load current listings.</div></div></div>
+          <div class="grid map-layout"><div id="competitorMap"></div><div class="scroll-list" id="competitorList"><div class="empty">Loading current business intelligence.</div></div></div>
         </div>
-        <div class="notice warning" style="margin-top:12px">Open data may not capture every business. Google Places can later add broader coverage, ratings and review counts through a secure backend.</div>
+        <div class="notice warning" style="margin-top:12px">The API secret stays in GitHub Actions. The browser receives sanitized names, locations, ratings, review counts, hours and links.</div>
       </section>
 
       <section class="view" id="view-pricing">
@@ -113,8 +112,8 @@
 
       <section class="view" id="view-sources">
         <div class="section-head"><div><h2>Sources, Connections & Gaps</h2></div><p>Missing evidence stays visible instead of being replaced with confident guesses.</p></div>
-        <div class="grid three-col"><div class="panel connection-card"><b>OpenStreetMap / Overpass <span class="tag-live">Live</span></b><p>Citywide competitor discovery.</p></div><div class="panel connection-card"><b>Zillow land snapshot <span class="tag-live">Live task</span></b><p>The scheduled task updates promising listing candidates.</p></div><div class="panel connection-card"><b>Construction baseline <span class="tag-ready">Loaded</span></b><p>1,100 square feet and $250–$400 per square foot remain editable.</p></div><div class="panel connection-card"><b>Verified menu prices <span class="tag-ready">Manual</span></b><p>Add official menu observations.</p></div><div class="panel connection-card"><b>Google Places <span class="tag-pending">Not connected</span></b><p>Needed for broader place coverage, ratings and reviews.</p></div><div class="panel connection-card"><b>Pima parcel verification <span class="tag-pending">Next layer</span></b><p>Needed before calling a parcel commercially viable.</p></div></div>
-        <div class="panel" style="margin-top:14px"><h3>Current decision rules</h3><div class="table-wrap"><table><thead><tr><th>Decision</th><th>What must be true</th><th>Status</th></tr></thead><tbody><tr><td>Test the concept</td><td>Paid demand, margin and repeat-intent proof</td><td>Not measured</td></tr><tr><td>Lease space</td><td>Traffic, rent, utilities and permitted use</td><td>Not verified</td></tr><tr><td>Buy land</td><td>Zoning, access, utilities, drainage, title and budget</td><td>Watchlist only</td></tr><tr><td>Build ground-up</td><td>Demand proof and a resilient capital plan</td><td>Model available</td></tr></tbody></table></div></div>
+        <div class="grid three-col"><div class="panel connection-card"><b>Google Maps competitor feed <span class="tag-live">Loaded</span></b><p>Stored names, locations, ratings, reviews and links. Review count is a demand proxy, not revenue.</p></div><div class="panel connection-card"><b>Land snapshot <span class="tag-live">Live task</span></b><p>The scheduled task updates promising listing candidates.</p></div><div class="panel connection-card"><b>Construction baseline <span class="tag-ready">Loaded</span></b><p>1,100 square feet and $250–$400 per square foot remain editable.</p></div><div class="panel connection-card"><b>Verified menu prices <span class="tag-ready">Manual</span></b><p>Add official menu observations.</p></div><div class="panel connection-card"><b>Commercial parcel verification <span class="tag-pending">Next layer</span></b><p>Needed before calling a parcel commercially viable.</p></div><div class="panel connection-card"><b>Paid concept validation <span class="tag-pending">Required</span></b><p>Transactions, repeat intent, daypart mix and margin must confirm the model.</p></div></div>
+        <div class="panel" style="margin-top:14px"><h3>Current decision rules</h3><div class="table-wrap"><table><thead><tr><th>Decision</th><th>What must be true</th><th>Status</th></tr></thead><tbody><tr><td>Choose a concept to test</td><td>Demand exceeds supply after confidence adjustments</td><td>Demand Lab added</td></tr><tr><td>Test the concept</td><td>Paid demand, margin and repeat-intent proof</td><td>Not measured</td></tr><tr><td>Lease space</td><td>Traffic, rent, utilities and permitted use</td><td>Not verified</td></tr><tr><td>Buy land</td><td>Zoning, access, utilities, drainage, title and budget</td><td>Watchlist only</td></tr><tr><td>Build ground-up</td><td>Demand proof and a resilient capital plan</td><td>Model available</td></tr></tbody></table></div></div>
       </section>
 
       <div class="footer">SNAP Tucson Intelligence System · interactive planning aid · no score is a guarantee</div>
@@ -127,5 +126,7 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 <script src="app.js"></script>
 <script src="interactive.js"></script>
+<script src="competitor-feed.js"></script>
+<script src="demand.js"></script>
 </body>
 </html>
