@@ -1,0 +1,17 @@
+{
+  "updated_at": null,
+  "market": "Tucson, Arizona",
+  "status": "waiting_for_first_github_actions_run",
+  "methodology_version": "1.0",
+  "sources": [],
+  "score_formula": {},
+  "caveats": [],
+  "errors": [],
+  "competitor_snapshot": { "updated_at": null, "analyzed_count": 0 },
+  "tucson_geo_match": null,
+  "rankings": [],
+  "timeline": [],
+  "corridors": {},
+  "traffic_intersections": [],
+  "top_business_signals": []
+}
