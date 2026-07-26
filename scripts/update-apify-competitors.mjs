@@ -17,17 +17,16 @@ const headers = {
 const input = {
   searchStringsArray: [
     'coffee shop',
-    'cafe',
     'drive through coffee',
     'juice bar',
     'smoothie shop',
-    'tea shop',
     'boba tea',
-    'breakfast restaurant',
+    'tea house',
     'bakery cafe',
+    'breakfast cafe',
   ],
   locationQuery,
-  maxCrawledPlacesPerSearch: 80,
+  maxCrawledPlacesPerSearch: 60,
   language: 'en',
   scrapeSocialMediaProfiles: {
     facebooks: false,
@@ -82,25 +81,68 @@ const rawItems = await request(
 
 if (!Array.isArray(rawItems)) throw new Error('Apify dataset response was not an array.');
 
-const first = (...values) => values.find(value => value !== undefined && value !== null && value !== '');
+const isUseful = value => {
+  if (value === undefined || value === null || value === '') return false;
+  const text = String(value).trim().toLowerCase();
+  return !['undefined', 'null', 'nan', '[object object]'].includes(text);
+};
+const first = (...values) => values.find(isUseful);
 const asNumber = value => {
   const parsed = Number(value);
   return Number.isFinite(parsed) ? parsed : null;
 };
 
-function categoryFor(row) {
-  const text = [
+function categoryText(row) {
+  return [
     row.categoryName,
     row.category,
     row.primaryCategory,
     ...(Array.isArray(row.categories) ? row.categories : []),
-    row.title,
-    row.name,
-  ].filter(Boolean).join(' ').toLowerCase();
-  if (/juice|smoothie/.test(text)) return 'juice';
-  if (/boba|bubble tea|tea shop|tea house/.test(text)) return 'tea';
-  if (/breakfast|bakery|bagel|sandwich|brunch/.test(text)) return 'breakfast';
-  return 'coffee';
+  ].filter(isUseful).join(' ').toLowerCase();
+}
+
+function categoryFor(row) {
+  const categories = categoryText(row);
+  const text = categories || [row.title, row.name].filter(isUseful).join(' ').toLowerCase();
+  if (/juice|smoothie|açaí|acai/.test(text)) return 'juice';
+  if (/boba|bubble tea|tea house|tea shop|tea room/.test(text)) return 'tea';
+  if (/breakfast|bakery|bagel|donut|doughnut|brunch|sandwich/.test(text)) return 'breakfast';
+  if (/coffee|cafe|café|espresso/.test(text)) return 'coffee';
+  return null;
+}
+
+function formatOpeningHours(value) {
+  if (!value) return '';
+  if (Array.isArray(value)) {
+    return value.map(entry => {
+      if (typeof entry === 'string') return entry;
+      if (entry && typeof entry === 'object') {
+        const day = first(entry.day, entry.name, entry.label);
+        const hours = first(entry.hours, entry.value, entry.open);
+        return [day, hours].filter(isUseful).join(' ');
+      }
+      return '';
+    }).filter(isUseful).join(' · ');
+  }
+  if (typeof value === 'object') {
+    return Object.entries(value).map(([day, hours]) => `${day} ${hours}`).join(' · ');
+  }
+  return isUseful(value) ? String(value) : '';
+}
+
+function getServiceOption(row, optionName) {
+  const sections = row.additionalInfo;
+  if (!sections || typeof sections !== 'object') return null;
+  for (const entries of Object.values(sections)) {
+    if (!Array.isArray(entries)) continue;
+    for (const entry of entries) {
+      if (!entry || typeof entry !== 'object') continue;
+      for (const [key, value] of Object.entries(entry)) {
+        if (key.toLowerCase() === optionName.toLowerCase()) return Boolean(value);
+      }
+    }
+  }
+  return null;
 }
 
 function normalize(row) {
@@ -112,20 +154,19 @@ function normalize(row) {
     row.address,
     row.fullAddress,
     row.street,
-    [row.street, row.city, row.state, row.postalCode].filter(Boolean).join(', '),
+    [row.street, row.city, row.state, row.postalCode].filter(isUseful).join(', '),
   );
   const googleMapsUrl = first(row.url, row.googleMapsUrl, row.placeUrl, row.mapsUrl, '');
   const website = first(row.website, row.websiteUrl, row.webUrl, '');
   const reviewsCount = asNumber(first(row.reviewsCount, row.reviewCount, row.numberOfReviews, row.reviews));
   const rating = asNumber(first(row.totalScore, row.rating, row.stars));
-  const openingHours = first(
-    Array.isArray(row.openingHours) ? row.openingHours.join(' · ') : row.openingHours,
-    Array.isArray(row.openingHoursStrings) ? row.openingHoursStrings.join(' · ') : row.openingHoursStrings,
-    row.hours,
-    '',
-  );
-  const driveThroughText = JSON.stringify(row).toLowerCase();
-  const driveThrough = first(row.driveThrough, row.hasDriveThrough, /drive.?through/.test(driveThroughText) ? 'possible' : 'unknown');
+  const openingHours = formatOpeningHours(first(row.openingHours, row.openingHoursStrings, row.hours));
+  const category = categoryFor(row);
+  const serviceDriveThrough = getServiceOption(row, 'Drive-through');
+  const directDriveThrough = first(row.driveThrough, row.hasDriveThrough);
+  const driveThrough = directDriveThrough !== undefined
+    ? Boolean(directDriveThrough)
+    : serviceDriveThrough;
 
   return {
     id: String(first(row.placeId, row.cid, row.fid, `${name}|${address}|${lat}|${lng}`)),
@@ -133,17 +174,17 @@ function normalize(row) {
     address: address ? String(address) : '',
     lat,
     lng,
-    category: categoryFor(row),
+    category,
     subtype: String(first(row.categoryName, row.primaryCategory, row.category, Array.isArray(row.categories) ? row.categories[0] : '', 'business')),
     rating,
     reviewsCount,
     priceLevel: String(first(row.price, row.priceLevel, row.priceRange, '')),
-    phone: String(first(row.phone, row.phoneNumber, row.unformattedPhone, '')),
+    phone: String(first(row.phone, row.phoneNumber, row.phoneUnformatted, row.unformattedPhone, '')),
     website: website ? String(website) : '',
     googleMapsUrl: googleMapsUrl ? String(googleMapsUrl) : '',
-    menuUrl: String(first(row.menu, row.menuUrl, row.orderBy, '')),
-    openingHours: openingHours ? String(openingHours) : '',
-    driveThrough: typeof driveThrough === 'boolean' ? (driveThrough ? 'yes' : 'no') : String(driveThrough),
+    menuUrl: String(first(row.menu, row.menuUrl, row.googleFoodUrl, row.orderBy, '')),
+    openingHours,
+    driveThrough: driveThrough === true ? 'yes' : driveThrough === false ? 'no' : 'unknown',
     permanentlyClosed: Boolean(first(row.permanentlyClosed, row.isPermanentlyClosed, false)),
     temporarilyClosed: Boolean(first(row.temporarilyClosed, row.isTemporarilyClosed, false)),
   };
@@ -152,6 +193,7 @@ function normalize(row) {
 const seen = new Set();
 const listings = rawItems
   .map(normalize)
+  .filter(item => item.category)
   .filter(item => item.lat !== null && item.lng !== null)
   .filter(item => item.lat >= 31.95 && item.lat <= 32.5 && item.lng >= -111.35 && item.lng <= -110.55)
   .filter(item => {
@@ -174,6 +216,4 @@ const output = {
 
 await mkdir('docs', { recursive: true });
 await writeFile('docs/competitor-data.json', `${JSON.stringify(output, null, 2)}\n`, 'utf8');
-console.log(`Saved ${listings.length} normalized Tucson competitors from ${rawItems.length} Apify results.`);
-
-// Workflow refresh marker: 2026-07-26
+console.log(`Saved ${listings.length} relevant Tucson competitors from ${rawItems.length} Apify results.`);
