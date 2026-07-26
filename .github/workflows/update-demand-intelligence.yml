@@ -27,10 +27,20 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Set up Node
+      - name: Set up Node 24
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
+
+      - name: Verify SerpApi secret
+        env:
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+        run: |
+          if [ -z "$SERPAPI_KEY" ]; then
+            echo "::error::The repository secret named SERPAPI_KEY is missing or empty. Open Settings > Secrets and variables > Actions and confirm that exact secret name."
+            exit 1
+          fi
+          echo "SERPAPI_KEY is available to the workflow."
 
       - name: Build demand intelligence
         env:
