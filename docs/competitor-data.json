@@ -1,0 +1,10 @@
+{
+  "updated_at": null,
+  "source": "Google Maps via Apify",
+  "actor": "compass/crawler-google-places",
+  "location_query": "Tucson, Arizona, USA",
+  "raw_count": 0,
+  "count": 0,
+  "status": "waiting_for_first_github_actions_run",
+  "listings": []
+}
