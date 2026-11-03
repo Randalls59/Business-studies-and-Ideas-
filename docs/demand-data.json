@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T18:54:56.436Z",
+  "updated_at": "2026-11-03T20:16:03.938Z",
   "market": "Tucson, Arizona",
   "status": "complete",
   "methodology_version": "2.0",
@@ -49,20 +49,25 @@
       "weighted_rating": 4.497663425175579,
       "review_coverage": 1,
       "search_average": 38.5,
-      "tucson_search_share": 29.5,
-      "search_index": 82,
+      "tucson_search_share": 30,
+      "search_index": 80,
       "review_index": 2,
-      "demand_score": 58,
+      "demand_score": 57,
       "saturation_score": 0,
-      "opportunity_score": 73,
+      "opportunity_score": 72,
       "confidence_score": 100,
       "verdict": "PROMISING",
       "related_queries": {
         "top": [
           {
-            "query": "tropical smoothie",
+            "query": "tropical",
             "value": "100",
             "score": 100
+          },
+          {
+            "query": "tropical smoothie",
+            "value": "98",
+            "score": 98
           },
           {
             "query": "smoothie cafe",
@@ -71,28 +76,23 @@
           },
           {
             "query": "smoothie king",
-            "value": "50",
-            "score": 50
+            "value": "51",
+            "score": 51
           },
           {
             "query": "tropical cafe smoothie",
-            "value": "50",
-            "score": 50
+            "value": "51",
+            "score": 51
           },
           {
             "query": "smoothie near me",
-            "value": "34",
-            "score": 34
+            "value": "35",
+            "score": 35
           },
           {
             "query": "protein smoothie",
             "value": "25",
             "score": 25
-          },
-          {
-            "query": "smoothie recipe",
-            "value": "24",
-            "score": 24
           },
           {
             "query": "banana smoothie",
@@ -104,42 +104,42 @@
           {
             "query": "bora bora smoothie cafe",
             "value": "Breakout",
-            "score": 15800
+            "score": 15150
           },
           {
-            "query": "jamba juice $1 smoothie",
+            "query": "all in one protein smoothie",
             "value": "Breakout",
-            "score": 7050
+            "score": 10400
           },
           {
-            "query": "smoothie king.",
-            "value": "+4,950%",
-            "score": 4950
+            "query": "smoothie king careers",
+            "value": "Breakout",
+            "score": 9100
           },
           {
-            "query": "kencko smoothie",
-            "value": "+4,750%",
-            "score": 4750
+            "query": "erewhon smoothie price",
+            "value": "Breakout",
+            "score": 5500
           },
           {
-            "query": "best smoothie recipes for weight loss",
-            "value": "+2,300%",
-            "score": 2300
+            "query": "smoothie king delivery",
+            "value": "Breakout",
+            "score": 5300
           },
           {
-            "query": "smoothie vortex",
-            "value": "+2,200%",
-            "score": 2200
+            "query": "what time does tropical smoothie open",
+            "value": "+2,900%",
+            "score": 2900
           },
           {
-            "query": "smoothie bowl near me",
-            "value": "+350%",
-            "score": 350
+            "query": "smoothie blenders",
+            "value": "+550%",
+            "score": 550
           },
           {
             "query": "healthy smoothie recipes",
-            "value": "+200%",
-            "score": 200
+            "value": "+190%",
+            "score": 190
           }
         ]
       }
@@ -153,11 +153,11 @@
       "reviews_per_listing": 560.527027027027,
       "weighted_rating": 4.388420646592252,
       "review_coverage": 0.9864864864864865,
-      "search_average": 45,
+      "search_average": 46,
       "tucson_search_share": 26,
       "search_index": 100,
       "review_index": 44,
-      "demand_score": 78,
+      "demand_score": 77,
       "saturation_score": 75,
       "opportunity_score": 59,
       "confidence_score": 100,
@@ -171,13 +171,8 @@
           },
           {
             "query": "coffee shop near",
-            "value": "84",
-            "score": 84
-          },
-          {
-            "query": "coffee near me",
-            "value": "68",
-            "score": 68
+            "value": "85",
+            "score": 85
           },
           {
             "query": "coffee shop near me",
@@ -185,9 +180,9 @@
             "score": 68
           },
           {
-            "query": "best coffee shop",
-            "value": "40",
-            "score": 40
+            "query": "coffee near me",
+            "value": "68",
+            "score": 68
           },
           {
             "query": "coffee shops",
@@ -195,56 +190,61 @@
             "score": 19
           },
           {
-            "query": "coffee shop gilbert",
-            "value": "19",
-            "score": 19
-          },
-          {
             "query": "coffee shop menu",
             "value": "15",
             "score": 15
+          },
+          {
+            "query": "coach coffee shop",
+            "value": "14",
+            "score": 14
+          },
+          {
+            "query": "nearest coffee shop",
+            "value": "11",
+            "score": 11
           }
         ],
         "rising": [
           {
             "query": "coach coffee shop arizona",
             "value": "Breakout",
-            "score": 24050
+            "score": 26800
+          },
+          {
+            "query": "scooters coffee",
+            "value": "Breakout",
+            "score": 19800
           },
           {
             "query": "milk and honey coffee shop",
             "value": "Breakout",
-            "score": 20400
-          },
-          {
-            "query": "coach coffee shop phoenix",
-            "value": "Breakout",
-            "score": 15800
+            "score": 19700
           },
           {
             "query": "coffee shop drawing",
             "value": "Breakout",
-            "score": 13050
+            "score": 18100
           },
           {
-            "query": "north end coffee shop",
+            "query": "matcha near me",
             "value": "Breakout",
-            "score": 11550
+            "score": 16250
           },
           {
-            "query": "coach coffee shop locations",
+            "query": "coach coffee shop phoenix",
             "value": "Breakout",
-            "score": 10350
+            "score": 15200
           },
           {
-            "query": "breakfast burrito near me",
+            "query": "7 brew",
             "value": "Breakout",
-            "score": 10050
+            "score": 13100
           },
           {
-            "query": "harry potter themed coffee shop",
+            "query": "black crown coffee",
             "value": "Breakout",
-            "score": 9400
+            "score": 10400
           }
         ]
       }
@@ -259,7 +259,7 @@
       "weighted_rating": 4.640803850156088,
       "review_coverage": 1,
       "search_average": 9,
-      "tucson_search_share": 10,
+      "tucson_search_share": 9,
       "search_index": 3,
       "review_index": 0,
       "demand_score": 5,
@@ -270,19 +270,19 @@
       "related_queries": {
         "top": [
           {
-            "query": "tea near me",
+            "query": "boba near me",
             "value": "100",
             "score": 100
           },
           {
             "query": "boba tea near me",
-            "value": "98",
-            "score": 98
+            "value": "95",
+            "score": 95
           },
           {
-            "query": "boba near me",
-            "value": "97",
-            "score": 97
+            "query": "boba tea company",
+            "value": "77",
+            "score": 77
           },
           {
             "query": "milk tea boba",
@@ -290,66 +290,66 @@
             "score": 76
           },
           {
-            "query": "boba tea company",
-            "value": "75",
-            "score": 75
-          },
-          {
             "query": "boba tea house",
-            "value": "60",
-            "score": 60
-          },
-          {
-            "query": "boba tea menu",
-            "value": "46",
-            "score": 46
+            "value": "64",
+            "score": 64
           },
           {
             "query": "bubble tea",
-            "value": "41",
-            "score": 41
+            "value": "37",
+            "score": 37
+          },
+          {
+            "query": "what is boba tea",
+            "value": "33",
+            "score": 33
+          },
+          {
+            "query": "thai tea boba",
+            "value": "23",
+            "score": 23
           }
         ],
         "rising": [
           {
-            "query": "boba tea and snow ice house",
-            "value": "Breakout",
-            "score": 61350
-          },
-          {
             "query": "crystal boba",
             "value": "Breakout",
-            "score": 45200
-          },
-          {
-            "query": "boba near me open now",
-            "value": "Breakout",
-            "score": 16750
-          },
-          {
-            "query": "teacup boba",
-            "value": "+250%",
-            "score": 250
-          },
-          {
-            "query": "boba tea nearby",
-            "value": "+250%",
-            "score": 250
+            "score": 67800
           },
           {
             "query": "koko boba tea house",
+            "value": "Breakout",
+            "score": 63150
+          },
+          {
+            "query": "google doodles",
+            "value": "Breakout",
+            "score": 27600
+          },
+          {
+            "query": "tea bliss",
             "value": "+200%",
             "score": 200
           },
           {
-            "query": "boba tea light",
-            "value": "+190%",
-            "score": 190
+            "query": "boba tea company near me",
+            "value": "+170%",
+            "score": 170
           },
           {
-            "query": "google doodle games",
-            "value": "+160%",
-            "score": 160
+            "query": "boba tea light",
+            "value": "+140%",
+            "score": 140
+          },
+          {
+            "query": "boba tea nearby",
+            "value": "+130%",
+            "score": 130
+          },
+          {
+            "query": "google games",
+            "value": "+110%",
+            "score": 110
           }
         ]
       }
@@ -375,86 +375,86 @@
       "related_queries": {
         "top": [
           {
-            "query": "breakfast sandwich near me",
+            "query": "breakfast near me",
             "value": "100",
             "score": 100
           },
           {
-            "query": "breakfast near me",
+            "query": "breakfast sandwich near me",
             "value": "99",
             "score": 99
           },
           {
             "query": "jimmy dean breakfast sandwich",
-            "value": "34",
-            "score": 34
+            "value": "33",
+            "score": 33
           },
           {
             "query": "chicken sandwich",
-            "value": "21",
-            "score": 21
+            "value": "20",
+            "score": 20
+          },
+          {
+            "query": "bagel breakfast sandwich",
+            "value": "15",
+            "score": 15
           },
           {
             "query": "croissant breakfast sandwich",
-            "value": "16",
-            "score": 16
-          },
-          {
-            "query": "mcdonalds breakfast sandwich",
-            "value": "14",
-            "score": 14
-          },
-          {
-            "query": "breakfast bagel sandwich",
             "value": "14",
             "score": 14
           },
           {
             "query": "mcdonalds breakfast",
-            "value": "12",
-            "score": 12
+            "value": "11",
+            "score": 11
+          },
+          {
+            "query": "chick fil a",
+            "value": "11",
+            "score": 11
           }
         ],
         "rising": [
           {
-            "query": "dunkin donuts breakfast sandwich",
-            "value": "Breakout",
-            "score": 135800
-          },
-          {
-            "query": "ultimate breakfast sandwich jack in the box",
-            "value": "Breakout",
-            "score": 80100
-          },
-          {
-            "query": "einstein bagels",
-            "value": "Breakout",
-            "score": 42350
-          },
-          {
-            "query": "korean breakfast sandwich",
-            "value": "Breakout",
-            "score": 25250
-          },
-          {
             "query": "dunkin donuts sourdough breakfast sandwich",
             "value": "Breakout",
-            "score": 23100
+            "score": 43700
           },
           {
-            "query": "dunkin donuts",
-            "value": "+250%",
-            "score": 250
+            "query": "mcdonalds new breakfast sandwich",
+            "value": "Breakout",
+            "score": 16000
           },
           {
-            "query": "waffle breakfast sandwich",
-            "value": "+160%",
-            "score": 160
+            "query": "kirkland signature breakfast sandwich review",
+            "value": "Breakout",
+            "score": 13550
           },
           {
-            "query": "chick fil a",
+            "query": "hardees breakfast sandwich menu hacks",
+            "value": "+1,150%",
+            "score": 1150
+          },
+          {
+            "query": "jimmy dean breakfast sandwich cooking instructions",
             "value": "+150%",
             "score": 150
+          },
+          {
+            "query": "trader joe's breakfast sandwich",
+            "value": "+90%",
+            "score": 90
+          },
+          {
+            "query": "dunkin donuts breakfast sandwich",
+            "value": "+90%",
+            "score": 90
+          },
+          {
+            "query": "dunkin breakfast sandwich",
+            "value": "+70%",
+            "score": 70
           }
         ]
       }
@@ -462,23 +462,13 @@
   ],
   "timeline": [
     {
-      "date": "Oct 26 – Nov 1, 2025",
-      "timestamp": "1761436800",
-      "values": {
-        "coffee": 31,
-        "juice": 28,
-        "tea": 8,
-        "breakfast": 5
-      }
-    },
-    {
       "date": "Nov 2 – 8, 2025",
       "timestamp": "1762041600",
       "values": {
         "coffee": 40,
-        "juice": 26,
-        "tea": 5,
-        "breakfast": 7
+        "juice": 27,
+        "tea": 8,
+        "breakfast": 6
       }
     },
     {
@@ -486,8 +476,8 @@
       "timestamp": "1762646400",
       "values": {
         "coffee": 42,
-        "juice": 29,
-        "tea": 12,
+        "juice": 30,
+        "tea": 11,
         "breakfast": 7
       }
     },
@@ -495,8 +485,8 @@
       "date": "Nov 16 – 22, 2025",
       "timestamp": "1763251200",
       "values": {
-        "coffee": 42,
-        "juice": 26,
+        "coffee": 43,
+        "juice": 25,
         "tea": 8,
         "breakfast": 6
       }
@@ -507,7 +497,7 @@
       "values": {
         "coffee": 42,
         "juice": 26,
-        "tea": 10,
+        "tea": 12,
         "breakfast": 5
       }
     },
@@ -517,7 +507,7 @@
       "values": {
         "coffee": 46,
         "juice": 28,
-        "tea": 8,
+        "tea": 7,
         "breakfast": 6
       }
     },
@@ -525,50 +515,50 @@
       "date": "Dec 7 – 13, 2025",
       "timestamp": "1765065600",
       "values": {
-        "coffee": 43,
+        "coffee": 41,
         "juice": 30,
         "tea": 7,
-        "breakfast": 4
+        "breakfast": 5
       }
     },
     {
       "date": "Dec 14 – 20, 2025",
       "timestamp": "1765670400",
       "values": {
-        "coffee": 42,
+        "coffee": 43,
         "juice": 32,
         "tea": 10,
-        "breakfast": 6
+        "breakfast": 7
       }
     },
     {
       "date": "Dec 21 – 27, 2025",
       "timestamp": "1766275200",
       "values": {
-        "coffee": 45,
-        "juice": 29,
+        "coffee": 47,
+        "juice": 28,
         "tea": 10,
-        "breakfast": 5
+        "breakfast": 6
       }
     },
     {
       "date": "Dec 28, 2025 – Jan 3, 2026",
       "timestamp": "1766880000",
       "values": {
-        "coffee": 46,
+        "coffee": 47,
         "juice": 37,
         "tea": 10,
-        "breakfast": 7
+        "breakfast": 6
       }
     },
     {
       "date": "Jan 4 – 10, 2026",
       "timestamp": "1767484800",
       "values": {
-        "coffee": 41,
-        "juice": 36,
-        "tea": 8,
-        "breakfast": 7
+        "coffee": 42,
+        "juice": 35,
+        "tea": 7,
+        "breakfast": 6
       }
     },
     {
@@ -576,7 +566,7 @@
       "timestamp": "1768089600",
       "values": {
         "coffee": 42,
-        "juice": 38,
+        "juice": 39,
         "tea": 11,
         "breakfast": 6
       }
@@ -585,10 +575,10 @@
       "date": "Jan 18 – 24, 2026",
       "timestamp": "1768694400",
       "values": {
-        "coffee": 49,
-        "juice": 35,
+        "coffee": 48,
+        "juice": 36,
         "tea": 9,
-        "breakfast": 9
+        "breakfast": 8
       }
     },
     {
@@ -596,19 +586,19 @@
       "timestamp": "1769299200",
       "values": {
         "coffee": 50,
-        "juice": 37,
+        "juice": 36,
         "tea": 8,
-        "breakfast": 8
+        "breakfast": 11
       }
     },
     {
       "date": "Feb 1 – 7, 2026",
       "timestamp": "1769904000",
       "values": {
-        "coffee": 51,
+        "coffee": 50,
         "juice": 42,
         "tea": 9,
-        "breakfast": 9
+        "breakfast": 8
       }
     },
     {
@@ -617,7 +607,7 @@
       "values": {
         "coffee": 48,
         "juice": 45,
-        "tea": 8,
+        "tea": 9,
         "breakfast": 8
       }
     },
@@ -625,9 +615,9 @@
       "date": "Feb 15 – 21, 2026",
       "timestamp": "1771113600",
       "values": {
-        "coffee": 57,
+        "coffee": 58,
         "juice": 43,
-        "tea": 7,
+        "tea": 8,
         "breakfast": 10
       }
     },
@@ -635,10 +625,10 @@
       "date": "Feb 22 – 28, 2026",
       "timestamp": "1771718400",
       "values": {
-        "coffee": 45,
+        "coffee": 46,
         "juice": 39,
         "tea": 8,
-        "breakfast": 5
+        "breakfast": 7
       }
     },
     {
@@ -646,8 +636,8 @@
       "timestamp": "1772323200",
       "values": {
         "coffee": 41,
-        "juice": 44,
-        "tea": 11,
+        "juice": 45,
+        "tea": 10,
         "breakfast": 8
       }
     },
@@ -655,10 +645,10 @@
       "date": "Mar 8 – 14, 2026",
       "timestamp": "1772928000",
       "values": {
-        "coffee": 44,
-        "juice": 42,
-        "tea": 12,
-        "breakfast": 9
+        "coffee": 45,
+        "juice": 43,
+        "tea": 10,
+        "breakfast": 8
       }
     },
     {
@@ -668,15 +658,15 @@
         "coffee": 48,
         "juice": 44,
         "tea": 9,
-        "breakfast": 9
+        "breakfast": 8
       }
     },
     {
       "date": "Mar 22 – 28, 2026",
       "timestamp": "1774137600",
       "values": {
-        "coffee": 40,
-        "juice": 46,
+        "coffee": 42,
+        "juice": 45,
         "tea": 8,
         "breakfast": 7
       }
@@ -685,9 +675,9 @@
       "date": "Mar 29 – Apr 4, 2026",
       "timestamp": "1774742400",
       "values": {
-        "coffee": 48,
-        "juice": 45,
-        "tea": 8,
+        "coffee": 49,
+        "juice": 46,
+        "tea": 9,
         "breakfast": 8
       }
     },
@@ -695,8 +685,8 @@
       "date": "Apr 5 – 11, 2026",
       "timestamp": "1775347200",
       "values": {
-        "coffee": 52,
-        "juice": 49,
+        "coffee": 53,
+        "juice": 48,
         "tea": 9,
         "breakfast": 9
       }
@@ -705,20 +695,20 @@
       "date": "Apr 12 – 18, 2026",
       "timestamp": "1775952000",
       "values": {
-        "coffee": 46,
-        "juice": 44,
-        "tea": 9,
-        "breakfast": 8
+        "coffee": 48,
+        "juice": 45,
+        "tea": 13,
+        "breakfast": 7
       }
     },
     {
       "date": "Apr 19 – 25, 2026",
       "timestamp": "1776556800",
       "values": {
-        "coffee": 48,
-        "juice": 46,
-        "tea": 9,
-        "breakfast": 7
+        "coffee": 47,
+        "juice": 48,
+        "tea": 8,
+        "breakfast": 10
       }
     },
     {
@@ -728,17 +718,17 @@
         "coffee": 55,
         "juice": 44,
         "tea": 13,
-        "breakfast": 5
+        "breakfast": 6
       }
     },
     {
       "date": "May 3 – 9, 2026",
       "timestamp": "1777766400",
       "values": {
-        "coffee": 45,
+        "coffee": 44,
         "juice": 44,
-        "tea": 11,
-        "breakfast": 7
+        "tea": 12,
+        "breakfast": 8
       }
     },
     {
@@ -756,9 +746,9 @@
       "timestamp": "1778976000",
       "values": {
         "coffee": 52,
-        "juice": 47,
+        "juice": 46,
         "tea": 13,
-        "breakfast": 5
+        "breakfast": 7
       }
     },
     {
@@ -768,17 +758,17 @@
         "coffee": 56,
         "juice": 45,
         "tea": 9,
-        "breakfast": 9
+        "breakfast": 8
       }
     },
     {
       "date": "May 31 – Jun 6, 2026",
       "timestamp": "1780185600",
       "values": {
-        "coffee": 49,
-        "juice": 53,
-        "tea": 10,
-        "breakfast": 9
+        "coffee": 51,
+        "juice": 55,
+        "tea": 11,
+        "breakfast": 10
       }
     },
     {
@@ -786,18 +776,18 @@
       "timestamp": "1780790400",
       "values": {
         "coffee": 51,
-        "juice": 52,
+        "juice": 53,
         "tea": 9,
-        "breakfast": 12
+        "breakfast": 13
       }
     },
     {
       "date": "Jun 14 – 20, 2026",
       "timestamp": "1781395200",
       "values": {
-        "coffee": 54,
-        "juice": 54,
-        "tea": 8,
+        "coffee": 56,
+        "juice": 55,
+        "tea": 9,
         "breakfast": 11
       }
     },
@@ -806,19 +796,19 @@
       "timestamp": "1782000000",
       "values": {
         "coffee": 55,
-        "juice": 55,
+        "juice": 54,
         "tea": 9,
-        "breakfast": 9
+        "breakfast": 10
       }
     },
     {
       "date": "Jun 28 – Jul 4, 2026",
       "timestamp": "1782604800",
       "values": {
-        "coffee": 47,
-        "juice": 44,
-        "tea": 8,
-        "breakfast": 10
+        "coffee": 46,
+        "juice": 43,
+        "tea": 9,
+        "breakfast": 9
       }
     },
     {
@@ -827,7 +817,7 @@
       "values": {
         "coffee": 47,
         "juice": 42,
-        "tea": 8,
+        "tea": 7,
         "breakfast": 9
       }
     },
@@ -835,30 +825,30 @@
       "date": "Jul 12 – 18, 2026",
       "timestamp": "1783814400",
       "values": {
-        "coffee": 40,
-        "juice": 41,
-        "tea": 11,
-        "breakfast": 9
+        "coffee": 42,
+        "juice": 43,
+        "tea": 12,
+        "breakfast": 10
       }
     },
     {
       "date": "Jul 19 – 25, 2026",
       "timestamp": "1784419200",
       "values": {
-        "coffee": 41,
+        "coffee": 42,
         "juice": 40,
-        "tea": 10,
-        "breakfast": 5
+        "tea": 12,
+        "breakfast": 6
       }
     },
     {
       "date": "Jul 26 – Aug 1, 2026",
       "timestamp": "1785024000",
       "values": {
-        "coffee": 46,
-        "juice": 41,
-        "tea": 8,
-        "breakfast": 11
+        "coffee": 45,
+        "juice": 39,
+        "tea": 9,
+        "breakfast": 9
       }
     },
     {
@@ -866,16 +856,16 @@
       "timestamp": "1785628800",
       "values": {
         "coffee": 42,
-        "juice": 38,
-        "tea": 9,
-        "breakfast": 8
+        "juice": 39,
+        "tea": 8,
+        "breakfast": 6
       }
     },
     {
       "date": "Aug 9 – 15, 2026",
       "timestamp": "1786233600",
       "values": {
-        "coffee": 36,
+        "coffee": 38,
         "juice": 36,
         "tea": 9,
         "breakfast": 7
@@ -886,19 +876,19 @@
       "timestamp": "1786838400",
       "values": {
         "coffee": 45,
-        "juice": 38,
-        "tea": 9,
-        "breakfast": 9
+        "juice": 39,
+        "tea": 8,
+        "breakfast": 10
       }
     },
     {
       "date": "Aug 23 – 29, 2026",
       "timestamp": "1787443200",
       "values": {
-        "coffee": 38,
-        "juice": 37,
-        "tea": 9,
-        "breakfast": 7
+        "coffee": 40,
+        "juice": 36,
+        "tea": 10,
+        "breakfast": 9
       }
     },
     {
@@ -906,48 +896,48 @@
       "timestamp": "1788048000",
       "values": {
         "coffee": 42,
-        "juice": 35,
+        "juice": 36,
         "tea": 6,
-        "breakfast": 11
+        "breakfast": 10
       }
     },
     {
       "date": "Sep 6 – 12, 2026",
       "timestamp": "1788652800",
       "values": {
-        "coffee": 47,
-        "juice": 39,
-        "tea": 8,
-        "breakfast": 8
+        "coffee": 46,
+        "juice": 40,
+        "tea": 9,
+        "breakfast": 9
       }
     },
     {
       "date": "Sep 13 – 19, 2026",
       "timestamp": "1789257600",
       "values": {
-        "coffee": 47,
-        "juice": 35,
-        "tea": 5,
-        "breakfast": 7
+        "coffee": 48,
+        "juice": 36,
+        "tea": 7,
+        "breakfast": 6
       }
     },
     {
       "date": "Sep 20 – 26, 2026",
       "timestamp": "1789862400",
       "values": {
-        "coffee": 37,
+        "coffee": 36,
         "juice": 35,
-        "tea": 6,
-        "breakfast": 8
+        "tea": 5,
+        "breakfast": 9
       }
     },
     {
       "date": "Sep 27 – Oct 3, 2026",
       "timestamp": "1790467200",
       "values": {
-        "coffee": 42,
-        "juice": 31,
-        "tea": 11,
+        "coffee": 41,
+        "juice": 30,
+        "tea": 10,
         "breakfast": 7
       }
     },
@@ -955,10 +945,10 @@
       "date": "Oct 4 – 10, 2026",
       "timestamp": "1791072000",
       "values": {
-        "coffee": 46,
+        "coffee": 49,
         "juice": 31,
-        "tea": 5,
-        "breakfast": 6
+        "tea": 7,
+        "breakfast": 7
       }
     },
     {
@@ -966,8 +956,8 @@
       "timestamp": "1791676800",
       "values": {
         "coffee": 41,
-        "juice": 28,
-        "tea": 4,
+        "juice": 31,
+        "tea": 9,
         "breakfast": 8
       }
     },
@@ -975,20 +965,30 @@
       "date": "Oct 18 – 24, 2026",
       "timestamp": "1792281600",
       "values": {
-        "coffee": 35,
-        "juice": 26,
-        "tea": 6,
-        "breakfast": 7
+        "coffee": 36,
+        "juice": 27,
+        "tea": 5,
+        "breakfast": 5
       }
     },
     {
       "date": "Oct 25 – 31, 2026",
       "timestamp": "1792886400",
       "values": {
-        "coffee": 46,
+        "coffee": 41,
         "juice": 27,
-        "tea": 7,
+        "tea": 6,
         "breakfast": 7
+      }
+    },
+    {
+      "date": "Nov 1 – 7, 2026",
+      "timestamp": "1793491200",
+      "values": {
+        "coffee": 42,
+        "juice": 24,
+        "tea": 5,
+        "breakfast": 8
       }
     }
   ],
