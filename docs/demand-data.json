@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T20:16:03.938Z",
+  "updated_at": "2026-11-10T20:34:55.905Z",
   "market": "Tucson, Arizona",
   "status": "complete",
   "methodology_version": "2.0",
@@ -11,7 +11,7 @@
     {
       "name": "Stored Google Maps competitor snapshot",
       "role": "Supply, rating and review-volume demand proxy",
-      "updated_at": "2026-10-26T19:15:02.020Z"
+      "updated_at": "2026-11-09T22:58:58.458Z"
     },
     {
       "name": "Pima Association of Governments",
@@ -31,8 +31,8 @@
   ],
   "errors": [],
   "competitor_snapshot": {
-    "updated_at": "2026-10-26T19:15:02.020Z",
-    "analyzed_count": 218
+    "updated_at": "2026-11-09T22:58:58.458Z",
+    "analyzed_count": 235
   },
   "tucson_geo_match": {
     "location": "Tucson",
@@ -42,47 +42,47 @@
     {
       "key": "juice",
       "label": "Juice / smoothie",
-      "supply_count": 26,
-      "total_reviews": 7404,
-      "median_reviews": 170,
-      "reviews_per_listing": 284.7692307692308,
-      "weighted_rating": 4.497663425175579,
+      "supply_count": 24,
+      "total_reviews": 4386,
+      "median_reviews": 144.5,
+      "reviews_per_listing": 182.75,
+      "weighted_rating": 4.345713634290925,
       "review_coverage": 1,
-      "search_average": 38.5,
-      "tucson_search_share": 30,
-      "search_index": 80,
-      "review_index": 2,
-      "demand_score": 57,
+      "search_average": 38,
+      "tucson_search_share": 29.5,
+      "search_index": 79,
+      "review_index": 0,
+      "demand_score": 56,
       "saturation_score": 0,
-      "opportunity_score": 72,
+      "opportunity_score": 71,
       "confidence_score": 100,
       "verdict": "PROMISING",
       "related_queries": {
         "top": [
           {
-            "query": "tropical",
+            "query": "tropical smoothie",
             "value": "100",
             "score": 100
           },
           {
-            "query": "tropical smoothie",
-            "value": "98",
-            "score": 98
+            "query": "tropical",
+            "value": "96",
+            "score": 96
           },
           {
             "query": "smoothie cafe",
-            "value": "55",
-            "score": 55
+            "value": "56",
+            "score": 56
           },
           {
             "query": "smoothie king",
-            "value": "51",
-            "score": 51
+            "value": "52",
+            "score": 52
           },
           {
             "query": "tropical cafe smoothie",
-            "value": "51",
-            "score": 51
+            "value": "50",
+            "score": 50
           },
           {
             "query": "smoothie near me",
@@ -104,42 +104,42 @@
           {
             "query": "bora bora smoothie cafe",
             "value": "Breakout",
-            "score": 15150
-          },
-          {
-            "query": "all in one protein smoothie",
-            "value": "Breakout",
-            "score": 10400
-          },
-          {
-            "query": "smoothie king careers",
-            "value": "Breakout",
-            "score": 9100
-          },
-          {
-            "query": "erewhon smoothie price",
-            "value": "Breakout",
-            "score": 5500
+            "score": 16650
           },
           {
             "query": "smoothie king delivery",
             "value": "Breakout",
+            "score": 7700
+          },
+          {
+            "query": "smoothie king application",
+            "value": "Breakout",
+            "score": 5350
+          },
+          {
+            "query": "erewhon smoothie price",
+            "value": "Breakout",
             "score": 5300
           },
           {
-            "query": "what time does tropical smoothie open",
-            "value": "+2,900%",
-            "score": 2900
+            "query": "jamba juice $1 smoothie",
+            "value": "Breakout",
+            "score": 5200
           },
           {
-            "query": "smoothie blenders",
-            "value": "+550%",
-            "score": 550
+            "query": "erewhon smoothie menu",
+            "value": "+4,900%",
+            "score": 4900
           },
           {
-            "query": "healthy smoothie recipes",
-            "value": "+190%",
-            "score": 190
+            "query": "i saw you on 8th avenue drinking a smoothie",
+            "value": "+4,850%",
+            "score": 4850
+          },
+          {
+            "query": "what time does tropical smoothie close",
+            "value": "+4,750%",
+            "score": 4750
           }
         ]
       }
@@ -147,21 +147,21 @@
     {
       "key": "coffee",
       "label": "Coffee / café",
-      "supply_count": 74,
-      "total_reviews": 41479,
-      "median_reviews": 297,
-      "reviews_per_listing": 560.527027027027,
-      "weighted_rating": 4.388420646592252,
-      "review_coverage": 0.9864864864864865,
+      "supply_count": 92,
+      "total_reviews": 51348,
+      "median_reviews": 340,
+      "reviews_per_listing": 558.1304347826087,
+      "weighted_rating": 4.372407883461869,
+      "review_coverage": 1,
       "search_average": 46,
       "tucson_search_share": 26,
       "search_index": 100,
-      "review_index": 44,
-      "demand_score": 77,
-      "saturation_score": 75,
-      "opportunity_score": 59,
+      "review_index": 56,
+      "demand_score": 82,
+      "saturation_score": 100,
+      "opportunity_score": 53,
       "confidence_score": 100,
-      "verdict": "VALIDATE",
+      "verdict": "CROWDED",
       "related_queries": {
         "top": [
           {
@@ -171,8 +171,8 @@
           },
           {
             "query": "coffee shop near",
-            "value": "85",
-            "score": 85
+            "value": "84",
+            "score": 84
           },
           {
             "query": "coffee shop near me",
@@ -190,6 +190,11 @@
             "score": 19
           },
           {
+            "query": "gilbert coffee shop",
+            "value": "19",
+            "score": 19
+          },
+          {
             "query": "coffee shop menu",
             "value": "15",
             "score": 15
@@ -198,53 +203,48 @@
             "query": "coach coffee shop",
             "value": "14",
             "score": 14
-          },
-          {
-            "query": "nearest coffee shop",
-            "value": "11",
-            "score": 11
           }
         ],
         "rising": [
           {
-            "query": "coach coffee shop arizona",
-            "value": "Breakout",
-            "score": 26800
-          },
-          {
-            "query": "scooters coffee",
-            "value": "Breakout",
-            "score": 19800
-          },
-          {
             "query": "milk and honey coffee shop",
             "value": "Breakout",
-            "score": 19700
-          },
-          {
-            "query": "coffee shop drawing",
-            "value": "Breakout",
-            "score": 18100
-          },
-          {
-            "query": "matcha near me",
-            "value": "Breakout",
-            "score": 16250
+            "score": 18700
           },
           {
             "query": "coach coffee shop phoenix",
             "value": "Breakout",
-            "score": 15200
+            "score": 15150
           },
           {
-            "query": "7 brew",
+            "query": "coach cafe",
             "value": "Breakout",
-            "score": 13100
+            "score": 10900
           },
           {
-            "query": "black crown coffee",
+            "query": "how to descale coffee maker",
             "value": "Breakout",
-            "score": 10400
+            "score": 7300
+          },
+          {
+            "query": "coffee shop open christmas day",
+            "value": "Breakout",
+            "score": 7000
+          },
+          {
+            "query": "north end coffee shop",
+            "value": "Breakout",
+            "score": 5950
+          },
+          {
+            "query": "coach coffee shop",
+            "value": "+950%",
+            "score": 950
+          },
+          {
+            "query": "nearest coffee shop",
+            "value": "+400%",
+            "score": 400
           }
         ]
       }
@@ -252,35 +252,40 @@
     {
       "key": "tea",
       "label": "Tea / boba",
-      "supply_count": 28,
-      "total_reviews": 7688,
-      "median_reviews": 267.5,
-      "reviews_per_listing": 274.57142857142856,
-      "weighted_rating": 4.640803850156088,
+      "supply_count": 33,
+      "total_reviews": 10100,
+      "median_reviews": 270,
+      "reviews_per_listing": 306.06060606060606,
+      "weighted_rating": 4.650009900990098,
       "review_coverage": 1,
       "search_average": 9,
-      "tucson_search_share": 9,
+      "tucson_search_share": 10,
       "search_index": 3,
-      "review_index": 0,
-      "demand_score": 5,
-      "saturation_score": 3,
-      "opportunity_score": 37,
+      "review_index": 26,
+      "demand_score": 14,
+      "saturation_score": 13,
+      "opportunity_score": 40,
       "confidence_score": 100,
       "verdict": "LOW PROOF",
       "related_queries": {
         "top": [
+          {
+            "query": "boba tea near me",
+            "value": "100",
+            "score": 100
+          },
           {
             "query": "boba near me",
             "value": "100",
             "score": 100
           },
           {
-            "query": "boba tea near me",
-            "value": "95",
-            "score": 95
+            "query": "tea near me",
+            "value": "96",
+            "score": 96
           },
           {
-            "query": "boba tea company",
+            "query": "milk tea",
             "value": "77",
             "score": 77
           },
@@ -290,66 +295,61 @@
             "score": 76
           },
           {
+            "query": "boba tea company",
+            "value": "76",
+            "score": 76
+          },
+          {
             "query": "boba tea house",
-            "value": "64",
-            "score": 64
+            "value": "61",
+            "score": 61
           },
           {
             "query": "bubble tea",
-            "value": "37",
-            "score": 37
-          },
-          {
-            "query": "what is boba tea",
-            "value": "33",
-            "score": 33
-          },
-          {
-            "query": "thai tea boba",
-            "value": "23",
-            "score": 23
+            "value": "38",
+            "score": 38
           }
         ],
         "rising": [
           {
-            "query": "crystal boba",
+            "query": "boba tea nearby",
             "value": "Breakout",
-            "score": 67800
+            "score": 29700
           },
           {
             "query": "koko boba tea house",
-            "value": "Breakout",
-            "score": 63150
+            "value": "+550%",
+            "score": 550
           },
           {
-            "query": "google doodles",
-            "value": "Breakout",
-            "score": 27600
+            "query": "google games boba tea",
+            "value": "+150%",
+            "score": 150
           },
           {
-            "query": "tea bliss",
-            "value": "+200%",
-            "score": 200
-          },
-          {
-            "query": "boba tea company near me",
-            "value": "+170%",
-            "score": 170
-          },
-          {
-            "query": "boba tea light",
-            "value": "+140%",
-            "score": 140
-          },
-          {
-            "query": "boba tea nearby",
+            "query": "google games",
             "value": "+130%",
             "score": 130
           },
           {
-            "query": "google games",
-            "value": "+110%",
-            "score": 110
+            "query": "boba tea light",
+            "value": "+120%",
+            "score": 120
+          },
+          {
+            "query": "boba tea and snow ice house",
+            "value": "+120%",
+            "score": 120
+          },
+          {
+            "query": "google doodles",
+            "value": "+80%",
+            "score": 80
+          },
+          {
+            "query": "tea snow",
+            "value": "+70%",
+            "score": 70
           }
         ]
       }
@@ -357,19 +357,19 @@
     {
       "key": "breakfast",
       "label": "Fast breakfast",
-      "supply_count": 90,
-      "total_reviews": 122802,
-      "median_reviews": 914.5,
-      "reviews_per_listing": 1364.4666666666667,
-      "weighted_rating": 4.36924480057328,
-      "review_coverage": 0.9888888888888889,
+      "supply_count": 86,
+      "total_reviews": 117046,
+      "median_reviews": 977,
+      "reviews_per_listing": 1361,
+      "weighted_rating": 4.386567674247733,
+      "review_coverage": 1,
       "search_average": 8,
       "tucson_search_share": 5,
       "search_index": 0,
       "review_index": 100,
       "demand_score": 35,
-      "saturation_score": 100,
-      "opportunity_score": 23,
+      "saturation_score": 91,
+      "opportunity_score": 26,
       "confidence_score": 100,
       "verdict": "CROWDED",
       "related_queries": {
@@ -385,6 +385,11 @@
             "score": 99
           },
           {
+            "query": "best breakfast sandwich",
+            "value": "35",
+            "score": 35
+          },
+          {
             "query": "jimmy dean breakfast sandwich",
             "value": "33",
             "score": 33
@@ -395,66 +400,61 @@
             "score": 20
           },
           {
-            "query": "bagel breakfast sandwich",
+            "query": "croissant breakfast sandwich",
+            "value": "16",
+            "score": 16
+          },
+          {
+            "query": "breakfast bagel sandwich",
             "value": "15",
             "score": 15
           },
           {
-            "query": "croissant breakfast sandwich",
-            "value": "14",
-            "score": 14
-          },
-          {
             "query": "mcdonalds breakfast",
-            "value": "11",
-            "score": 11
-          },
-          {
-            "query": "chick fil a",
-            "value": "11",
-            "score": 11
+            "value": "13",
+            "score": 13
           }
         ],
         "rising": [
           {
-            "query": "dunkin donuts sourdough breakfast sandwich",
-            "value": "Breakout",
-            "score": 43700
-          },
-          {
             "query": "mcdonalds new breakfast sandwich",
             "value": "Breakout",
-            "score": 16000
+            "score": 52700
+          },
+          {
+            "query": "dunkin donuts sourdough breakfast sandwich",
+            "value": "Breakout",
+            "score": 44200
           },
           {
             "query": "kirkland signature breakfast sandwich review",
             "value": "Breakout",
-            "score": 13550
+            "score": 29900
+          },
+          {
+            "query": "sloppy joe breakfast sandwich recipe",
+            "value": "+3,550%",
+            "score": 3550
           },
           {
             "query": "hardees breakfast sandwich menu hacks",
-            "value": "+1,150%",
-            "score": 1150
+            "value": "+1,600%",
+            "score": 1600
           },
           {
-            "query": "jimmy dean breakfast sandwich cooking instructions",
-            "value": "+150%",
-            "score": 150
+            "query": "mcdonalds menu",
+            "value": "+400%",
+            "score": 400
           },
           {
             "query": "trader joe's breakfast sandwich",
-            "value": "+90%",
-            "score": 90
+            "value": "+300%",
+            "score": 300
           },
           {
-            "query": "dunkin donuts breakfast sandwich",
-            "value": "+90%",
-            "score": 90
-          },
-          {
-            "query": "dunkin breakfast sandwich",
-            "value": "+70%",
-            "score": 70
+            "query": "dunkin sourdough breakfast sandwich",
+            "value": "+170%",
+            "score": 170
           }
         ]
       }
@@ -462,22 +462,12 @@
   ],
   "timeline": [
     {
-      "date": "Nov 2 – 8, 2025",
-      "timestamp": "1762041600",
-      "values": {
-        "coffee": 40,
-        "juice": 27,
-        "tea": 8,
-        "breakfast": 6
-      }
-    },
-    {
       "date": "Nov 9 – 15, 2025",
       "timestamp": "1762646400",
       "values": {
         "coffee": 42,
-        "juice": 30,
-        "tea": 11,
+        "juice": 29,
+        "tea": 8,
         "breakfast": 7
       }
     },
@@ -485,20 +475,20 @@
       "date": "Nov 16 – 22, 2025",
       "timestamp": "1763251200",
       "values": {
-        "coffee": 43,
-        "juice": 25,
-        "tea": 8,
-        "breakfast": 6
+        "coffee": 44,
+        "juice": 27,
+        "tea": 7,
+        "breakfast": 7
       }
     },
     {
       "date": "Nov 23 – 29, 2025",
       "timestamp": "1763856000",
       "values": {
-        "coffee": 42,
-        "juice": 26,
-        "tea": 12,
-        "breakfast": 5
+        "coffee": 44,
+        "juice": 24,
+        "tea": 10,
+        "breakfast": 6
       }
     },
     {
@@ -515,7 +505,7 @@
       "date": "Dec 7 – 13, 2025",
       "timestamp": "1765065600",
       "values": {
-        "coffee": 41,
+        "coffee": 43,
         "juice": 30,
         "tea": 7,
         "breakfast": 5
@@ -525,10 +515,10 @@
       "date": "Dec 14 – 20, 2025",
       "timestamp": "1765670400",
       "values": {
-        "coffee": 43,
-        "juice": 32,
-        "tea": 10,
-        "breakfast": 7
+        "coffee": 41,
+        "juice": 31,
+        "tea": 9,
+        "breakfast": 6
       }
     },
     {
@@ -536,19 +526,19 @@
       "timestamp": "1766275200",
       "values": {
         "coffee": 47,
-        "juice": 28,
+        "juice": 29,
         "tea": 10,
-        "breakfast": 6
+        "breakfast": 5
       }
     },
     {
       "date": "Dec 28, 2025 – Jan 3, 2026",
       "timestamp": "1766880000",
       "values": {
-        "coffee": 47,
-        "juice": 37,
+        "coffee": 46,
+        "juice": 36,
         "tea": 10,
-        "breakfast": 6
+        "breakfast": 7
       }
     },
     {
@@ -557,27 +547,27 @@
       "values": {
         "coffee": 42,
         "juice": 35,
-        "tea": 7,
-        "breakfast": 6
+        "tea": 8,
+        "breakfast": 7
       }
     },
     {
       "date": "Jan 11 – 17, 2026",
       "timestamp": "1768089600",
       "values": {
-        "coffee": 42,
-        "juice": 39,
-        "tea": 11,
-        "breakfast": 6
+        "coffee": 41,
+        "juice": 38,
+        "tea": 9,
+        "breakfast": 9
       }
     },
     {
       "date": "Jan 18 – 24, 2026",
       "timestamp": "1768694400",
       "values": {
-        "coffee": 48,
+        "coffee": 49,
         "juice": 36,
-        "tea": 9,
+        "tea": 10,
         "breakfast": 8
       }
     },
@@ -585,10 +575,10 @@
       "date": "Jan 25 – 31, 2026",
       "timestamp": "1769299200",
       "values": {
-        "coffee": 50,
-        "juice": 36,
-        "tea": 8,
-        "breakfast": 11
+        "coffee": 49,
+        "juice": 37,
+        "tea": 7,
+        "breakfast": 9
       }
     },
     {
@@ -596,7 +586,7 @@
       "timestamp": "1769904000",
       "values": {
         "coffee": 50,
-        "juice": 42,
+        "juice": 41,
         "tea": 9,
         "breakfast": 8
       }
@@ -606,7 +596,7 @@
       "timestamp": "1770508800",
       "values": {
         "coffee": 48,
-        "juice": 45,
+        "juice": 44,
         "tea": 9,
         "breakfast": 8
       }
@@ -615,9 +605,9 @@
       "date": "Feb 15 – 21, 2026",
       "timestamp": "1771113600",
       "values": {
-        "coffee": 58,
-        "juice": 43,
-        "tea": 8,
+        "coffee": 57,
+        "juice": 42,
+        "tea": 7,
         "breakfast": 10
       }
     },
@@ -627,26 +617,26 @@
       "values": {
         "coffee": 46,
         "juice": 39,
-        "tea": 8,
-        "breakfast": 7
+        "tea": 9,
+        "breakfast": 8
       }
     },
     {
       "date": "Mar 1 – 7, 2026",
       "timestamp": "1772323200",
       "values": {
-        "coffee": 41,
-        "juice": 45,
-        "tea": 10,
-        "breakfast": 8
+        "coffee": 40,
+        "juice": 43,
+        "tea": 11,
+        "breakfast": 7
       }
     },
     {
       "date": "Mar 8 – 14, 2026",
       "timestamp": "1772928000",
       "values": {
-        "coffee": 45,
-        "juice": 43,
+        "coffee": 44,
+        "juice": 42,
         "tea": 10,
         "breakfast": 8
       }
@@ -655,7 +645,7 @@
       "date": "Mar 15 – 21, 2026",
       "timestamp": "1773532800",
       "values": {
-        "coffee": 48,
+        "coffee": 47,
         "juice": 44,
         "tea": 9,
         "breakfast": 8
@@ -675,29 +665,29 @@
       "date": "Mar 29 – Apr 4, 2026",
       "timestamp": "1774742400",
       "values": {
-        "coffee": 49,
+        "coffee": 47,
         "juice": 46,
-        "tea": 9,
-        "breakfast": 8
+        "tea": 10,
+        "breakfast": 7
       }
     },
     {
       "date": "Apr 5 – 11, 2026",
       "timestamp": "1775347200",
       "values": {
-        "coffee": 53,
+        "coffee": 52,
         "juice": 48,
-        "tea": 9,
-        "breakfast": 9
+        "tea": 8,
+        "breakfast": 10
       }
     },
     {
       "date": "Apr 12 – 18, 2026",
       "timestamp": "1775952000",
       "values": {
-        "coffee": 48,
-        "juice": 45,
-        "tea": 13,
+        "coffee": 47,
+        "juice": 44,
+        "tea": 9,
         "breakfast": 7
       }
     },
@@ -706,17 +696,17 @@
       "timestamp": "1776556800",
       "values": {
         "coffee": 47,
-        "juice": 48,
+        "juice": 46,
         "tea": 8,
-        "breakfast": 10
+        "breakfast": 7
       }
     },
     {
       "date": "Apr 26 – May 2, 2026",
       "timestamp": "1777161600",
       "values": {
-        "coffee": 55,
-        "juice": 44,
+        "coffee": 56,
+        "juice": 43,
         "tea": 13,
         "breakfast": 6
       }
@@ -725,19 +715,19 @@
       "date": "May 3 – 9, 2026",
       "timestamp": "1777766400",
       "values": {
-        "coffee": 44,
-        "juice": 44,
-        "tea": 12,
-        "breakfast": 8
+        "coffee": 43,
+        "juice": 45,
+        "tea": 11,
+        "breakfast": 7
       }
     },
     {
       "date": "May 10 – 16, 2026",
       "timestamp": "1778371200",
       "values": {
-        "coffee": 47,
-        "juice": 46,
-        "tea": 9,
+        "coffee": 48,
+        "juice": 45,
+        "tea": 10,
         "breakfast": 6
       }
     },
@@ -746,8 +736,8 @@
       "timestamp": "1778976000",
       "values": {
         "coffee": 52,
-        "juice": 46,
-        "tea": 13,
+        "juice": 45,
+        "tea": 12,
         "breakfast": 7
       }
     },
@@ -755,7 +745,7 @@
       "date": "May 24 – 30, 2026",
       "timestamp": "1779580800",
       "values": {
-        "coffee": 56,
+        "coffee": 55,
         "juice": 45,
         "tea": 9,
         "breakfast": 8
@@ -765,35 +755,25 @@
       "date": "May 31 – Jun 6, 2026",
       "timestamp": "1780185600",
       "values": {
-        "coffee": 51,
-        "juice": 55,
-        "tea": 11,
-        "breakfast": 10
+        "coffee": 49,
+        "juice": 53,
+        "tea": 10,
+        "breakfast": 8
       }
     },
     {
       "date": "Jun 7 – 13, 2026",
       "timestamp": "1780790400",
       "values": {
-        "coffee": 51,
+        "coffee": 50,
         "juice": 53,
         "tea": 9,
-        "breakfast": 13
+        "breakfast": 12
       }
     },
     {
       "date": "Jun 14 – 20, 2026",
       "timestamp": "1781395200",
-      "values": {
-        "coffee": 56,
-        "juice": 55,
-        "tea": 9,
-        "breakfast": 11
-      }
-    },
-    {
-      "date": "Jun 21 – 27, 2026",
-      "timestamp": "1782000000",
       "values": {
         "coffee": 55,
         "juice": 54,
@@ -802,12 +782,22 @@
       }
     },
     {
+      "date": "Jun 21 – 27, 2026",
+      "timestamp": "1782000000",
+      "values": {
+        "coffee": 56,
+        "juice": 54,
+        "tea": 8,
+        "breakfast": 9
+      }
+    },
+    {
       "date": "Jun 28 – Jul 4, 2026",
       "timestamp": "1782604800",
       "values": {
-        "coffee": 46,
+        "coffee": 47,
         "juice": 43,
-        "tea": 9,
+        "tea": 8,
         "breakfast": 9
       }
     },
@@ -815,18 +805,18 @@
       "date": "Jul 5 – 11, 2026",
       "timestamp": "1783209600",
       "values": {
-        "coffee": 47,
-        "juice": 42,
-        "tea": 7,
-        "breakfast": 9
+        "coffee": 48,
+        "juice": 41,
+        "tea": 9,
+        "breakfast": 8
       }
     },
     {
       "date": "Jul 12 – 18, 2026",
       "timestamp": "1783814400",
       "values": {
-        "coffee": 42,
-        "juice": 43,
+        "coffee": 40,
+        "juice": 41,
         "tea": 12,
         "breakfast": 10
       }
@@ -835,10 +825,10 @@
       "date": "Jul 19 – 25, 2026",
       "timestamp": "1784419200",
       "values": {
-        "coffee": 42,
-        "juice": 40,
-        "tea": 12,
-        "breakfast": 6
+        "coffee": 40,
+        "juice": 39,
+        "tea": 8,
+        "breakfast": 5
       }
     },
     {
@@ -846,28 +836,28 @@
       "timestamp": "1785024000",
       "values": {
         "coffee": 45,
-        "juice": 39,
-        "tea": 9,
-        "breakfast": 9
+        "juice": 41,
+        "tea": 8,
+        "breakfast": 10
       }
     },
     {
       "date": "Aug 2 – 8, 2026",
       "timestamp": "1785628800",
       "values": {
-        "coffee": 42,
-        "juice": 39,
-        "tea": 8,
-        "breakfast": 6
+        "coffee": 43,
+        "juice": 38,
+        "tea": 9,
+        "breakfast": 7
       }
     },
     {
       "date": "Aug 9 – 15, 2026",
       "timestamp": "1786233600",
       "values": {
-        "coffee": 38,
+        "coffee": 37,
         "juice": 36,
-        "tea": 9,
+        "tea": 7,
         "breakfast": 7
       }
     },
@@ -875,68 +865,68 @@
       "date": "Aug 16 – 22, 2026",
       "timestamp": "1786838400",
       "values": {
-        "coffee": 45,
+        "coffee": 46,
         "juice": 39,
-        "tea": 8,
-        "breakfast": 10
+        "tea": 9,
+        "breakfast": 9
       }
     },
     {
       "date": "Aug 23 – 29, 2026",
       "timestamp": "1787443200",
       "values": {
-        "coffee": 40,
+        "coffee": 39,
         "juice": 36,
-        "tea": 10,
-        "breakfast": 9
+        "tea": 9,
+        "breakfast": 10
       }
     },
     {
       "date": "Aug 30 – Sep 5, 2026",
       "timestamp": "1788048000",
       "values": {
-        "coffee": 42,
+        "coffee": 41,
         "juice": 36,
-        "tea": 6,
-        "breakfast": 10
+        "tea": 7,
+        "breakfast": 11
       }
     },
     {
       "date": "Sep 6 – 12, 2026",
       "timestamp": "1788652800",
       "values": {
-        "coffee": 46,
-        "juice": 40,
+        "coffee": 47,
+        "juice": 39,
         "tea": 9,
-        "breakfast": 9
+        "breakfast": 8
       }
     },
     {
       "date": "Sep 13 – 19, 2026",
       "timestamp": "1789257600",
       "values": {
-        "coffee": 48,
+        "coffee": 47,
         "juice": 36,
         "tea": 7,
-        "breakfast": 6
+        "breakfast": 7
       }
     },
     {
       "date": "Sep 20 – 26, 2026",
       "timestamp": "1789862400",
       "values": {
-        "coffee": 36,
-        "juice": 35,
-        "tea": 5,
-        "breakfast": 9
+        "coffee": 35,
+        "juice": 34,
+        "tea": 9,
+        "breakfast": 7
       }
     },
     {
       "date": "Sep 27 – Oct 3, 2026",
       "timestamp": "1790467200",
       "values": {
-        "coffee": 41,
-        "juice": 30,
+        "coffee": 40,
+        "juice": 31,
         "tea": 10,
         "breakfast": 7
       }
@@ -945,10 +935,10 @@
       "date": "Oct 4 – 10, 2026",
       "timestamp": "1791072000",
       "values": {
-        "coffee": 49,
+        "coffee": 46,
         "juice": 31,
         "tea": 7,
-        "breakfast": 7
+        "breakfast": 5
       }
     },
     {
@@ -956,8 +946,8 @@
       "timestamp": "1791676800",
       "values": {
         "coffee": 41,
-        "juice": 31,
-        "tea": 9,
+        "juice": 29,
+        "tea": 8,
         "breakfast": 8
       }
     },
@@ -966,287 +956,297 @@
       "timestamp": "1792281600",
       "values": {
         "coffee": 36,
-        "juice": 27,
-        "tea": 5,
-        "breakfast": 5
+        "juice": 26,
+        "tea": 7,
+        "breakfast": 8
       }
     },
     {
       "date": "Oct 25 – 31, 2026",
       "timestamp": "1792886400",
       "values": {
-        "coffee": 41,
-        "juice": 27,
+        "coffee": 40,
+        "juice": 25,
         "tea": 6,
-        "breakfast": 7
+        "breakfast": 5
       }
     },
     {
       "date": "Nov 1 – 7, 2026",
       "timestamp": "1793491200",
       "values": {
-        "coffee": 42,
-        "juice": 24,
-        "tea": 5,
-        "breakfast": 8
+        "coffee": 43,
+        "juice": 26,
+        "tea": 6,
+        "breakfast": 7
+      }
+    },
+    {
+      "date": "Nov 8 – 14, 2026",
+      "timestamp": "1794096000",
+      "values": {
+        "coffee": 46,
+        "juice": 28,
+        "tea": 7,
+        "breakfast": 7
       }
     }
   ],
   "corridors": {
     "coffee": [
       {
-        "name": "Campbell Avenue",
-        "total_listings": 15,
-        "total_reviews": 11003,
-        "reviews_per_listing": 733.5333333333333,
-        "traffic_peak_proxy": 12652,
-        "category_counts": {
-          "coffee": 3,
-          "juice": 4,
-          "tea": 2,
-          "breakfast": 6
-        },
-        "category": "coffee",
-        "category_supply": 3,
-        "white_space_score": 79,
-        "demand_base_score": 68,
-        "gap_score": 71,
-        "confidence_score": 100,
-        "rationale": "Peak-count proxy 12,652 vehicles; 15 relevant businesses; 3 coffee / café listings; 734 reviews per listing."
-      },
-      {
         "name": "Wilmot Road",
-        "total_listings": 6,
-        "total_reviews": 4716,
-        "reviews_per_listing": 786,
+        "total_listings": 5,
+        "total_reviews": 4548,
+        "reviews_per_listing": 909.6,
         "traffic_peak_proxy": 12739.75,
         "category_counts": {
           "coffee": 1,
-          "juice": 1,
+          "juice": 0,
           "tea": 0,
           "breakfast": 4
         },
         "category": "coffee",
         "category_supply": 1,
-        "white_space_score": 93,
-        "demand_base_score": 60,
-        "gap_score": 70,
+        "white_space_score": 92,
+        "demand_base_score": 59,
+        "gap_score": 69,
         "confidence_score": 100,
-        "rationale": "Peak-count proxy 12,740 vehicles; 6 relevant businesses; 1 coffee / café listings; 786 reviews per listing."
+        "rationale": "Peak-count proxy 12,740 vehicles; 5 relevant businesses; 1 coffee / café listings; 910 reviews per listing."
       },
       {
-        "name": "Oracle Road",
-        "total_listings": 8,
-        "total_reviews": 14842,
-        "reviews_per_listing": 1855.25,
-        "traffic_peak_proxy": null,
+        "name": "Campbell Avenue",
+        "total_listings": 14,
+        "total_reviews": 10993,
+        "reviews_per_listing": 785.2142857142857,
+        "traffic_peak_proxy": 12652,
         "category_counts": {
-          "coffee": 0,
-          "juice": 1,
+          "coffee": 4,
+          "juice": 3,
           "tea": 2,
           "breakfast": 5
         },
         "category": "coffee",
-        "category_supply": 0,
-        "white_space_score": 100,
-        "demand_base_score": 55,
-        "gap_score": 69,
-        "confidence_score": 75,
-        "rationale": "No official peak-count proxy; 8 relevant businesses; 0 coffee / café listings; 1,855 reviews per listing."
+        "category_supply": 4,
+        "white_space_score": 67,
+        "demand_base_score": 68,
+        "gap_score": 68,
+        "confidence_score": 100,
+        "rationale": "Peak-count proxy 12,652 vehicles; 14 relevant businesses; 4 coffee / café listings; 785 reviews per listing."
       },
       {
         "name": "Golf Links Road",
-        "total_listings": 9,
-        "total_reviews": 5620,
-        "reviews_per_listing": 624.4444444444445,
+        "total_listings": 10,
+        "total_reviews": 5782,
+        "reviews_per_listing": 578.2,
         "traffic_peak_proxy": 13075.5,
         "category_counts": {
           "coffee": 5,
           "juice": 0,
           "tea": 1,
-          "breakfast": 3
+          "breakfast": 4
         },
         "category": "coffee",
         "category_supply": 5,
-        "white_space_score": 64,
+        "white_space_score": 58,
         "demand_base_score": 71,
-        "gap_score": 69,
+        "gap_score": 67,
         "confidence_score": 100,
-        "rationale": "Peak-count proxy 13,076 vehicles; 9 relevant businesses; 5 coffee / café listings; 624 reviews per listing."
+        "rationale": "Peak-count proxy 13,076 vehicles; 10 relevant businesses; 5 coffee / café listings; 578 reviews per listing."
+      },
+      {
+        "name": "Oracle Road",
+        "total_listings": 8,
+        "total_reviews": 15017,
+        "reviews_per_listing": 1877.125,
+        "traffic_peak_proxy": null,
+        "category_counts": {
+          "coffee": 1,
+          "juice": 0,
+          "tea": 2,
+          "breakfast": 5
+        },
+        "category": "coffee",
+        "category_supply": 1,
+        "white_space_score": 92,
+        "demand_base_score": 54,
+        "gap_score": 65,
+        "confidence_score": 75,
+        "rationale": "No official peak-count proxy; 8 relevant businesses; 1 coffee / café listings; 1,877 reviews per listing."
+      },
+      {
+        "name": "22nd Street",
+        "total_listings": 12,
+        "total_reviews": 13435,
+        "reviews_per_listing": 1119.5833333333333,
+        "traffic_peak_proxy": 12271,
+        "category_counts": {
+          "coffee": 4,
+          "juice": 0,
+          "tea": 0,
+          "breakfast": 8
+        },
+        "category": "coffee",
+        "category_supply": 4,
+        "white_space_score": 67,
+        "demand_base_score": 58,
+        "gap_score": 61,
+        "confidence_score": 100,
+        "rationale": "Peak-count proxy 12,271 vehicles; 12 relevant businesses; 4 coffee / café listings; 1,120 reviews per listing."
       },
       {
         "name": "Speedway Boulevard",
-        "total_listings": 12,
-        "total_reviews": 8865,
-        "reviews_per_listing": 738.75,
+        "total_listings": 15,
+        "total_reviews": 10354,
+        "reviews_per_listing": 690.2666666666667,
         "traffic_peak_proxy": 12538.166666666666,
         "category_counts": {
-          "coffee": 3,
+          "coffee": 6,
           "juice": 0,
           "tea": 5,
           "breakfast": 4
         },
         "category": "coffee",
-        "category_supply": 3,
-        "white_space_score": 79,
-        "demand_base_score": 62,
-        "gap_score": 67,
+        "category_supply": 6,
+        "white_space_score": 50,
+        "demand_base_score": 64,
+        "gap_score": 60,
         "confidence_score": 100,
-        "rationale": "Peak-count proxy 12,538 vehicles; 12 relevant businesses; 3 coffee / café listings; 739 reviews per listing."
-      },
-      {
-        "name": "22nd Street",
-        "total_listings": 9,
-        "total_reviews": 11214,
-        "reviews_per_listing": 1246,
-        "traffic_peak_proxy": 12271,
-        "category_counts": {
-          "coffee": 3,
-          "juice": 0,
-          "tea": 0,
-          "breakfast": 6
-        },
-        "category": "coffee",
-        "category_supply": 3,
-        "white_space_score": 79,
-        "demand_base_score": 56,
-        "gap_score": 63,
-        "confidence_score": 100,
-        "rationale": "Peak-count proxy 12,271 vehicles; 9 relevant businesses; 3 coffee / café listings; 1,246 reviews per listing."
+        "rationale": "Peak-count proxy 12,538 vehicles; 15 relevant businesses; 6 coffee / café listings; 690 reviews per listing."
       },
       {
         "name": "Kolb Road",
         "total_listings": 3,
-        "total_reviews": 1670,
-        "reviews_per_listing": 556.6666666666666,
+        "total_reviews": 1678,
+        "reviews_per_listing": 559.3333333333334,
         "traffic_peak_proxy": 12488.625,
         "category_counts": {
-          "coffee": 1,
-          "juice": 0,
-          "tea": 0,
-          "breakfast": 2
-        },
-        "category": "coffee",
-        "category_supply": 1,
-        "white_space_score": 93,
-        "demand_base_score": 47,
-        "gap_score": 61,
-        "confidence_score": 88,
-        "rationale": "Peak-count proxy 12,489 vehicles; 3 relevant businesses; 1 coffee / café listings; 557 reviews per listing."
-      },
-      {
-        "name": "First Avenue",
-        "total_listings": 5,
-        "total_reviews": 1990,
-        "reviews_per_listing": 398,
-        "traffic_peak_proxy": null,
-        "category_counts": {
-          "coffee": 1,
-          "juice": 1,
-          "tea": 1,
-          "breakfast": 2
-        },
-        "category": "coffee",
-        "category_supply": 1,
-        "white_space_score": 93,
-        "demand_base_score": 41,
-        "gap_score": 57,
-        "confidence_score": 75,
-        "rationale": "No official peak-count proxy; 5 relevant businesses; 1 coffee / café listings; 398 reviews per listing."
-      },
-      {
-        "name": "Alvernon Way",
-        "total_listings": 2,
-        "total_reviews": 2227,
-        "reviews_per_listing": 1113.5,
-        "traffic_peak_proxy": null,
-        "category_counts": {
-          "coffee": 1,
+          "coffee": 2,
           "juice": 0,
           "tea": 0,
           "breakfast": 1
         },
         "category": "coffee",
-        "category_supply": 1,
-        "white_space_score": 93,
-        "demand_base_score": 40,
+        "category_supply": 2,
+        "white_space_score": 83,
+        "demand_base_score": 45,
         "gap_score": 56,
-        "confidence_score": 63,
-        "rationale": "No official peak-count proxy; 2 relevant businesses; 1 coffee / café listings; 1,114 reviews per listing."
+        "confidence_score": 88,
+        "rationale": "Peak-count proxy 12,489 vehicles; 3 relevant businesses; 2 coffee / café listings; 559 reviews per listing."
       },
       {
         "name": "Broadway Boulevard",
-        "total_listings": 42,
-        "total_reviews": 38573,
-        "reviews_per_listing": 918.4047619047619,
+        "total_listings": 40,
+        "total_reviews": 39228,
+        "reviews_per_listing": 980.7,
         "traffic_peak_proxy": null,
         "category_counts": {
-          "coffee": 14,
+          "coffee": 12,
           "juice": 5,
           "tea": 7,
           "breakfast": 16
         },
         "category": "coffee",
-        "category_supply": 14,
+        "category_supply": 12,
         "white_space_score": 0,
         "demand_base_score": 78,
         "gap_score": 55,
         "confidence_score": 75,
-        "rationale": "No official peak-count proxy; 42 relevant businesses; 14 coffee / café listings; 918 reviews per listing."
+        "rationale": "No official peak-count proxy; 40 relevant businesses; 12 coffee / café listings; 981 reviews per listing."
       },
       {
-        "name": "Grant Road",
-        "total_listings": 14,
-        "total_reviews": 23992,
-        "reviews_per_listing": 1713.7142857142858,
-        "traffic_peak_proxy": 11546.166666666666,
-        "category_counts": {
-          "coffee": 3,
-          "juice": 3,
-          "tea": 0,
-          "breakfast": 8
-        },
-        "category": "coffee",
-        "category_supply": 3,
-        "white_space_score": 79,
-        "demand_base_score": 45,
-        "gap_score": 55,
-        "confidence_score": 100,
-        "rationale": "Peak-count proxy 11,546 vehicles; 14 relevant businesses; 3 coffee / café listings; 1,714 reviews per listing."
-      },
-      {
-        "name": "Houghton Road",
-        "total_listings": 7,
-        "total_reviews": 2038,
-        "reviews_per_listing": 291.14285714285717,
+        "name": "First Avenue",
+        "total_listings": 4,
+        "total_reviews": 1384,
+        "reviews_per_listing": 346,
         "traffic_peak_proxy": null,
         "category_counts": {
-          "coffee": 4,
-          "juice": 2,
+          "coffee": 0,
+          "juice": 0,
+          "tea": 2,
+          "breakfast": 2
+        },
+        "category": "coffee",
+        "category_supply": 0,
+        "white_space_score": 100,
+        "demand_base_score": 36,
+        "gap_score": 55,
+        "confidence_score": 63,
+        "rationale": "No official peak-count proxy; 4 relevant businesses; 0 coffee / café listings; 346 reviews per listing."
+      },
+      {
+        "name": "Sixth Avenue",
+        "total_listings": 2,
+        "total_reviews": 1139,
+        "reviews_per_listing": 569.5,
+        "traffic_peak_proxy": null,
+        "category_counts": {
+          "coffee": 0,
+          "juice": 1,
           "tea": 0,
           "breakfast": 1
         },
         "category": "coffee",
+        "category_supply": 0,
+        "white_space_score": 100,
+        "demand_base_score": 34,
+        "gap_score": 54,
+        "confidence_score": 63,
+        "rationale": "No official peak-count proxy; 2 relevant businesses; 0 coffee / café listings; 570 reviews per listing."
+      },
+      {
+        "name": "Grant Road",
+        "total_listings": 15,
+        "total_reviews": 23969,
+        "reviews_per_listing": 1597.9333333333334,
+        "traffic_peak_proxy": 11546.166666666666,
+        "category_counts": {
+          "coffee": 4,
+          "juice": 2,
+          "tea": 1,
+          "breakfast": 8
+        },
+        "category": "coffee",
         "category_supply": 4,
-        "white_space_score": 71,
-        "demand_base_score": 42,
-        "gap_score": 51,
-        "confidence_score": 75,
-        "rationale": "No official peak-count proxy; 7 relevant businesses; 4 coffee / café listings; 291 reviews per listing."
+        "white_space_score": 67,
+        "demand_base_score": 46,
+        "gap_score": 52,
+        "confidence_score": 100,
+        "rationale": "Peak-count proxy 11,546 vehicles; 15 relevant businesses; 4 coffee / café listings; 1,598 reviews per listing."
+      },
+      {
+        "name": "Stone Avenue",
+        "total_listings": 2,
+        "total_reviews": 941,
+        "reviews_per_listing": 470.5,
+        "traffic_peak_proxy": null,
+        "category_counts": {
+          "coffee": 0,
+          "juice": 0,
+          "tea": 1,
+          "breakfast": 1
+        },
+        "category": "coffee",
+        "category_supply": 0,
+        "white_space_score": 100,
+        "demand_base_score": 32,
+        "gap_score": 52,
+        "confidence_score": 50,
+        "rationale": "No official peak-count proxy; 2 relevant businesses; 0 coffee / café listings; 471 reviews per listing."
       }
     ],
     "juice": [
       {
         "name": "Golf Links Road",
-        "total_listings": 9,
-        "total_reviews": 5620,
-        "reviews_per_listing": 624.4444444444445,
+        "total_listings": 10,
+        "total_reviews": 5782,
+        "reviews_per_listing": 578.2,
         "traffic_peak_proxy": 13075.5,
         "category_counts": {
           "coffee": 5,
           "juice": 0,
           "tea": 1,
-          "breakfast": 3
+          "breakfast": 4
         },
         "category": "juice",
         "category_supply": 0,
@@ -1254,16 +1254,16 @@
         "demand_base_score": 71,
         "gap_score": 80,
         "confidence_score": 100,
-        "rationale": "Peak-count proxy 13,076 vehicles; 9 relevant businesses; 0 juice / smoothie listings; 624 reviews per listing."
+        "rationale": "Peak-count proxy 13,076 vehicles; 10 relevant businesses; 0 juice / smoothie listings; 578 reviews per listing."
       },
       {
         "name": "Speedway Boulevard",
-        "total_listings": 12,
-        "total_reviews": 8865,
-        "reviews_per_listing": 738.75,
+        "total_listings": 15,
+        "total_reviews": 10354,
+        "reviews_per_listing": 690.2666666666667,
         "traffic_peak_proxy": 12538.166666666666,
         "category_counts": {
-          "coffee": 3,
+          "coffee": 6,
           "juice": 0,
           "tea": 5,
           "breakfast": 4
@@ -1271,99 +1271,79 @@
         "category": "juice",
         "category_supply": 0,
         "white_space_score": 100,
-        "demand_base_score": 62,
-        "gap_score": 73,
+        "demand_base_score": 64,
+        "gap_score": 75,
         "confidence_score": 100,
-        "rationale": "Peak-count proxy 12,538 vehicles; 12 relevant businesses; 0 juice / smoothie listings; 739 reviews per listing."
+        "rationale": "Peak-count proxy 12,538 vehicles; 15 relevant businesses; 0 juice / smoothie listings; 690 reviews per listing."
       },
       {
         "name": "22nd Street",
-        "total_listings": 9,
-        "total_reviews": 11214,
-        "reviews_per_listing": 1246,
+        "total_listings": 12,
+        "total_reviews": 13435,
+        "reviews_per_listing": 1119.5833333333333,
         "traffic_peak_proxy": 12271,
         "category_counts": {
-          "coffee": 3,
+          "coffee": 4,
           "juice": 0,
           "tea": 0,
-          "breakfast": 6
+          "breakfast": 8
         },
         "category": "juice",
         "category_supply": 0,
         "white_space_score": 100,
-        "demand_base_score": 56,
-        "gap_score": 69,
+        "demand_base_score": 58,
+        "gap_score": 71,
         "confidence_score": 100,
-        "rationale": "Peak-count proxy 12,271 vehicles; 9 relevant businesses; 0 juice / smoothie listings; 1,246 reviews per listing."
+        "rationale": "Peak-count proxy 12,271 vehicles; 12 relevant businesses; 0 juice / smoothie listings; 1,120 reviews per listing."
       },
       {
         "name": "Wilmot Road",
-        "total_listings": 6,
-        "total_reviews": 4716,
-        "reviews_per_listing": 786,
+        "total_listings": 5,
+        "total_reviews": 4548,
+        "reviews_per_listing": 909.6,
         "traffic_peak_proxy": 12739.75,
         "category_counts": {
           "coffee": 1,
-          "juice": 1,
+          "juice": 0,
           "tea": 0,
           "breakfast": 4
         },
         "category": "juice",
-        "category_supply": 1,
-        "white_space_score": 80,
-        "demand_base_score": 60,
-        "gap_score": 66,
+        "category_supply": 0,
+        "white_space_score": 100,
+        "demand_base_score": 59,
+        "gap_score": 71,
         "confidence_score": 100,
-        "rationale": "Peak-count proxy 12,740 vehicles; 6 relevant businesses; 1 juice / smoothie listings; 786 reviews per listing."
+        "rationale": "Peak-count proxy 12,740 vehicles; 5 relevant businesses; 0 juice / smoothie listings; 910 reviews per listing."
       },
       {
         "name": "Oracle Road",
         "total_listings": 8,
-        "total_reviews": 14842,
-        "reviews_per_listing": 1855.25,
+        "total_reviews": 15017,
+        "reviews_per_listing": 1877.125,
         "traffic_peak_proxy": null,
         "category_counts": {
-          "coffee": 0,
-          "juice": 1,
+          "coffee": 1,
+          "juice": 0,
           "tea": 2,
           "breakfast": 5
         },
         "category": "juice",
-        "category_supply": 1,
-        "white_space_score": 80,
-        "demand_base_score": 55,
-        "gap_score": 63,
+        "category_supply": 0,
+        "white_space_score": 100,
+        "demand_base_score": 54,
+        "gap_score": 68,
         "confidence_score": 75,
-        "rationale": "No official peak-count proxy; 8 relevant businesses; 1 juice / smoothie listings; 1,855 reviews per listing."
+        "rationale": "No official peak-count proxy; 8 relevant businesses; 0 juice / smoothie listings; 1,877 reviews per listing."
       },
       {
         "name": "Kolb Road",
         "total_listings": 3,
-        "total_reviews": 1670,
-        "reviews_per_listing": 556.6666666666666,
+        "total_reviews": 1678,
+        "reviews_per_listing": 559.3333333333334,
         "traffic_peak_proxy": 12488.625,
         "category_counts": {
-          "coffee": 1,
-          "juice": 0,
-          "tea": 0,
-          "breakfast": 2
-        },
-        "category": "juice",
-        "category_supply": 0,
-        "white_space_score": 100,
-        "demand_base_score": 47,
-        "gap_score": 63,
-        "confidence_score": 88,
-        "rationale": "Peak-count proxy 12,489 vehicles; 3 relevant businesses; 0 juice / smoothie listings; 557 reviews per listing."
-      },
-      {
-        "name": "Alvernon Way",
-        "total_listings": 2,
-        "total_reviews": 2227,
-        "reviews_per_listing": 1113.5,
-        "traffic_peak_proxy": null,
-        "category_counts": {
-          "coffee": 1,
+          "coffee": 2,
           "juice": 0,
           "tea": 0,
           "breakfast": 1
@@ -1371,19 +1351,39 @@
         "category": "juice",
         "category_supply": 0,
         "white_space_score": 100,
-        "demand_base_score": 40,
-        "gap_score": 58,
-        "confidence_score": 63,
-        "rationale": "No official peak-count proxy; 2 relevant businesses; 0 juice / smoothie listings; 1,114 reviews per listing."
+        "demand_base_score": 45,
+        "gap_score": 62,
+        "confidence_score": 88,
+        "rationale": "Peak-count proxy 12,489 vehicles; 3 relevant businesses; 0 juice / smoothie listings; 559 reviews per listing."
+      },
+      {
+        "name": "Campbell Avenue",
+        "total_listings": 14,
+        "total_reviews": 10993,
+        "reviews_per_listing": 785.2142857142857,
+        "traffic_peak_proxy": 12652,
+        "category_counts": {
+          "coffee": 4,
+          "juice": 3,
+          "tea": 2,
+          "breakfast": 5
+        },
+        "category": "juice",
+        "category_supply": 3,
+        "white_space_score": 40,
+        "demand_base_score": 68,
+        "gap_score": 60,
+        "confidence_score": 100,
+        "rationale": "Peak-count proxy 12,652 vehicles; 14 relevant businesses; 3 juice / smoothie listings; 785 reviews per listing."
       },
       {
         "name": "Broadway Boulevard",
-        "total_listings": 42,
-        "total_reviews": 38573,
-        "reviews_per_listing": 918.4047619047619,
+        "total_listings": 40,
+        "total_reviews": 39228,
+        "reviews_per_listing": 980.7,
         "traffic_peak_proxy": null,
         "category_counts": {
-          "coffee": 14,
+          "coffee": 12,
           "juice": 5,
           "tea": 7,
           "breakfast": 16
@@ -1394,101 +1394,101 @@
         "demand_base_score": 78,
         "gap_score": 55,
         "confidence_score": 75,
-        "rationale": "No official peak-count proxy; 42 relevant businesses; 5 juice / smoothie listings; 918 reviews per listing."
-      },
-      {
-        "name": "Campbell Avenue",
-        "total_listings": 15,
-        "total_reviews": 11003,
-        "reviews_per_listing": 733.5333333333333,
-        "traffic_peak_proxy": 12652,
-        "category_counts": {
-          "coffee": 3,
-          "juice": 4,
-          "tea": 2,
-          "breakfast": 6
-        },
-        "category": "juice",
-        "category_supply": 4,
-        "white_space_score": 20,
-        "demand_base_score": 68,
-        "gap_score": 54,
-        "confidence_score": 100,
-        "rationale": "Peak-count proxy 12,652 vehicles; 15 relevant businesses; 4 juice / smoothie listings; 734 reviews per listing."
+        "rationale": "No official peak-count proxy; 40 relevant businesses; 5 juice / smoothie listings; 981 reviews per listing."
       },
       {
         "name": "First Avenue",
-        "total_listings": 5,
-        "total_reviews": 1990,
-        "reviews_per_listing": 398,
+        "total_listings": 4,
+        "total_reviews": 1384,
+        "reviews_per_listing": 346,
         "traffic_peak_proxy": null,
         "category_counts": {
-          "coffee": 1,
-          "juice": 1,
-          "tea": 1,
+          "coffee": 0,
+          "juice": 0,
+          "tea": 2,
           "breakfast": 2
         },
         "category": "juice",
-        "category_supply": 1,
-        "white_space_score": 80,
-        "demand_base_score": 41,
-        "gap_score": 53,
-        "confidence_score": 75,
-        "rationale": "No official peak-count proxy; 5 relevant businesses; 1 juice / smoothie listings; 398 reviews per listing."
+        "category_supply": 0,
+        "white_space_score": 100,
+        "demand_base_score": 36,
+        "gap_score": 55,
+        "confidence_score": 63,
+        "rationale": "No official peak-count proxy; 4 relevant businesses; 0 juice / smoothie listings; 346 reviews per listing."
       },
       {
-        "name": "Country Club Road",
+        "name": "Tanque Verde Road",
+        "total_listings": 13,
+        "total_reviews": 7256,
+        "reviews_per_listing": 558.1538461538462,
+        "traffic_peak_proxy": 11428,
+        "category_counts": {
+          "coffee": 8,
+          "juice": 0,
+          "tea": 2,
+          "breakfast": 3
+        },
+        "category": "juice",
+        "category_supply": 0,
+        "white_space_score": 100,
+        "demand_base_score": 34,
+        "gap_score": 54,
+        "confidence_score": 100,
+        "rationale": "Peak-count proxy 11,428 vehicles; 13 relevant businesses; 0 juice / smoothie listings; 558 reviews per listing."
+      },
+      {
+        "name": "Stone Avenue",
         "total_listings": 2,
-        "total_reviews": 740,
-        "reviews_per_listing": 370,
+        "total_reviews": 941,
+        "reviews_per_listing": 470.5,
         "traffic_peak_proxy": null,
         "category_counts": {
-          "coffee": 1,
+          "coffee": 0,
           "juice": 0,
-          "tea": 0,
+          "tea": 1,
           "breakfast": 1
         },
         "category": "juice",
         "category_supply": 0,
         "white_space_score": 100,
-        "demand_base_score": 33,
-        "gap_score": 53,
+        "demand_base_score": 32,
+        "gap_score": 52,
         "confidence_score": 50,
-        "rationale": "No official peak-count proxy; 2 relevant businesses; 0 juice / smoothie listings; 370 reviews per listing."
+        "rationale": "No official peak-count proxy; 2 relevant businesses; 0 juice / smoothie listings; 471 reviews per listing."
       },
       {
-        "name": "Houghton Road",
-        "total_listings": 7,
-        "total_reviews": 2038,
-        "reviews_per_listing": 291.14285714285717,
-        "traffic_peak_proxy": null,
+        "name": "Grant Road",
+        "total_listings": 15,
+        "total_reviews": 23969,
+        "reviews_per_listing": 1597.9333333333334,
+        "traffic_peak_proxy": 11546.166666666666,
         "category_counts": {
           "coffee": 4,
           "juice": 2,
-          "tea": 0,
-          "breakfast": 1
+          "tea": 1,
+          "breakfast": 8
         },
         "category": "juice",
         "category_supply": 2,
         "white_space_score": 60,
-        "demand_base_score": 42,
-        "gap_score": 47,
-        "confidence_score": 75,
-        "rationale": "No official peak-count proxy; 7 relevant businesses; 2 juice / smoothie listings; 291 reviews per listing."
+        "demand_base_score": 46,
+        "gap_score": 50,
+        "confidence_score": 100,
+        "rationale": "Peak-count proxy 11,546 vehicles; 15 relevant businesses; 2 juice / smoothie listings; 1,598 reviews per listing."
       }
     ],
     "tea": [
       {
         "name": "Golf Links Road",
-        "total_listings": 9,
-        "total_reviews": 5620,
-        "reviews_per_listing": 624.4444444444445,
+        "total_listings": 10,
+        "total_reviews": 5782,
+        "reviews_per_listing": 578.2,
         "traffic_peak_proxy": 13075.5,
         "category_counts": {
           "coffee": 5,
           "juice": 0,
           "tea": 1,
-          "breakfast": 3
+          "breakfast": 4
         },
         "category": "tea",
         "category_supply": 1,
@@ -1496,59 +1496,59 @@
         "demand_base_score": 71,
         "gap_score": 76,
         "confidence_score": 100,
-        "rationale": "Peak-count proxy 13,076 vehicles; 9 relevant businesses; 1 tea / boba listings; 624 reviews per listing."
+        "rationale": "Peak-count proxy 13,076 vehicles; 10 relevant businesses; 1 tea / boba listings; 578 reviews per listing."
+      },
+      {
+        "name": "22nd Street",
+        "total_listings": 12,
+        "total_reviews": 13435,
+        "reviews_per_listing": 1119.5833333333333,
+        "traffic_peak_proxy": 12271,
+        "category_counts": {
+          "coffee": 4,
+          "juice": 0,
+          "tea": 0,
+          "breakfast": 8
+        },
+        "category": "tea",
+        "category_supply": 0,
+        "white_space_score": 100,
+        "demand_base_score": 58,
+        "gap_score": 71,
+        "confidence_score": 100,
+        "rationale": "Peak-count proxy 12,271 vehicles; 12 relevant businesses; 0 tea / boba listings; 1,120 reviews per listing."
       },
       {
         "name": "Wilmot Road",
-        "total_listings": 6,
-        "total_reviews": 4716,
-        "reviews_per_listing": 786,
+        "total_listings": 5,
+        "total_reviews": 4548,
+        "reviews_per_listing": 909.6,
         "traffic_peak_proxy": 12739.75,
         "category_counts": {
           "coffee": 1,
-          "juice": 1,
+          "juice": 0,
           "tea": 0,
           "breakfast": 4
         },
         "category": "tea",
         "category_supply": 0,
         "white_space_score": 100,
-        "demand_base_score": 60,
-        "gap_score": 72,
+        "demand_base_score": 59,
+        "gap_score": 71,
         "confidence_score": 100,
-        "rationale": "Peak-count proxy 12,740 vehicles; 6 relevant businesses; 0 tea / boba listings; 786 reviews per listing."
-      },
-      {
-        "name": "22nd Street",
-        "total_listings": 9,
-        "total_reviews": 11214,
-        "reviews_per_listing": 1246,
-        "traffic_peak_proxy": 12271,
-        "category_counts": {
-          "coffee": 3,
-          "juice": 0,
-          "tea": 0,
-          "breakfast": 6
-        },
-        "category": "tea",
-        "category_supply": 0,
-        "white_space_score": 100,
-        "demand_base_score": 56,
-        "gap_score": 69,
-        "confidence_score": 100,
-        "rationale": "Peak-count proxy 12,271 vehicles; 9 relevant businesses; 0 tea / boba listings; 1,246 reviews per listing."
+        "rationale": "Peak-count proxy 12,740 vehicles; 5 relevant businesses; 0 tea / boba listings; 910 reviews per listing."
       },
       {
         "name": "Campbell Avenue",
-        "total_listings": 15,
-        "total_reviews": 11003,
-        "reviews_per_listing": 733.5333333333333,
+        "total_listings": 14,
+        "total_reviews": 10993,
+        "reviews_per_listing": 785.2142857142857,
         "traffic_peak_proxy": 12652,
         "category_counts": {
-          "coffee": 3,
-          "juice": 4,
+          "coffee": 4,
+          "juice": 3,
           "tea": 2,
-          "breakfast": 6
+          "breakfast": 5
         },
         "category": "tea",
         "category_supply": 2,
@@ -1556,76 +1556,56 @@
         "demand_base_score": 68,
         "gap_score": 69,
         "confidence_score": 100,
-        "rationale": "Peak-count proxy 12,652 vehicles; 15 relevant businesses; 2 tea / boba listings; 734 reviews per listing."
+        "rationale": "Peak-count proxy 12,652 vehicles; 14 relevant businesses; 2 tea / boba listings; 785 reviews per listing."
       },
       {
         "name": "Kolb Road",
         "total_listings": 3,
-        "total_reviews": 1670,
-        "reviews_per_listing": 556.6666666666666,
+        "total_reviews": 1678,
+        "reviews_per_listing": 559.3333333333334,
         "traffic_peak_proxy": 12488.625,
         "category_counts": {
-          "coffee": 1,
+          "coffee": 2,
           "juice": 0,
           "tea": 0,
-          "breakfast": 2
-        },
-        "category": "tea",
-        "category_supply": 0,
-        "white_space_score": 100,
-        "demand_base_score": 47,
-        "gap_score": 63,
-        "confidence_score": 88,
-        "rationale": "Peak-count proxy 12,489 vehicles; 3 relevant businesses; 0 tea / boba listings; 557 reviews per listing."
-      },
-      {
-        "name": "Grant Road",
-        "total_listings": 14,
-        "total_reviews": 23992,
-        "reviews_per_listing": 1713.7142857142858,
-        "traffic_peak_proxy": 11546.166666666666,
-        "category_counts": {
-          "coffee": 3,
-          "juice": 3,
-          "tea": 0,
-          "breakfast": 8
+          "breakfast": 1
         },
         "category": "tea",
         "category_supply": 0,
         "white_space_score": 100,
         "demand_base_score": 45,
         "gap_score": 62,
-        "confidence_score": 100,
-        "rationale": "Peak-count proxy 11,546 vehicles; 14 relevant businesses; 0 tea / boba listings; 1,714 reviews per listing."
+        "confidence_score": 88,
+        "rationale": "Peak-count proxy 12,489 vehicles; 3 relevant businesses; 0 tea / boba listings; 559 reviews per listing."
       },
       {
         "name": "Oracle Road",
         "total_listings": 8,
-        "total_reviews": 14842,
-        "reviews_per_listing": 1855.25,
+        "total_reviews": 15017,
+        "reviews_per_listing": 1877.125,
         "traffic_peak_proxy": null,
         "category_counts": {
-          "coffee": 0,
-          "juice": 1,
+          "coffee": 1,
+          "juice": 0,
           "tea": 2,
           "breakfast": 5
         },
         "category": "tea",
         "category_supply": 2,
         "white_space_score": 71,
-        "demand_base_score": 55,
-        "gap_score": 60,
+        "demand_base_score": 54,
+        "gap_score": 59,
         "confidence_score": 75,
-        "rationale": "No official peak-count proxy; 8 relevant businesses; 2 tea / boba listings; 1,855 reviews per listing."
+        "rationale": "No official peak-count proxy; 8 relevant businesses; 2 tea / boba listings; 1,877 reviews per listing."
       },
       {
         "name": "Houghton Road",
-        "total_listings": 7,
-        "total_reviews": 2038,
-        "reviews_per_listing": 291.14285714285717,
+        "total_listings": 8,
+        "total_reviews": 2049,
+        "reviews_per_listing": 256.125,
         "traffic_peak_proxy": null,
         "category_counts": {
-          "coffee": 4,
+          "coffee": 5,
           "juice": 2,
           "tea": 0,
           "breakfast": 1
@@ -1633,39 +1613,39 @@
         "category": "tea",
         "category_supply": 0,
         "white_space_score": 100,
-        "demand_base_score": 42,
+        "demand_base_score": 41,
         "gap_score": 59,
         "confidence_score": 75,
-        "rationale": "No official peak-count proxy; 7 relevant businesses; 0 tea / boba listings; 291 reviews per listing."
+        "rationale": "No official peak-count proxy; 8 relevant businesses; 0 tea / boba listings; 256 reviews per listing."
       },
       {
-        "name": "Alvernon Way",
-        "total_listings": 2,
-        "total_reviews": 2227,
-        "reviews_per_listing": 1113.5,
-        "traffic_peak_proxy": null,
+        "name": "Grant Road",
+        "total_listings": 15,
+        "total_reviews": 23969,
+        "reviews_per_listing": 1597.9333333333334,
+        "traffic_peak_proxy": 11546.166666666666,
         "category_counts": {
-          "coffee": 1,
-          "juice": 0,
-          "tea": 0,
-          "breakfast": 1
+          "coffee": 4,
+          "juice": 2,
+          "tea": 1,
+          "breakfast": 8
         },
         "category": "tea",
-        "category_supply": 0,
-        "white_space_score": 100,
-        "demand_base_score": 40,
+        "category_supply": 1,
+        "white_space_score": 86,
+        "demand_base_score": 46,
         "gap_score": 58,
-        "confidence_score": 63,
-        "rationale": "No official peak-count proxy; 2 relevant businesses; 0 tea / boba listings; 1,114 reviews per listing."
+        "confidence_score": 100,
+        "rationale": "Peak-count proxy 11,546 vehicles; 15 relevant businesses; 1 tea / boba listings; 1,598 reviews per listing."
       },
       {
         "name": "Broadway Boulevard",
-        "total_listings": 42,
-        "total_reviews": 38573,
-        "reviews_per_listing": 918.4047619047619,
+        "total_listings": 40,
+        "total_reviews": 39228,
+        "reviews_per_listing": 980.7,
         "traffic_peak_proxy": null,
         "category_counts": {
-          "coffee": 14,
+          "coffee": 12,
           "juice": 5,
           "tea": 7,
           "breakfast": 16
@@ -1676,98 +1656,118 @@
         "demand_base_score": 78,
         "gap_score": 55,
         "confidence_score": 75,
-        "rationale": "No official peak-count proxy; 42 relevant businesses; 7 tea / boba listings; 918 reviews per listing."
+        "rationale": "No official peak-count proxy; 40 relevant businesses; 7 tea / boba listings; 981 reviews per listing."
       },
       {
-        "name": "First Avenue",
-        "total_listings": 5,
-        "total_reviews": 1990,
-        "reviews_per_listing": 398,
-        "traffic_peak_proxy": null,
+        "name": "Speedway Boulevard",
+        "total_listings": 15,
+        "total_reviews": 10354,
+        "reviews_per_listing": 690.2666666666667,
+        "traffic_peak_proxy": 12538.166666666666,
         "category_counts": {
-          "coffee": 1,
-          "juice": 1,
-          "tea": 1,
-          "breakfast": 2
+          "coffee": 6,
+          "juice": 0,
+          "tea": 5,
+          "breakfast": 4
         },
         "category": "tea",
-        "category_supply": 1,
-        "white_space_score": 86,
-        "demand_base_score": 41,
-        "gap_score": 55,
-        "confidence_score": 75,
-        "rationale": "No official peak-count proxy; 5 relevant businesses; 1 tea / boba listings; 398 reviews per listing."
+        "category_supply": 5,
+        "white_space_score": 29,
+        "demand_base_score": 64,
+        "gap_score": 54,
+        "confidence_score": 100,
+        "rationale": "Peak-count proxy 12,538 vehicles; 15 relevant businesses; 5 tea / boba listings; 690 reviews per listing."
       },
       {
-        "name": "Country Club Road",
+        "name": "Sixth Avenue",
         "total_listings": 2,
-        "total_reviews": 740,
-        "reviews_per_listing": 370,
+        "total_reviews": 1139,
+        "reviews_per_listing": 569.5,
         "traffic_peak_proxy": null,
         "category_counts": {
-          "coffee": 1,
-          "juice": 0,
+          "coffee": 0,
+          "juice": 1,
           "tea": 0,
           "breakfast": 1
         },
         "category": "tea",
         "category_supply": 0,
         "white_space_score": 100,
-        "demand_base_score": 33,
-        "gap_score": 53,
+        "demand_base_score": 34,
+        "gap_score": 54,
+        "confidence_score": 63,
+        "rationale": "No official peak-count proxy; 2 relevant businesses; 0 tea / boba listings; 570 reviews per listing."
+      },
+      {
+        "name": "River Road",
+        "total_listings": 2,
+        "total_reviews": 463,
+        "reviews_per_listing": 231.5,
+        "traffic_peak_proxy": null,
+        "category_counts": {
+          "coffee": 0,
+          "juice": 1,
+          "tea": 0,
+          "breakfast": 1
+        },
+        "category": "tea",
+        "category_supply": 0,
+        "white_space_score": 100,
+        "demand_base_score": 28,
+        "gap_score": 50,
         "confidence_score": 50,
-        "rationale": "No official peak-count proxy; 2 relevant businesses; 0 tea / boba listings; 370 reviews per listing."
+        "rationale": "No official peak-count proxy; 2 relevant businesses; 0 tea / boba listings; 232 reviews per listing."
       }
     ],
     "breakfast": [
       {
         "name": "Golf Links Road",
-        "total_listings": 9,
-        "total_reviews": 5620,
-        "reviews_per_listing": 624.4444444444445,
+        "total_listings": 10,
+        "total_reviews": 5782,
+        "reviews_per_listing": 578.2,
         "traffic_peak_proxy": 13075.5,
         "category_counts": {
           "coffee": 5,
           "juice": 0,
           "tea": 1,
-          "breakfast": 3
+          "breakfast": 4
         },
         "category": "breakfast",
-        "category_supply": 3,
-        "white_space_score": 81,
+        "category_supply": 4,
+        "white_space_score": 75,
         "demand_base_score": 71,
-        "gap_score": 74,
+        "gap_score": 72,
         "confidence_score": 100,
-        "rationale": "Peak-count proxy 13,076 vehicles; 9 relevant businesses; 3 fast breakfast listings; 624 reviews per listing."
+        "rationale": "Peak-count proxy 13,076 vehicles; 10 relevant businesses; 4 fast breakfast listings; 578 reviews per listing."
       },
       {
         "name": "Campbell Avenue",
-        "total_listings": 15,
-        "total_reviews": 11003,
-        "reviews_per_listing": 733.5333333333333,
+        "total_listings": 14,
+        "total_reviews": 10993,
+        "reviews_per_listing": 785.2142857142857,
         "traffic_peak_proxy": 12652,
         "category_counts": {
-          "coffee": 3,
-          "juice": 4,
+          "coffee": 4,
+          "juice": 3,
           "tea": 2,
-          "breakfast": 6
+          "breakfast": 5
         },
         "category": "breakfast",
-        "category_supply": 6,
-        "white_space_score": 63,
+        "category_supply": 5,
+        "white_space_score": 69,
         "demand_base_score": 68,
-        "gap_score": 67,
+        "gap_score": 68,
         "confidence_score": 100,
-        "rationale": "Peak-count proxy 12,652 vehicles; 15 relevant businesses; 6 fast breakfast listings; 734 reviews per listing."
+        "rationale": "Peak-count proxy 12,652 vehicles; 14 relevant businesses; 5 fast breakfast listings; 785 reviews per listing."
       },
       {
         "name": "Speedway Boulevard",
-        "total_listings": 12,
-        "total_reviews": 8865,
-        "reviews_per_listing": 738.75,
+        "total_listings": 15,
+        "total_reviews": 10354,
+        "reviews_per_listing": 690.2666666666667,
         "traffic_peak_proxy": 12538.166666666666,
         "category_counts": {
-          "coffee": 3,
+          "coffee": 6,
           "juice": 0,
           "tea": 5,
           "breakfast": 4
@@ -1775,99 +1775,79 @@
         "category": "breakfast",
         "category_supply": 4,
         "white_space_score": 75,
-        "demand_base_score": 62,
-        "gap_score": 66,
+        "demand_base_score": 64,
+        "gap_score": 67,
         "confidence_score": 100,
-        "rationale": "Peak-count proxy 12,538 vehicles; 12 relevant businesses; 4 fast breakfast listings; 739 reviews per listing."
+        "rationale": "Peak-count proxy 12,538 vehicles; 15 relevant businesses; 4 fast breakfast listings; 690 reviews per listing."
       },
       {
         "name": "Wilmot Road",
-        "total_listings": 6,
-        "total_reviews": 4716,
-        "reviews_per_listing": 786,
+        "total_listings": 5,
+        "total_reviews": 4548,
+        "reviews_per_listing": 909.6,
         "traffic_peak_proxy": 12739.75,
         "category_counts": {
           "coffee": 1,
-          "juice": 1,
+          "juice": 0,
           "tea": 0,
           "breakfast": 4
         },
         "category": "breakfast",
         "category_supply": 4,
         "white_space_score": 75,
-        "demand_base_score": 60,
-        "gap_score": 65,
+        "demand_base_score": 59,
+        "gap_score": 64,
         "confidence_score": 100,
-        "rationale": "Peak-count proxy 12,740 vehicles; 6 relevant businesses; 4 fast breakfast listings; 786 reviews per listing."
+        "rationale": "Peak-count proxy 12,740 vehicles; 5 relevant businesses; 4 fast breakfast listings; 910 reviews per listing."
+      },
+      {
+        "name": "Kolb Road",
+        "total_listings": 3,
+        "total_reviews": 1678,
+        "reviews_per_listing": 559.3333333333334,
+        "traffic_peak_proxy": 12488.625,
+        "category_counts": {
+          "coffee": 2,
+          "juice": 0,
+          "tea": 0,
+          "breakfast": 1
+        },
+        "category": "breakfast",
+        "category_supply": 1,
+        "white_space_score": 94,
+        "demand_base_score": 45,
+        "gap_score": 60,
+        "confidence_score": 88,
+        "rationale": "Peak-count proxy 12,489 vehicles; 3 relevant businesses; 1 fast breakfast listings; 559 reviews per listing."
       },
       {
         "name": "Oracle Road",
         "total_listings": 8,
-        "total_reviews": 14842,
-        "reviews_per_listing": 1855.25,
+        "total_reviews": 15017,
+        "reviews_per_listing": 1877.125,
         "traffic_peak_proxy": null,
         "category_counts": {
-          "coffee": 0,
-          "juice": 1,
+          "coffee": 1,
+          "juice": 0,
           "tea": 2,
           "breakfast": 5
         },
         "category": "breakfast",
         "category_supply": 5,
         "white_space_score": 69,
-        "demand_base_score": 55,
+        "demand_base_score": 54,
         "gap_score": 59,
         "confidence_score": 75,
-        "rationale": "No official peak-count proxy; 8 relevant businesses; 5 fast breakfast listings; 1,855 reviews per listing."
-      },
-      {
-        "name": "Kolb Road",
-        "total_listings": 3,
-        "total_reviews": 1670,
-        "reviews_per_listing": 556.6666666666666,
-        "traffic_peak_proxy": 12488.625,
-        "category_counts": {
-          "coffee": 1,
-          "juice": 0,
-          "tea": 0,
-          "breakfast": 2
-        },
-        "category": "breakfast",
-        "category_supply": 2,
-        "white_space_score": 88,
-        "demand_base_score": 47,
-        "gap_score": 59,
-        "confidence_score": 88,
-        "rationale": "Peak-count proxy 12,489 vehicles; 3 relevant businesses; 2 fast breakfast listings; 557 reviews per listing."
-      },
-      {
-        "name": "22nd Street",
-        "total_listings": 9,
-        "total_reviews": 11214,
-        "reviews_per_listing": 1246,
-        "traffic_peak_proxy": 12271,
-        "category_counts": {
-          "coffee": 3,
-          "juice": 0,
-          "tea": 0,
-          "breakfast": 6
-        },
-        "category": "breakfast",
-        "category_supply": 6,
-        "white_space_score": 63,
-        "demand_base_score": 56,
-        "gap_score": 58,
-        "confidence_score": 100,
-        "rationale": "Peak-count proxy 12,271 vehicles; 9 relevant businesses; 6 fast breakfast listings; 1,246 reviews per listing."
+        "rationale": "No official peak-count proxy; 8 relevant businesses; 5 fast breakfast listings; 1,877 reviews per listing."
       },
       {
         "name": "Houghton Road",
-        "total_listings": 7,
-        "total_reviews": 2038,
-        "reviews_per_listing": 291.14285714285717,
+        "total_listings": 8,
+        "total_reviews": 2049,
+        "reviews_per_listing": 256.125,
         "traffic_peak_proxy": null,
         "category_counts": {
-          "coffee": 4,
+          "coffee": 5,
           "juice": 2,
           "tea": 0,
           "breakfast": 1
@@ -1875,39 +1855,39 @@
         "category": "breakfast",
         "category_supply": 1,
         "white_space_score": 94,
-        "demand_base_score": 42,
-        "gap_score": 58,
+        "demand_base_score": 41,
+        "gap_score": 57,
         "confidence_score": 75,
-        "rationale": "No official peak-count proxy; 7 relevant businesses; 1 fast breakfast listings; 291 reviews per listing."
+        "rationale": "No official peak-count proxy; 8 relevant businesses; 1 fast breakfast listings; 256 reviews per listing."
       },
       {
-        "name": "Alvernon Way",
-        "total_listings": 2,
-        "total_reviews": 2227,
-        "reviews_per_listing": 1113.5,
-        "traffic_peak_proxy": null,
+        "name": "22nd Street",
+        "total_listings": 12,
+        "total_reviews": 13435,
+        "reviews_per_listing": 1119.5833333333333,
+        "traffic_peak_proxy": 12271,
         "category_counts": {
-          "coffee": 1,
+          "coffee": 4,
           "juice": 0,
           "tea": 0,
-          "breakfast": 1
+          "breakfast": 8
         },
         "category": "breakfast",
-        "category_supply": 1,
-        "white_space_score": 94,
-        "demand_base_score": 40,
+        "category_supply": 8,
+        "white_space_score": 50,
+        "demand_base_score": 58,
         "gap_score": 56,
-        "confidence_score": 63,
-        "rationale": "No official peak-count proxy; 2 relevant businesses; 1 fast breakfast listings; 1,114 reviews per listing."
+        "confidence_score": 100,
+        "rationale": "Peak-count proxy 12,271 vehicles; 12 relevant businesses; 8 fast breakfast listings; 1,120 reviews per listing."
       },
       {
         "name": "Broadway Boulevard",
-        "total_listings": 42,
-        "total_reviews": 38573,
-        "reviews_per_listing": 918.4047619047619,
+        "total_listings": 40,
+        "total_reviews": 39228,
+        "reviews_per_listing": 980.7,
         "traffic_peak_proxy": null,
         "category_counts": {
-          "coffee": 14,
+          "coffee": 12,
           "juice": 5,
           "tea": 7,
           "breakfast": 16
@@ -1918,47 +1898,67 @@
         "demand_base_score": 78,
         "gap_score": 55,
         "confidence_score": 75,
-        "rationale": "No official peak-count proxy; 42 relevant businesses; 16 fast breakfast listings; 918 reviews per listing."
+        "rationale": "No official peak-count proxy; 40 relevant businesses; 16 fast breakfast listings; 981 reviews per listing."
       },
       {
         "name": "First Avenue",
-        "total_listings": 5,
-        "total_reviews": 1990,
-        "reviews_per_listing": 398,
+        "total_listings": 4,
+        "total_reviews": 1384,
+        "reviews_per_listing": 346,
         "traffic_peak_proxy": null,
         "category_counts": {
-          "coffee": 1,
-          "juice": 1,
-          "tea": 1,
+          "coffee": 0,
+          "juice": 0,
+          "tea": 2,
           "breakfast": 2
         },
         "category": "breakfast",
         "category_supply": 2,
         "white_space_score": 88,
-        "demand_base_score": 41,
-        "gap_score": 55,
-        "confidence_score": 75,
-        "rationale": "No official peak-count proxy; 5 relevant businesses; 2 fast breakfast listings; 398 reviews per listing."
+        "demand_base_score": 36,
+        "gap_score": 52,
+        "confidence_score": 63,
+        "rationale": "No official peak-count proxy; 4 relevant businesses; 2 fast breakfast listings; 346 reviews per listing."
       },
       {
-        "name": "Country Club Road",
+        "name": "Sixth Avenue",
         "total_listings": 2,
-        "total_reviews": 740,
-        "reviews_per_listing": 370,
+        "total_reviews": 1139,
+        "reviews_per_listing": 569.5,
         "traffic_peak_proxy": null,
         "category_counts": {
-          "coffee": 1,
-          "juice": 0,
+          "coffee": 0,
+          "juice": 1,
           "tea": 0,
           "breakfast": 1
         },
         "category": "breakfast",
         "category_supply": 1,
         "white_space_score": 94,
-        "demand_base_score": 33,
+        "demand_base_score": 34,
+        "gap_score": 52,
+        "confidence_score": 63,
+        "rationale": "No official peak-count proxy; 2 relevant businesses; 1 fast breakfast listings; 570 reviews per listing."
+      },
+      {
+        "name": "Stone Avenue",
+        "total_listings": 2,
+        "total_reviews": 941,
+        "reviews_per_listing": 470.5,
+        "traffic_peak_proxy": null,
+        "category_counts": {
+          "coffee": 0,
+          "juice": 0,
+          "tea": 1,
+          "breakfast": 1
+        },
+        "category": "breakfast",
+        "category_supply": 1,
+        "white_space_score": 94,
+        "demand_base_score": 32,
         "gap_score": 51,
         "confidence_score": 50,
-        "rationale": "No official peak-count proxy; 2 relevant businesses; 1 fast breakfast listings; 370 reviews per listing."
+        "rationale": "No official peak-count proxy; 2 relevant businesses; 1 fast breakfast listings; 471 reviews per listing."
       }
     ]
   },
@@ -2055,7 +2055,7 @@
       "address": "5553 E Grant Rd, Tucson, AZ 85712",
       "category": "breakfast",
       "rating": 4.7,
-      "reviews_count": 4460,
+      "reviews_count": 4562,
       "corridor": "Grant Road",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=AMELIAS%20MEXICAN%20KITCHEN&query_place_id=ChIJlZqYIzFv1oYRZiU1UPeKAaU",
       "website": "https://ameliastucson.com/east-grant-rd?utm_source=google",
@@ -2067,11 +2067,11 @@
       "address": "2938 E Grant Rd, Tucson, AZ 85716",
       "category": "breakfast",
       "rating": 4.7,
-      "reviews_count": 3362,
+      "reviews_count": 3366,
       "corridor": "Grant Road",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Bobo's%20Restaurant&query_place_id=ChIJ6Tc4mb9x1oYR0wq_JENWwgc",
       "website": "",
-      "performance_proxy": 96
+      "performance_proxy": 95
     },
     {
       "id": "ChIJH8_SiW1v1oYR0eFY3CNP5MY",
@@ -2079,23 +2079,11 @@
       "address": "7002 E Broadway Blvd, Tucson, AZ 85710",
       "category": "breakfast",
       "rating": 4.7,
-      "reviews_count": 3156,
+      "reviews_count": 3166,
       "corridor": "Broadway Boulevard",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Baja%20Cafe%20on%20Broadway&query_place_id=ChIJH8_SiW1v1oYR0eFY3CNP5MY",
       "website": "https://www.bajacafetucson.com/",
-      "performance_proxy": 95
-    },
-    {
-      "id": "ChIJPS2H7cBz1oYRGfp_n8TuNbc",
-      "name": "The Cheesecake Factory",
-      "address": "60 W Wetmore Rd, Tucson, AZ 85705",
-      "category": "breakfast",
-      "rating": 4.3,
-      "reviews_count": 6025,
-      "corridor": null,
-      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=The%20Cheesecake%20Factory&query_place_id=ChIJPS2H7cBz1oYRGfp_n8TuNbc",
-      "website": "https://locations.thecheesecakefactory.com/az/tucson-150.html?utm_source=Google&utm_medium=Maps&utm_campaign=Google+Places",
-      "performance_proxy": 93
+      "performance_proxy": 94
     },
     {
       "id": "ChIJ_bnSfJdz1oYR6I-QVpQkFA0",
@@ -2103,11 +2091,11 @@
       "address": "5000 N Oracle Rd, Tucson, AZ 85704",
       "category": "breakfast",
       "rating": 4.3,
-      "reviews_count": 5762,
+      "reviews_count": 5785,
       "corridor": "Oracle Road",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Denny's%20Restaurant&query_place_id=ChIJ_bnSfJdz1oYR6I-QVpQkFA0",
       "website": "https://locations.dennys.com/AZ/TUCSON/246915?utm_source=G&utm_medium=organic&utm_campaign=DAC",
-      "performance_proxy": 93
+      "performance_proxy": 92
     },
     {
       "id": "ChIJq0eeTKJv1oYRtH_vETLrPLM",
@@ -2115,11 +2103,11 @@
       "address": "6095 E Broadway Blvd, Tucson, AZ 85711",
       "category": "breakfast",
       "rating": 4.4,
-      "reviews_count": 4900,
+      "reviews_count": 4911,
       "corridor": "Broadway Boulevard",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Black%20Bear%20Diner%20Tucson&query_place_id=ChIJq0eeTKJv1oYRtH_vETLrPLM",
       "website": "https://blackbeardiner.com/location/tucson/",
-      "performance_proxy": 93
+      "performance_proxy": 92
     },
     {
       "id": "ChIJca53Fxtx1oYRuDrQ-8pkYSU",
@@ -2127,11 +2115,11 @@
       "address": "444 E University Blvd, Tucson, AZ 85705",
       "category": "breakfast",
       "rating": 4.7,
-      "reviews_count": 2414,
+      "reviews_count": 2427,
       "corridor": null,
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Time%20Market&query_place_id=ChIJca53Fxtx1oYRuDrQ-8pkYSU",
       "website": "http://www.timemarket.xyz/",
-      "performance_proxy": 91
+      "performance_proxy": 90
     },
     {
       "id": "ChIJ_aUv5Zlz1oYR0sz9H3iakQs",
@@ -2139,11 +2127,11 @@
       "address": "5055 N Oracle Rd, Tucson, AZ 85704",
       "category": "breakfast",
       "rating": 4.5,
-      "reviews_count": 3020,
+      "reviews_count": 3033,
       "corridor": "Oracle Road",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=First%20Watch&query_place_id=ChIJ_aUv5Zlz1oYR0sz9H3iakQs",
       "website": "https://www.firstwatch.com/locations/fiesta/?utm_source=gbp-listing&utm_medium=organic&utm_campaign=gbp-listing&utm_content=fiesta",
-      "performance_proxy": 89
+      "performance_proxy": 88
     },
     {
       "id": "ChIJT9rdxXhv1oYRipa-xrNad5c",
@@ -2151,11 +2139,11 @@
       "address": "6504 E 22nd St, Tucson, AZ 85710",
       "category": "breakfast",
       "rating": 4.4,
-      "reviews_count": 3381,
+      "reviews_count": 3388,
       "corridor": "22nd Street",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Whataburger&query_place_id=ChIJT9rdxXhv1oYRipa-xrNad5c",
       "website": "https://locations.whataburger.com/az/tucson/6504-e-22nd-st.html/?utm_source=yextpages&utm_medium=locallistings&utm_campaign=yextpages",
-      "performance_proxy": 88
+      "performance_proxy": 87
     },
     {
       "id": "ChIJZaZqgIRx1oYR_J-UlnujlNc",
@@ -2163,11 +2151,11 @@
       "address": "2660 N Campbell Ave, Tucson, AZ 85719",
       "category": "breakfast",
       "rating": 4.5,
-      "reviews_count": 2861,
+      "reviews_count": 2867,
       "corridor": "Campbell Avenue",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Prep%20%26%20Pastry&query_place_id=ChIJZaZqgIRx1oYR_J-UlnujlNc",
       "website": "https://www.prepandpastry.com/tucson-central",
-      "performance_proxy": 88
+      "performance_proxy": 87
     },
     {
       "id": "ChIJ467vQOJw1oYRKHI-zuxsemo",
@@ -2175,11 +2163,11 @@
       "address": "311 E Congress St #1811, Tucson, AZ 85701",
       "category": "coffee",
       "rating": 4.6,
-      "reviews_count": 2385,
+      "reviews_count": 2391,
       "corridor": null,
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Cup%20Cafe&query_place_id=ChIJ467vQOJw1oYRKHI-zuxsemo",
       "website": "https://hotelcongress.com/family/the-cup/",
-      "performance_proxy": 88
+      "performance_proxy": 87
     },
     {
       "id": "ChIJ0__JotBx1oYRrp9IcUqNq7k",
@@ -2187,11 +2175,11 @@
       "address": "3843 E Pima St, Tucson, AZ 85716",
       "category": "coffee",
       "rating": 4.7,
-      "reviews_count": 2006,
+      "reviews_count": 2010,
       "corridor": null,
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Frank's%20Restaurant-Tucson&query_place_id=ChIJ0__JotBx1oYRrp9IcUqNq7k",
       "website": "https://www.franksrestaurant.com/",
-      "performance_proxy": 88
+      "performance_proxy": 87
     },
     {
       "id": "ChIJZVg_2CRx1oYRaevIu77I-rM",
@@ -2199,35 +2187,23 @@
       "address": "555 N Freeway, Tucson, AZ 85745",
       "category": "breakfast",
       "rating": 4.2,
-      "reviews_count": 4666,
+      "reviews_count": 4703,
       "corridor": null,
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Denny's%20Restaurant&query_place_id=ChIJZVg_2CRx1oYRaevIu77I-rM",
       "website": "https://locations.dennys.com/AZ/TUCSON/246913?utm_source=G&utm_medium=organic&utm_campaign=DAC",
-      "performance_proxy": 87
-    },
-    {
-      "id": "ChIJlRtOm01x1oYRcPo_QnGfJd8",
-      "name": "Waffle House",
-      "address": "1380 W Grant Rd, Tucson, AZ 85705",
-      "category": "breakfast",
-      "rating": 4.4,
-      "reviews_count": 2816,
-      "corridor": "Grant Road",
-      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Waffle%20House&query_place_id=ChIJlRtOm01x1oYRcPo_QnGfJd8",
-      "website": "https://www.wafflehouse.com/?olonwp=JjBtp_vMLk25gkYh_bnoiQ",
       "performance_proxy": 86
     },
     {
       "id": "ChIJKX9tJnZv1oYRZY0pa8pnliM",
       "name": "Dutch Bros Coffee",
       "address": "120 S Wilmot Rd, Tucson, AZ 85711",
-      "category": "juice",
+      "category": "coffee",
       "rating": 4.6,
       "reviews_count": 2119,
       "corridor": "Wilmot Road",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Dutch%20Bros%20Coffee&query_place_id=ChIJKX9tJnZv1oYRZY0pa8pnliM",
       "website": "https://www.dutchbros.com/locations/az/tucson/120-s-wilmot-rd.?y_source=1_MTUyMjgyNDctNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
-      "performance_proxy": 86
+      "performance_proxy": 85
     },
     {
       "id": "ChIJ_YaVGttv1oYRS6TlQCdqud8",
@@ -2235,23 +2211,35 @@
       "address": "4637 E Broadway Blvd, Tucson, AZ 85711",
       "category": "breakfast",
       "rating": 4.6,
-      "reviews_count": 2104,
+      "reviews_count": 2107,
       "corridor": "Broadway Boulevard",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=The%20Hungry%20Fox%20Restaurant%20%26%20Country%20Store&query_place_id=ChIJ_YaVGttv1oYRS6TlQCdqud8",
       "website": "http://www.thehungryfoxrestaurant.com/",
-      "performance_proxy": 86
+      "performance_proxy": 85
     },
     {
-      "id": "ChIJranGZb9v1oYR3eWub9yPaQk",
-      "name": "First Watch",
-      "address": "5350 E Broadway Blvd #103, Tucson, AZ 85711",
+      "id": "ChIJlRtOm01x1oYRcPo_QnGfJd8",
+      "name": "Waffle House",
+      "address": "1380 W Grant Rd, Tucson, AZ 85705",
       "category": "breakfast",
-      "rating": 4.7,
-      "reviews_count": 1692,
+      "rating": 4.4,
+      "reviews_count": 2825,
+      "corridor": "Grant Road",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Waffle%20House&query_place_id=ChIJlRtOm01x1oYRcPo_QnGfJd8",
+      "website": "https://www.wafflehouse.com/?olonwp=JjBtp_vMLk25gkYh_bnoiQ",
+      "performance_proxy": 84
+    },
+    {
+      "id": "ChIJeTM3-Wxv1oYR9yxZzVm0t3A",
+      "name": "The Oink Cafe",
+      "address": "7131 E Broadway Blvd, Tucson, AZ 85710",
+      "category": "breakfast",
+      "rating": 4.3,
+      "reviews_count": 3249,
       "corridor": "Broadway Boulevard",
-      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=First%20Watch&query_place_id=ChIJranGZb9v1oYR3eWub9yPaQk",
-      "website": "https://www.firstwatch.com/locations/williams/?utm_source=gbp-listing&utm_medium=organic&utm_campaign=gbp-listing&utm_content=williams",
-      "performance_proxy": 86
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=The%20Oink%20Cafe&query_place_id=ChIJeTM3-Wxv1oYR9yxZzVm0t3A",
+      "website": "https://oinkcafe.com/?utm_source=google",
+      "performance_proxy": 83
     },
     {
       "id": "ChIJ_Ya-Vq121oYRiPUMn_mm1iY",
@@ -2259,23 +2247,11 @@
       "address": "1500 W Grant Rd, Tucson, AZ 85745",
       "category": "breakfast",
       "rating": 4.2,
-      "reviews_count": 3698,
+      "reviews_count": 3730,
       "corridor": "Grant Road",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=IHOP&query_place_id=ChIJ_Ya-Vq121oYRiPUMn_mm1iY",
       "website": "https://restaurants.ihop.com/en-us/az/tucson/breakfast-1500-w-grant-rd-1517?utm_source=google&utm_medium=organic&utm_campaign=google_my_business&utm_term=1517&utm_content=website",
-      "performance_proxy": 84
-    },
-    {
-      "id": "ChIJDUtJt7lx1oYRi7jhm_LP_Q4",
-      "name": "Locale Neighborhood Italian Restaurant",
-      "address": "60 N Alvernon Way, Tucson, AZ 85711",
-      "category": "breakfast",
-      "rating": 4.5,
-      "reviews_count": 2137,
-      "corridor": "Alvernon Way",
-      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Locale%20Neighborhood%20Italian%20Restaurant&query_place_id=ChIJDUtJt7lx1oYRi7jhm_LP_Q4",
-      "website": "https://www.localetucson.com/",
-      "performance_proxy": 84
+      "performance_proxy": 82
     },
     {
       "id": "ChIJ__WTFBpv1oYRE8I--jU9Hy4",
@@ -2283,11 +2259,11 @@
       "address": "7189 E Speedway Blvd #102, Tucson, AZ 85710",
       "category": "breakfast",
       "rating": 4.5,
-      "reviews_count": 2112,
+      "reviews_count": 2118,
       "corridor": "Speedway Boulevard",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=First%20Watch&query_place_id=ChIJ__WTFBpv1oYRE8I--jU9Hy4",
       "website": "https://www.firstwatch.com/locations/speedway/?utm_source=gbp-listing&utm_medium=organic&utm_campaign=gbp-listing&utm_content=speedway",
-      "performance_proxy": 84
+      "performance_proxy": 82
     },
     {
       "id": "ChIJQUP_GCBx1oYRbu7iSqu5ztE",
@@ -2295,11 +2271,23 @@
       "address": "150 N Main Ave, Tucson, AZ 85701",
       "category": "coffee",
       "rating": 4.7,
-      "reviews_count": 1520,
+      "reviews_count": 1526,
       "corridor": null,
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Caf%C3%A9%20%C3%A0%20La%20C'Art&query_place_id=ChIJQUP_GCBx1oYRbu7iSqu5ztE",
       "website": "http://www.cafealacarttucson.com/",
-      "performance_proxy": 84
+      "performance_proxy": 82
+    },
+    {
+      "id": "ChIJranGZb9v1oYR3eWub9yPaQk",
+      "name": "First Watch",
+      "address": "5350 E Broadway Blvd #103, Tucson, AZ 85711",
+      "category": "breakfast",
+      "rating": 4.6,
+      "reviews_count": 1700,
+      "corridor": "Broadway Boulevard",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=First%20Watch&query_place_id=ChIJranGZb9v1oYR3eWub9yPaQk",
+      "website": "https://www.firstwatch.com/locations/williams/?utm_source=gbp-listing&utm_medium=organic&utm_campaign=gbp-listing&utm_content=williams",
+      "performance_proxy": 81
     },
     {
       "id": "ChIJI3alLTtu1oYRk0YX5legTIE",
@@ -2307,11 +2295,11 @@
       "address": "4775 E Grant Rd, Tucson, AZ 85712",
       "category": "breakfast",
       "rating": 4.6,
-      "reviews_count": 1642,
+      "reviews_count": 1644,
       "corridor": "Grant Road",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=First%20Watch&query_place_id=ChIJI3alLTtu1oYRk0YX5legTIE",
       "website": "https://www.firstwatch.com/locations/crossroads/?utm_source=gbp-listing&utm_medium=organic&utm_campaign=gbp-listing&utm_content=crossroads",
-      "performance_proxy": 83
+      "performance_proxy": 81
     },
     {
       "id": "ChIJK3mDyOtz1oYRpo9SvKx5vM0",
@@ -2319,11 +2307,11 @@
       "address": "4187 N Oracle Rd, Tucson, AZ 85705",
       "category": "breakfast",
       "rating": 4.1,
-      "reviews_count": 3763,
+      "reviews_count": 3794,
       "corridor": "Oracle Road",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=IHOP&query_place_id=ChIJK3mDyOtz1oYRpo9SvKx5vM0",
       "website": "https://restaurants.ihop.com/en-us/az/tucson/breakfast-4187-n-oracle-rd-1530?utm_source=google&utm_medium=organic&utm_campaign=google_my_business&utm_term=1530&utm_content=website",
-      "performance_proxy": 82
+      "performance_proxy": 80
     },
     {
       "id": "ChIJkcxSkYRx1oYRWXCGGoYHU40",
@@ -2331,11 +2319,23 @@
       "address": "3026 N Campbell Ave, Tucson, AZ 85719",
       "category": "breakfast",
       "rating": 4.5,
-      "reviews_count": 1883,
+      "reviews_count": 1885,
       "corridor": "Campbell Avenue",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Beyond%20Bread&query_place_id=ChIJkcxSkYRx1oYRWXCGGoYHU40",
       "website": "http://www.beyondbread.com/",
-      "performance_proxy": 82
+      "performance_proxy": 80
+    },
+    {
+      "id": "ChIJ91Txcalv1oYRtpVjznpKluQ",
+      "name": "Beyond Bread",
+      "address": "6260 E Speedway Blvd, Tucson, AZ 85712",
+      "category": "breakfast",
+      "rating": 4.5,
+      "reviews_count": 1833,
+      "corridor": "Speedway Boulevard",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Beyond%20Bread&query_place_id=ChIJ91Txcalv1oYRtpVjznpKluQ",
+      "website": "http://www.beyondbread.com/",
+      "performance_proxy": 80
     },
     {
       "id": "ChIJMW6J79Rx1oYRKX1yxd21UA8",
@@ -2343,11 +2343,11 @@
       "address": "4024 E Speedway Blvd, Tucson, AZ 85712",
       "category": "coffee",
       "rating": 4.7,
-      "reviews_count": 1298,
+      "reviews_count": 1297,
       "corridor": "Speedway Boulevard",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Black%20Crown%20Coffee%20Company&query_place_id=ChIJMW6J79Rx1oYRKX1yxd21UA8",
       "website": "https://blackcrowncoffeecompany.shop/",
-      "performance_proxy": 82
+      "performance_proxy": 80
     },
     {
       "id": "ChIJQWg3tB5m1oYRR3gGMG8Q2F8",
@@ -2355,23 +2355,11 @@
       "address": "9560 E 22nd St, Tucson, AZ 85716",
       "category": "breakfast",
       "rating": 4.4,
-      "reviews_count": 2074,
+      "reviews_count": 2078,
       "corridor": "22nd Street",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Village%20Inn&query_place_id=ChIJQWg3tB5m1oYRR3gGMG8Q2F8",
       "website": "https://www.villageinn.com/tucson-az-22nd-and-harrison/",
-      "performance_proxy": 81
-    },
-    {
-      "id": "ChIJH8_SiW1v1oYREMDsN_qHSHc",
-      "name": "Biscuits Country Cafe",
-      "address": "7026 E Broadway Blvd, Tucson, AZ 85710",
-      "category": "coffee",
-      "rating": 4.5,
-      "reviews_count": 1755,
-      "corridor": "Broadway Boulevard",
-      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Biscuits%20Country%20Cafe&query_place_id=ChIJH8_SiW1v1oYREMDsN_qHSHc",
-      "website": "https://biscuitscountrycafe.com/?utm_source=google",
-      "performance_proxy": 81
+      "performance_proxy": 79
     },
     {
       "id": "ChIJn9qhnvhu1oYRTBHF2pmbUUA",
@@ -2379,11 +2367,11 @@
       "address": "6450 E Grant Rd, Tucson, AZ 85715",
       "category": "breakfast",
       "rating": 4.5,
-      "reviews_count": 1735,
+      "reviews_count": 1739,
       "corridor": "Grant Road",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Prep%20%26%20Pastry&query_place_id=ChIJn9qhnvhu1oYRTBHF2pmbUUA",
       "website": "https://www.prepandpastry.com/tucson-east",
-      "performance_proxy": 81
+      "performance_proxy": 79
     },
     {
       "id": "ChIJi0TZIsZv1oYRbzVkPNVuQGo",
@@ -2391,11 +2379,11 @@
       "address": "4726 E Broadway Blvd, Tucson, AZ 85711",
       "category": "tea",
       "rating": 4.8,
-      "reviews_count": 1047,
+      "reviews_count": 1050,
       "corridor": "Broadway Boulevard",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Ni%20Hao%20Tea&query_place_id=ChIJi0TZIsZv1oYRbzVkPNVuQGo",
       "website": "http://nihaotea.square.site/",
-      "performance_proxy": 81
+      "performance_proxy": 79
     },
     {
       "id": "ChIJNyLYAXRv1oYRm4V8SZKHmyM",
@@ -2403,11 +2391,11 @@
       "address": "6484 E Broadway Blvd, Tucson, AZ 85710",
       "category": "breakfast",
       "rating": 4,
-      "reviews_count": 4119,
+      "reviews_count": 4135,
       "corridor": "Broadway Boulevard",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Denny's%20Restaurant&query_place_id=ChIJNyLYAXRv1oYRm4V8SZKHmyM",
       "website": "https://locations.dennys.com/AZ/TUCSON/246914?utm_source=G&utm_medium=organic&utm_campaign=DAC",
-      "performance_proxy": 80
+      "performance_proxy": 78
     },
     {
       "id": "ChIJ3UgunUZv1oYR_a5fnm21Dp4",
@@ -2415,11 +2403,11 @@
       "address": "7945 E Broadway Blvd, Tucson, AZ 85710",
       "category": "breakfast",
       "rating": 4,
-      "reviews_count": 3978,
+      "reviews_count": 3983,
       "corridor": "Broadway Boulevard",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=IHOP&query_place_id=ChIJ3UgunUZv1oYR_a5fnm21Dp4",
       "website": "https://restaurants.ihop.com/en-us/az/tucson/breakfast-7945-e-broadway-blvd-1515?utm_source=google&utm_medium=organic&utm_campaign=google_my_business&utm_term=1515&utm_content=website",
-      "performance_proxy": 80
+      "performance_proxy": 78
     },
     {
       "id": "ChIJGVnEmDlu1oYRPyULHJlCF78",
@@ -2427,11 +2415,11 @@
       "address": "5101 E Grant Rd, Tucson, AZ 85712",
       "category": "breakfast",
       "rating": 4.1,
-      "reviews_count": 3369,
+      "reviews_count": 3370,
       "corridor": "Grant Road",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=IHOP&query_place_id=ChIJGVnEmDlu1oYRPyULHJlCF78",
       "website": "https://restaurants.ihop.com/en-us/az/tucson/breakfast-5101-e-grant-rd-1514?utm_source=google&utm_medium=organic&utm_campaign=google_my_business&utm_term=1514&utm_content=website",
-      "performance_proxy": 80
+      "performance_proxy": 78
     },
     {
       "id": "ChIJL8XnIzFx1oYRjD0p7WISehU",
@@ -2439,11 +2427,11 @@
       "address": "1002 N Grande Ave, Tucson, AZ 85745",
       "category": "coffee",
       "rating": 4.7,
-      "reviews_count": 1166,
+      "reviews_count": 1167,
       "corridor": null,
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Barista%20del%20Barrio&query_place_id=ChIJL8XnIzFx1oYRjD0p7WISehU",
       "website": "http://baristadelbarrio.square.site/",
-      "performance_proxy": 80
+      "performance_proxy": 78
     },
     {
       "id": "ChIJVVVp5UZv1oYRwY57uc2w0JA",
@@ -2451,11 +2439,11 @@
       "address": "210 N Pantano Rd, Tucson, AZ 85710",
       "category": "breakfast",
       "rating": 4.5,
-      "reviews_count": 1480,
+      "reviews_count": 1487,
       "corridor": null,
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Salsa%20Verde%20Restaurant&query_place_id=ChIJVVVp5UZv1oYRwY57uc2w0JA",
       "website": "http://www.salsaverdemx.com/",
-      "performance_proxy": 79
+      "performance_proxy": 77
     },
     {
       "id": "ChIJz3gs1_pz1oYRgv5t3MX5JT8",
@@ -2463,11 +2451,11 @@
       "address": "917 W Prince Rd, Tucson, AZ 85705",
       "category": "breakfast",
       "rating": 4.6,
-      "reviews_count": 1261,
+      "reviews_count": 1265,
       "corridor": null,
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Cappy's%20Breakfast%20Cafe&query_place_id=ChIJz3gs1_pz1oYRgv5t3MX5JT8",
       "website": "https://rebrand.ly/cappy-cafe",
-      "performance_proxy": 79
+      "performance_proxy": 77
     },
     {
       "id": "ChIJ9wvosIRx1oYR1_g1N0C5cwQ",
@@ -2475,11 +2463,11 @@
       "address": "2990 N Campbell Ave #120, Tucson, AZ 85719",
       "category": "breakfast",
       "rating": 4.6,
-      "reviews_count": 1211,
+      "reviews_count": 1209,
       "corridor": "Campbell Avenue",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Lovin'%20Spoonfuls%20Vegan%20Restaurant%20and%20Bakery&query_place_id=ChIJ9wvosIRx1oYR1_g1N0C5cwQ",
       "website": "http://lovinspoonfuls.com/",
-      "performance_proxy": 78
+      "performance_proxy": 76
     },
     {
       "id": "ChIJWTgbxNtv1oYRnjQokqyv-XM",
@@ -2487,23 +2475,23 @@
       "address": "4530 E Broadway Blvd, Tucson, AZ 85711",
       "category": "coffee",
       "rating": 4.6,
-      "reviews_count": 1195,
+      "reviews_count": 1197,
       "corridor": "Broadway Boulevard",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Crave%20Coffee%20Bar&query_place_id=ChIJWTgbxNtv1oYRnjQokqyv-XM",
       "website": "https://www.cravecoffeebar.com/",
-      "performance_proxy": 78
+      "performance_proxy": 76
     },
     {
-      "id": "ChIJ8fe168Zx1oYRusCqF4gPiR4",
-      "name": "Buendía Breakfast & Lunch Café",
-      "address": "2530 N 1st Ave, Tucson, AZ 85719",
-      "category": "breakfast",
-      "rating": 4.7,
-      "reviews_count": 987,
-      "corridor": "First Avenue",
-      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Buend%C3%ADa%20Breakfast%20%26%20Lunch%20Caf%C3%A9&query_place_id=ChIJ8fe168Zx1oYRusCqF4gPiR4",
-      "website": "",
-      "performance_proxy": 78
+      "id": "ChIJyQcvquhw1oYRb9EuiziaD2E",
+      "name": "Cafe Desta",
+      "address": "758 S Stone Ave, Tucson, AZ 85701",
+      "category": "tea",
+      "rating": 4.8,
+      "reviews_count": 878,
+      "corridor": "Stone Avenue",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Cafe%20Desta&query_place_id=ChIJyQcvquhw1oYRb9EuiziaD2E",
+      "website": "http://www.destacafe.com/",
+      "performance_proxy": 76
     },
     {
       "id": "ChIJNeF4n-Ru1oYR1HbQGz30EaA",
@@ -2511,11 +2499,11 @@
       "address": "7053 E Tanque Verde Rd, Tucson, AZ 85715",
       "category": "coffee",
       "rating": 4.5,
-      "reviews_count": 1310,
+      "reviews_count": 1317,
       "corridor": "Tanque Verde Road",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Eclectic%20Cafe&query_place_id=ChIJNeF4n-Ru1oYR1HbQGz30EaA",
       "website": "http://eclecticcafetucson.com/",
-      "performance_proxy": 77
+      "performance_proxy": 75
     },
     {
       "id": "ChIJYbia4bJo1oYRuC1k-MFKK1Q",
@@ -2523,11 +2511,23 @@
       "address": "8735 E Broadway Blvd, Tucson, AZ 85710",
       "category": "coffee",
       "rating": 4.5,
-      "reviews_count": 1306,
+      "reviews_count": 1313,
       "corridor": "Broadway Boulevard",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Jethro's%20Cafe%20and%20Tavern&query_place_id=ChIJYbia4bJo1oYRuC1k-MFKK1Q",
       "website": "https://jethros-cafe-and-tavern.site/",
-      "performance_proxy": 77
+      "performance_proxy": 75
+    },
+    {
+      "id": "ChIJNydUw4Vx1oYRraulLy9dZCM",
+      "name": "Dutch Bros Coffee",
+      "address": "3901 E 22nd St Alvernon, Tucson, AZ 85711",
+      "category": "coffee",
+      "rating": 4.7,
+      "reviews_count": 1008,
+      "corridor": "22nd Street",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Dutch%20Bros%20Coffee&query_place_id=ChIJNydUw4Vx1oYRraulLy9dZCM",
+      "website": "https://www.dutchbros.com/locations/az/tucson/3901-e-22nd-st.-(alvernon)?y_source=1_MTU0NDk4MzEtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+      "performance_proxy": 75
     }
   ]
 }
