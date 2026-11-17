@@ -1,5 +1,7 @@
 {
-  "updated_at": "2026-11-10T20:34:55.905Z",
-  "status": "success",
-  "errors": []
+  "updated_at": "2026-11-17T21:53:05.689Z",
+  "status": "completed_with_warnings",
+  "errors": [
+    "Google Trends Tucson geography: Google Trends hasn't returned any results for this query."
+  ]
 }
